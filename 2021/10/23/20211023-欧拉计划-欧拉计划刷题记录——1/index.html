@@ -115,6 +115,8 @@
 <p>By listing the first six prime numbers:2,3,5,7,11, and 13, we can see that the 6th prime is 13.</p>
 <p>What is the 10001st prime number?</p>
 </blockquote>
+<span id="more"></span>
+
 <p>此处使用欧拉筛法寻找质数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="number">1000000</span> <span class="comment">#数组长度限制</span></span><br><span class="line">n = <span class="number">10001</span> <span class="comment">#取第n位质数</span></span><br><span class="line">x = <span class="number">2</span>  <span class="comment">#提前定义的倍数值</span></span><br><span class="line">c = <span class="number">0</span>  <span class="comment">#质数的计数</span></span><br><span class="line">prime = [<span class="literal">True</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, m)]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, m):</span><br><span class="line">    <span class="keyword">if</span> prime[i]:</span><br><span class="line">        <span class="keyword">while</span> i*x &lt; m:</span><br><span class="line">            prime[i*x] = <span class="literal">False</span></span><br><span class="line">            x += <span class="number">1</span></span><br><span class="line">        x = <span class="number">2</span></span><br><span class="line">        c += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> c == n:   <span class="comment">#发现答案就退出计算</span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 
@@ -239,6 +241,15 @@
    
   <nav class="article-nav">
     
+      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            积分学笔记
+          
+        </div>
+      </a>
+    
     
       <a href="/2021/10/21/20211021-%E5%BF%83%E7%90%86%E5%AD%A6-%E9%87%8A%E6%A2%A6%E7%9A%84%E6%84%8F%E4%B9%89/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
@@ -352,6 +363,10 @@
     
     <li class="nav-item">
       <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
     </li>
     
     <li class="nav-item">
