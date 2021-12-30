@@ -227,16 +227,16 @@
 <p>则$f$在$x_0$处收敛.</p>
 <h5 id="单调有界原理-1"><a href="#单调有界原理-1" class="headerlink" title="单调有界原理"></a>单调有界原理</h5><h5 id="上极限与下极限-1"><a href="#上极限与下极限-1" class="headerlink" title="上极限与下极限"></a>上极限与下极限</h5><h5 id="Heine-定理"><a href="#Heine-定理" class="headerlink" title="Heine 定理"></a>Heine 定理</h5><p>$$<br>\forall x_n\to x_0 (x \rightarrow \infty), \lim_{n \to \infty} x_n = A \Leftrightarrow \lim_{x \to x_0} f(x) = A<br>$$</p>
 <h3 id="无穷小与无穷大"><a href="#无穷小与无穷大" class="headerlink" title="无穷小与无穷大"></a>无穷小与无穷大</h3><p>设$f$与$g$在$x_0$的近旁有定义，并且$g(x) \not = 0$.</p>
-<p>$x \to x_0$时，若$f(x)/g(x)保持有界，记为</p>
+<p>$x \to x_0$时，若$f(x)/g(x)$保持有界，记为</p>
 <p>$$<br>f(x) = O(g(x))(x \to x_0)<br>$$</p>
-<p>$x \to x_0$时，若f(x)/g(x)是一个无穷小，记为</p>
+<p>$x \to x_0$时，若$f(x)/g(x)$是一个无穷小，记为</p>
 <p>$$<br>f(x) = o(g(x))(x \to x_0)<br>$$</p>
 <h3 id="积分和的极限"><a href="#积分和的极限" class="headerlink" title="积分和的极限"></a>积分和的极限</h3><h4 id="定义6-1-1-Riemann可积"><a href="#定义6-1-1-Riemann可积" class="headerlink" title="定义6.1.1 Riemann可积"></a>定义6.1.1 Riemann可积</h4><p>设函数在区间$[a,b]$上有定义.如果实数$I$使得对于任意给定的$\varepsilon &gt; 0$，存在$\delta &gt; 0$，只要$[a,b]$的分割$\pi$满足$\left | \pi \right | &lt; \delta$，而不管$\xi_i \in [x_{i-1},x_i] (1 \le i \le n)$如何选择，都有</p>
 <p>$$<br>\left | I - \sum_{i=1}^{n} f(\xi_i) \Delta x_i \right | &lt; \varepsilon<br>$$</p>
-<p>成立，则称$f$在$[a,b]$上Riemann可积，称$I$是$[a,b]$上的Riemann积分.记为</p>
+<p>成立，则称$f$在$[a,b]$上Riemann可积，称$I$是$[a,b]$上的<strong>Riemann积分</strong>. 记为</p>
 <p>$$<br>\int_{a}^{b} f(x) , \mathrm{d}x<br>$$</p>
 <hr>
-<h2 id="函数的连续性"><a href="#函数的连续性" class="headerlink" title="函数的连续性"></a>函数的连续性</h2><h3 id="定义-varepsilon-delta-表述（局部性质）"><a href="#定义-varepsilon-delta-表述（局部性质）" class="headerlink" title="定义 $\varepsilon - \delta$表述（局部性质）"></a>定义 $\varepsilon - \delta$表述（局部性质）</h3><p>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt; 0,s.t.当0 &lt; |x-x_0| &lt; \delta时，有<br>$$<br>$$<br>\left | f(x) - f(x_0) \right | &lt; \varepsilon<br>$$</p>
+<h2 id="函数的连续性（局部性质）"><a href="#函数的连续性（局部性质）" class="headerlink" title="函数的连续性（局部性质）"></a>函数的连续性（局部性质）</h2><h3 id="定义-varepsilon-delta-表述"><a href="#定义-varepsilon-delta-表述" class="headerlink" title="定义 $\varepsilon - \delta$表述"></a>定义 $\varepsilon - \delta$表述</h3><p>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt; 0,s.t.当0 &lt; |x-x_0| &lt; \delta时，有<br>$$<br>$$<br>\left | f(x) - f(x_0) \right | &lt; \varepsilon<br>$$</p>
 <p>记为<br>$$<br>\lim_{x \to x_0} f(x) = f(x_0)<br>$$</p>
 <h3 id="单侧定义"><a href="#单侧定义" class="headerlink" title="单侧定义"></a>单侧定义</h3><h4 id="左极限"><a href="#左极限" class="headerlink" title="左极限"></a>左极限</h4><p>$$<br>\lim_{x \to x_0^-} f(x)<br>$$</p>
 <p>记为$f(x_0 -)$</p>
@@ -248,7 +248,7 @@
 <h3 id="间断点"><a href="#间断点" class="headerlink" title="间断点"></a>间断点</h3><h4 id="第一类间断点"><a href="#第一类间断点" class="headerlink" title="第一类间断点"></a>第一类间断点</h4><h5 id="跳跃点"><a href="#跳跃点" class="headerlink" title="跳跃点"></a>跳跃点</h5><p>函数在该点$x_0$左右极限不相等<br>$$<br>f(x_0 -) \not = f(x_0 +)<br>$$</p>
 <h5 id="可去间断点"><a href="#可去间断点" class="headerlink" title="可去间断点"></a>可去间断点</h5><p>函数在该点$x_0$左右极限相等，但不等于函数在该点的值<br>$$<br>f(x_0 -) = f(x_0 +) \not = f(x_0)<br>$$</p>
 <h4 id="第二类间断点"><a href="#第二类间断点" class="headerlink" title="第二类间断点"></a>第二类间断点</h4><p>$f(x_0 +)$和$f(x_0 -)$至少有一个不存在或不是有限数</p>
-<h3 id="一致连续（整体性质）"><a href="#一致连续（整体性质）" class="headerlink" title="一致连续（整体性质）"></a>一致连续（整体性质）</h3><p><code>注意该定义与Cauchy收敛原理之间的区别</code><br>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt;0,s.t.当0&lt;\left | x_1 - x_2 \right | &lt; \delta 时，<br>$$<br>$$<br>\left | f(x_1) - f(x_2) \right | &lt; \varepsilon<br>$$</p>
+<h3 id="函数的一致连续性（整体性质）"><a href="#函数的一致连续性（整体性质）" class="headerlink" title="函数的一致连续性（整体性质）"></a>函数的一致连续性（整体性质）</h3><p><code>注意该定义与Cauchy收敛原理之间的区别</code><br>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt;0,s.t.当0&lt;\left | x_1 - x_2 \right | &lt; \delta 时，<br>$$<br>$$<br>\left | f(x_1) - f(x_2) \right | &lt; \varepsilon<br>$$</p>
 <h3 id="连续函数的整体性质"><a href="#连续函数的整体性质" class="headerlink" title="连续函数的整体性质"></a>连续函数的整体性质</h3><h4 id="有限闭区间上的连续函数"><a href="#有限闭区间上的连续函数" class="headerlink" title="有限闭区间上的连续函数"></a>有限闭区间上的连续函数</h4><ol>
 <li>有界性</li>
 <li>最大值，最小值 可取到</li>
