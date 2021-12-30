@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">274</span>
+            <span class="post-count">562</span>
         </span>
     </span>
 
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -114,7 +114,7 @@
   <h1 id="拓扑学笔记-1-拓扑空间"><a href="#拓扑学笔记-1-拓扑空间" class="headerlink" title="拓扑学笔记(1) 拓扑空间"></a>拓扑学笔记(1) 拓扑空间</h1><h2 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h2><h3 id="定义-拓扑"><a href="#定义-拓扑" class="headerlink" title="定义 拓扑"></a>定义 拓扑</h3><p>集合$X$上的一个<strong>拓扑</strong>(topology)是$X$的子集的一个族$\mathcal{T}$，它满足以下条件:</p>
 <ol>
 <li>$\emptyset \in \mathcal{T},X \in \mathcal{T} $</li>
-<li> $\mathcal{T}$的任意子族的元素的并在$\mathcal{T}$中.</li>
+<li>$\mathcal{T}$的任意子族的元素的并在$\mathcal{T}$中.</li>
 <li>$\mathcal{T}$的任意有限子族的元素的交在$\mathcal{T}$中.</li>
 </ol>
 <p>一个指定了拓扑$\mathcal{T}$的集合$X$叫做一个<strong>拓扑空间</strong>(topological space).在不会混淆的场合下，可以不去提$\mathcal{T}$.</p>
@@ -123,6 +123,14 @@
 <p>仅含有$X$与$emptyset$的也是$X$的一个拓扑，称为<strong>密着拓扑</strong>(indiscrete topology)或者<strong>平庸拓扑</strong>(trivial topology).</p>
 <p>$\mathcal{T}$是使得$\forall U \in \mathcal{T}, X - U \in \mathcal{T}$的一个拓扑，我们称$\mathcal{T}$为<strong>有限补拓扑</strong></p>
 <h3 id="定义-细于（小于）"><a href="#定义-细于（小于）" class="headerlink" title="定义 细于（小于）"></a>定义 细于（小于）</h3><p>对于$X$的两个拓扑$\mathcal{T}, \mathcal{T}’$，如果$\mathcal{T} \supset \mathcal{T}’$，我们称$\mathcal{T}’ 细于 \mathcal{T}$，如果$\mathcal{T} \supsetneq \mathcal{T}’$，我们称$\mathcal{T}’ 严格细于 \mathcal{T}$</p>
+<h2 id="拓扑的基"><a href="#拓扑的基" class="headerlink" title="拓扑的基"></a>拓扑的基</h2><p>总是用$\mathcal{T}$来刻画拓扑总是很不方便，我们希望能有一个更小的子集可以描述一个拓扑</p>
+<h3 id="定义-拓扑的基"><a href="#定义-拓扑的基" class="headerlink" title="定义 拓扑的基"></a>定义 拓扑的基</h3><p>如果$X$是一个集合，$X$的某拓扑的一个<strong>基</strong>(base)是$X$的子集的一个族$\mathscr{B}$(其成员称为<strong>基元素</strong>(base element))，满足条件：</p>
+<ol>
+<li>对于每一个$x \in X$，至少存在一个包含$x$的基元素$B$.</li>
+<li>若$x$属于两个基元素$B_1$和$B_2$的交，则存在包含$x$的一个基元素$B_3$，使得$B_3 \subset B_1 \cap B_2$.</li>
+</ol>
+<h3 id="例子-开集族"><a href="#例子-开集族" class="headerlink" title="例子 开集族"></a>例子 开集族</h3><h3 id="引理-13-1-拓扑基到拓扑"><a href="#引理-13-1-拓扑基到拓扑" class="headerlink" title="引理 13.1 拓扑基到拓扑"></a>引理 13.1 拓扑基到拓扑</h3><p>设$X$是一个集合，$\mathscr{B}$是$\mathcal{T}$的一个基. 则$\mathcal{T}$是$\mathscr{B}$中元素所有并的族.<br>$$<br>\mathcal{T} = \left { \bigcup_{B \in \mathscr{B’}} B | \mathscr{B’} \subset \mathscr{B}  \right }<br>$$</p>
+<h3 id="引理-13-2-拓扑到拓扑基"><a href="#引理-13-2-拓扑到拓扑基" class="headerlink" title="引理 13.2 拓扑到拓扑基"></a>引理 13.2 拓扑到拓扑基</h3><p>设$X$是一个拓扑空间. $\mathcal{C}$是$X$的开集的一个族，它满足对于$X$的每一个开集$U$及每一个$x \in U$，存在\mathcal{C} 的一个元素$C$，使得$x \in C \subset U$. 那么$\mathcal{C}$是$X$上这个拓扑的一个基.</p>
  
       <!-- reward -->
       
