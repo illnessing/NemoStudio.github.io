@@ -168,7 +168,7 @@
     
     
     <article
-  id="post-数学分析/积分学"
+  id="post-数学分析/数分复习——理论论证部分"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -179,8 +179,8 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%A7%AF%E5%88%86%E5%AD%A6/"
-    >积分学笔记</a> 
+  <a class="article-title" href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/"
+    >数分1知识梳理</a> 
 </h2>
  
 
@@ -188,7 +188,316 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-date">
+      <a href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/" class="article-date">
+  <time datetime="2021-12-30T05:07:13.000Z" itemprop="datePublished">2021-12-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数分知识梳理"><a href="#数分知识梳理" class="headerlink" title="数分知识梳理"></a>数分知识梳理</h1><h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h3 id="数列的极限"><a href="#数列的极限" class="headerlink" title="数列的极限"></a>数列的极限</h3><h4 id="varepsilon-N-定义"><a href="#varepsilon-N-定义" class="headerlink" title="$\varepsilon - N$定义"></a>$\varepsilon - N$定义</h4><p>$$<br>\forall \varepsilon &gt; 0, \exists N \in N_+,s.t.当n&gt;N时,有<br>$$<br>$$<br>\left | a_n - a \right | &lt; \varepsilon<br>$$</p>
+<p>我们称$a$为数列${ a_n }$的极限，记为$\lim_{n \to \infty} a_n = a $</p>
+<h4 id="收敛数列的性质"><a href="#收敛数列的性质" class="headerlink" title="收敛数列的性质"></a>收敛数列的性质</h4><ol>
+<li>极限的唯一性</li>
+<li>极限数列必有界</li>
+<li>极限运算为线性运算</li>
+<li>极限的保序性（$a_n &lt; b_n \Rightarrow \lim_{n \to \infty} a_n \le \lim_{n \to \infty} b_n$）</li>
+</ol>
+<h4 id="数列收敛的判别"><a href="#数列收敛的判别" class="headerlink" title="数列收敛的判别"></a>数列收敛的判别</h4><h5 id="Cauchy-收敛原理"><a href="#Cauchy-收敛原理" class="headerlink" title="Cauchy 收敛原理"></a>Cauchy 收敛原理</h5><p> 该原理与极限的定义等价<br>$$<br>\forall \varepsilon &gt; 0, \exists N \in N_+,s.t.当m,n&gt;N时，有<br>$$<br>$$<br>\left | a_m - a_n \right | &lt; \varepsilon<br>$$</p>
+<h5 id="单调有界原理"><a href="#单调有界原理" class="headerlink" title="单调有界原理"></a>单调有界原理</h5><p>若数列${ a_n }$单调且有界，则${ a_n }$收敛.</p>
+<h5 id="上极限与下极限"><a href="#上极限与下极限" class="headerlink" title="上极限与下极限"></a>上极限与下极限</h5><p>上极限:$\lim_{N \to \infty} \sup_{n&gt;N} t$</p>
+<p>下极限:$\lim_{N \to \infty} \inf_{n&gt;N} t$</p>
+<h5 id="夹逼定理"><a href="#夹逼定理" class="headerlink" title="夹逼定理"></a>夹逼定理</h5><p>若对于三个数列总有$a_n \le b_n \le c_n$，那么<br>$$<br>\lim_{n \to \infty} a_n \le \lim_{n \to \infty} b_n \le \lim_{n \to \infty} c_n<br>$$<br>由此可得$\lim_{n \to \infty} b_n $的上下限</p>
+<h3 id="基础-实数系的“连续性”"><a href="#基础-实数系的“连续性”" class="headerlink" title="基础 实数系的“连续性”"></a>基础 实数系的“连续性”</h3><p>可用工具：</p>
+<ol>
+<li>确界存在定理</li>
+<li>闭区间套定理（二分法）</li>
+<li>有限覆盖定理（联系局部性质与整体性质）</li>
+<li>列紧性原理（有界数列的收敛子列）</li>
+</ol>
+<h3 id="函数的极限"><a href="#函数的极限" class="headerlink" title="函数的极限"></a>函数的极限</h3><h4 id="给定点处的极限"><a href="#给定点处的极限" class="headerlink" title="给定点处的极限"></a>给定点处的极限</h4><p>记该点为$x_0$<br>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt; 0,s.t.当0 &lt; |x-x_0| &lt; \delta时，有<br>$$<br>$$<br>\left | f(x) - C \right | &lt; \varepsilon<br>$$</p>
+<p>我们称$C$为函数该点的极限，记为$\lim_{x \to x_0} f(x) = C $</p>
+<h4 id="无穷远处的极限"><a href="#无穷远处的极限" class="headerlink" title="无穷远处的极限"></a>无穷远处的极限</h4><p>以$+\infty$为例子<br>$$<br>\forall \varepsilon &gt; 0, \exists A &gt; 0,s.t.当 x &gt; A时，有<br>$$<br>$$<br>\left | f(x) - C \right | &lt; \varepsilon<br>$$</p>
+<p>我们称$C$为函数趋于无穷时的极限，记为$\lim_{x \to + \infty} f(x) = C $</p>
+<h4 id="函数极限运算及有极限函数的性质"><a href="#函数极限运算及有极限函数的性质" class="headerlink" title="函数极限运算及有极限函数的性质"></a>函数极限运算及有极限函数的性质</h4><ol>
+<li>有极限函数的极限唯一</li>
+<li>有极限函数的局部有界性</li>
+<li>极限运算为线性运算</li>
+<li>极限运算的保序性</li>
+</ol>
+<h4 id="函数极限的判定"><a href="#函数极限的判定" class="headerlink" title="函数极限的判定"></a>函数极限的判定</h4><h5 id="Cauchy-收敛原理-1"><a href="#Cauchy-收敛原理-1" class="headerlink" title="Cauchy 收敛原理"></a>Cauchy 收敛原理</h5><p>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt; 0,s.t.当0 &lt; |x_1-x_0| &lt; \delta,0 &lt; |x_2-x_0| &lt; \delta时，有<br>$$<br>$$<br>\left | f(x_1) - f(x_2) \right | &lt; \varepsilon<br>$$</p>
+<h5 id="单调有界原理-1"><a href="#单调有界原理-1" class="headerlink" title="单调有界原理"></a>单调有界原理</h5><h5 id="上极限与下极限-1"><a href="#上极限与下极限-1" class="headerlink" title="上极限与下极限"></a>上极限与下极限</h5><h5 id="Heine-定理"><a href="#Heine-定理" class="headerlink" title="Heine 定理"></a>Heine 定理</h5><p>$$<br>\forall x_n\to x_0 (x \rightarrow \infty), \lim_{n \to \infty} x_n = A \Leftrightarrow \lim_{x \to x_0} f(x) = A<br>$$</p>
+<h3 id="无穷小与无穷大"><a href="#无穷小与无穷大" class="headerlink" title="无穷小与无穷大"></a>无穷小与无穷大</h3><p>*</p>
+<h3 id="积分和的极限"><a href="#积分和的极限" class="headerlink" title="积分和的极限"></a>积分和的极限</h3><h4 id="定义6-1-1-Riemann可积"><a href="#定义6-1-1-Riemann可积" class="headerlink" title="定义6.1.1 Riemann可积"></a>定义6.1.1 Riemann可积</h4><p>设函数在区间$[a,b]$上有定义.如果实数$I$使得对于任意给定的$\varepsilon &gt; 0$，存在$\delta &gt; 0$，只要$[a,b]$的分割$\pi$满足$\left | \pi \right | &lt; \delta$，而不管$\xi_i \in [x_{i-1},x_i] (1 \le i \le n)$如何选择，都有</p>
+<p>$$<br>\left | I - \sum_{i=1}^{n} f(\xi_i) \Delta x_i \right | &lt; \varepsilon<br>$$</p>
+<p>成立，则称$f$在$[a,b]$上Riemann可积，称$I$是$[a,b]$上的Riemann积分.记为</p>
+<p>$$<br>\int_{a}^{b} f(x) , \mathrm{d}x<br>$$</p>
+<hr>
+<h2 id="函数的连续性"><a href="#函数的连续性" class="headerlink" title="函数的连续性"></a>函数的连续性</h2><h3 id="定义-varepsilon-delta-表述（局部性质）"><a href="#定义-varepsilon-delta-表述（局部性质）" class="headerlink" title="定义 $\varepsilon - \delta$表述（局部性质）"></a>定义 $\varepsilon - \delta$表述（局部性质）</h3><p>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt; 0,s.t.当0 &lt; |x-x_0| &lt; \delta时，有<br>$$<br>$$<br>\left | f(x) - f(x_0) \right | &lt; \varepsilon<br>$$</p>
+<p>记为$\lim_{x \to x_0} f(x) = f(x_0) $</p>
+<h3 id="单侧定义"><a href="#单侧定义" class="headerlink" title="单侧定义"></a>单侧定义</h3><h3 id="函数在区间上连续（逐点定义）"><a href="#函数在区间上连续（逐点定义）" class="headerlink" title="函数在区间上连续（逐点定义）"></a>函数在区间上连续（逐点定义）</h3><p>记区间为$I$<br>$$<br>\forall x_0 \in I, \lim_{x \to x_0} f(x) = f(x_0)<br>$$</p>
+<h3 id="间断点"><a href="#间断点" class="headerlink" title="间断点"></a>间断点</h3><h4 id="第一类间断点"><a href="#第一类间断点" class="headerlink" title="第一类间断点"></a>第一类间断点</h4><h5 id="跳跃点"><a href="#跳跃点" class="headerlink" title="跳跃点"></a>跳跃点</h5><h5 id="可去间断点"><a href="#可去间断点" class="headerlink" title="可去间断点"></a>可去间断点</h5><h4 id="第二类间断点"><a href="#第二类间断点" class="headerlink" title="第二类间断点"></a>第二类间断点</h4><h3 id="一致连续（整体性质）"><a href="#一致连续（整体性质）" class="headerlink" title="一致连续（整体性质）"></a>一致连续（整体性质）</h3><p>$$<br>\forall \varepsilon &gt; 0, \exists \delta &gt;0,s.t.当0&lt;\left | x_1 - x_2 \right | &lt; \delta 时，<br>$$<br>$$<br>\left | f(x_1) - f(x_2) \right | &lt; \varepsilon<br>$$</p>
+<h3 id="连续函数的整体性质"><a href="#连续函数的整体性质" class="headerlink" title="连续函数的整体性质"></a>连续函数的整体性质</h3><h4 id="有限闭区间上的连续函数"><a href="#有限闭区间上的连续函数" class="headerlink" title="有限闭区间上的连续函数"></a>有限闭区间上的连续函数</h4><ol>
+<li>有界性</li>
+<li>最大值，最小值 可取到</li>
+<li>介质定理</li>
+<li>一致连续性</li>
+</ol>
+<h3 id="可数集"><a href="#可数集" class="headerlink" title="可数集"></a>可数集</h3><ol>
+<li>集合</li>
+<li>映射</li>
+<li>集合的势（基数）</li>
+<li>无限集（与真子集等势）</li>
+</ol>
+<hr>
+<h2 id="导数与微分"><a href="#导数与微分" class="headerlink" title="导数与微分"></a>导数与微分</h2><h3 id="从变化率见导数"><a href="#从变化率见导数" class="headerlink" title="从变化率见导数"></a>从变化率见导数</h3><p>我们认为瞬时变化率是平均变化率的极限<br>$$<br>f’(t) = \lim_{\Delta t \to 0} \frac{\Delta f(t)}{\Delta t}<br>$$</p>
+<p>即得导数的定义<br>$$<br>f’(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}<br>$$</p>
+<h3 id="微分——以直带曲，局部的线性化"><a href="#微分——以直带曲，局部的线性化" class="headerlink" title="微分——以直带曲，局部的线性化"></a>微分——以直带曲，局部的线性化</h3><p>设函数$f$在$(a,b)$上有定义，且$x_0 \in (a,b)$. 如果存在一个常数$\lambda$，使得<br>$$<br>f(x_0 + \Delta x) - f(x_0) = \lambda \Delta x + 0(\Delta x)(\Delta x \to 0)<br>$$<br>则称$f$在点$x_0$处<strong>可微</strong>.</p>
+<h3 id="可微与可导的关系"><a href="#可微与可导的关系" class="headerlink" title="可微与可导的关系"></a>可微与可导的关系</h3><p>可微比可导更加严格。对一元函数，可导就是可微；对于多元函数，可导不一定可微</p>
+<h3 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h3><h4 id="微分中值定理"><a href="#微分中值定理" class="headerlink" title="微分中值定理"></a>微分中值定理</h4><h5 id="Rolle-中值定理"><a href="#Rolle-中值定理" class="headerlink" title="Rolle 中值定理"></a>Rolle 中值定理</h5><p>设函数$f$在$[a,b]$上连续，在$(a,b)$上可导，且$f(a)=f(b)$，那么存在一点$\xi \in (a,b)$，使得$f’(x)=0$.</p>
+<h5 id="Lagrange-中值定理"><a href="#Lagrange-中值定理" class="headerlink" title="Lagrange 中值定理"></a>Lagrange 中值定理</h5><p>设函数$f$在$[a,b]$上连续，在$(a,b)$上可导，那么存在一点$\xi \in (a,b)$，使得<br>$$<br>\frac{f(b) - f(a)}{b - a} = f’(\xi)<br>$$</p>
+<h5 id="Cauchy-中值定理"><a href="#Cauchy-中值定理" class="headerlink" title="Cauchy 中值定理"></a>Cauchy 中值定理</h5><p>设函数$f$和$g$在$[a,b]$上连续，在$(a,b)$上可导，且当$x \in (a,b)$时，$g’(x) \not = 0$，那么存在一点$\xi \in (a,b)$，使得<br>$$<br>\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f’(\xi)}{g’(\xi)}<br>$$</p>
+<h3 id="Talor-展开（对函数局部性质的研究）"><a href="#Talor-展开（对函数局部性质的研究）" class="headerlink" title="Talor 展开（对函数局部性质的研究）"></a>Talor 展开（对函数局部性质的研究）</h3><p>$$<br>T_n(f, x_0; x) = f(x_0) + \frac{1}{1!} f’(x_0)(x-x_0) + \cdots + \frac{1}{n!} f^{(n)}(x_0)(x-x_0)^n<br>$$</p>
+<p>特别的，$n \to \infty$时，我们称其为Talor级数</p>
+<h4 id="余项-R-n-x"><a href="#余项-R-n-x" class="headerlink" title="余项$R_n(x)$"></a>余项$R_n(x)$</h4><p>Talor展开与原函数之间的差值，我们称之为<strong>余项</strong><br>$$<br>R_n(x) = f(x) - T_n(f, x_0; x)<br>$$</p>
+<h4 id="Peano余项"><a href="#Peano余项" class="headerlink" title="Peano余项"></a>Peano余项</h4><p>$$<br>R_n(x) = o((x-x_0)^n) (x \to x_0)<br>$$</p>
+<h4 id="Lagrange-余项"><a href="#Lagrange-余项" class="headerlink" title="Lagrange 余项"></a>Lagrange 余项</h4><p>$$<br>R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}<br>$$</p>
+<h4 id="Cauchy-余项"><a href="#Cauchy-余项" class="headerlink" title="Cauchy 余项"></a>Cauchy 余项</h4><p>$$<br>R_n(x) = \frac{f^{(n+1)}(\xi)}{n!}(x - \xi)^n (x-x_0)<br>$$</p>
+<h4 id="积分余项"><a href="#积分余项" class="headerlink" title="积分余项"></a>积分余项</h4><p>$$<br>R_n(x) = \frac{1}{n!} \int_{x_0}^{x} (x-t)^n f^{(n+1)}(t) \mathrm{d}t<br>$$</p>
+<h2 id="原函数"><a href="#原函数" class="headerlink" title="原函数"></a>原函数</h2><h3 id="计算部分"><a href="#计算部分" class="headerlink" title="计算部分"></a>计算部分</h3><h4 id="极限的计算"><a href="#极限的计算" class="headerlink" title="极限的计算"></a>极限的计算</h4><ol>
+<li>单调数列（解方程）</li>
+<li>不等式（夹逼定理）</li>
+<li>几个特殊的极限复合</li>
+<li>幂指函数的极限</li>
+<li>连续性</li>
+<li>Stolz 定理</li>
+<li>L‘Hospital 法则</li>
+<li>Talor公式</li>
+<li>阶的比较</li>
+<li>积分和</li>
+</ol>
+<h4 id="导数的计算"><a href="#导数的计算" class="headerlink" title="导数的计算"></a>导数的计算</h4><ol>
+<li>基本初等函数的导数</li>
+<li>四则运算</li>
+<li>反函数的导数</li>
+<li>链式法则</li>
+<li>一阶微分的形式不变性</li>
+<li>高阶导数</li>
+<li>Leibniz公式（没有Newton）（乘积求导法则）</li>
+<li>特殊函数的Taylor公式</li>
+</ol>
+<p>$$<br>e = 1+1+\frac{1}{2!}+\frac{1}{3!}+\cdots+\frac{1}{n!}+o(1)(n \to + \infty)<br>$$</p>
+<p>$$<br>1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}=\ln n + \gamma + o(1)<br>$$</p>
+<h4 id="原函数的计算"><a href="#原函数的计算" class="headerlink" title="原函数的计算"></a>原函数的计算</h4><ol>
+<li>基本积分法</li>
+<li>分部积分法</li>
+<li>换元积分法</li>
+<li>有理函数的积分</li>
+<li>可有理化的函数的积分</li>
+</ol>
+<h4 id="函数不等式的证明"><a href="#函数不等式的证明" class="headerlink" title="函数不等式的证明"></a>函数不等式的证明</h4><ol>
+<li>函数的性质分析</li>
+<li>单调</li>
+<li>凸性</li>
+<li>极值</li>
+<li>最值</li>
+<li>渐近线</li>
+<li>拐点</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-拓扑学/拓扑学笔记（1）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"
+    >拓扑学笔记（1）拓扑空间</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="article-date">
+  <time datetime="2021-12-29T12:30:42.000Z" itemprop="datePublished">2021-12-29</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="拓扑学笔记-1-拓扑空间"><a href="#拓扑学笔记-1-拓扑空间" class="headerlink" title="拓扑学笔记(1) 拓扑空间"></a>拓扑学笔记(1) 拓扑空间</h1><h2 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h2><h3 id="定义-拓扑"><a href="#定义-拓扑" class="headerlink" title="定义 拓扑"></a>定义 拓扑</h3><p>集合$X$上的一个<strong>拓扑</strong>(topology)是$X$的子集的一个族$\mathcal{T}$，它满足以下条件:</p>
+<ol>
+<li>$\emptyset \in \mathcal{T},X \in \mathcal{T} $</li>
+<li> $\mathcal{T}$的任意子族的元素的并在$\mathcal{T}$中.</li>
+<li>$\mathcal{T}$的任意有限子族的元素的交在$\mathcal{T}$中.</li>
+</ol>
+<p>一个指定了拓扑$\mathcal{T}$的集合$X$叫做一个<strong>拓扑空间</strong>(topological space).在不会混淆的场合下，可以不去提$\mathcal{T}$.</p>
+<h3 id="特殊的拓扑"><a href="#特殊的拓扑" class="headerlink" title="特殊的拓扑"></a>特殊的拓扑</h3><p>对于任意集合$X$，</p>
+<p>$X$的所有子集为$X$的一个拓扑，称为<strong>离散拓扑</strong>(discrete topology).</p>
+<p>仅含有$X$与$emptyset$的也是$X$的一个拓扑，称为<strong>密着拓扑</strong>(indiscrete topology)或者<strong>平庸拓扑</strong>(trivial topology).</p>
+<p>$\mathcal{T}$是使得$\forall U \in \mathcal{T}, X - U \in \mathcal{T}$的一个拓扑，我们称$\mathcal{T}$为<strong>有限补拓扑</strong></p>
+<h3 id="定义-细于（小于）"><a href="#定义-细于（小于）" class="headerlink" title="定义 细于（小于）"></a>定义 细于（小于）</h3><p>对于$X$的两个拓扑$\mathcal{T}, \mathcal{T}’$，如果$\mathcal{T} \supset \mathcal{T}’$，我们称$\mathcal{T}’ 细于 \mathcal{T}$，如果$\mathcal{T} \supsetneq \mathcal{T}’$，我们称$\mathcal{T}’ 严格细于 \mathcal{T}$</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-大学物理/热力学第二定律"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
+    >热力学第二定律</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
+  <time datetime="2021-12-29T10:22:53.000Z" itemprop="datePublished">2021-12-29</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="热力学第二定律-笔记"><a href="#热力学第二定律-笔记" class="headerlink" title="热力学第二定律 笔记"></a>热力学第二定律 笔记</h1><h2 id="热力学第二定律-熵增定理"><a href="#热力学第二定律-熵增定理" class="headerlink" title="热力学第二定律(熵增定理)"></a>热力学第二定律(熵增定理)</h2><blockquote>
+<p>If a process occurs in a closed system, the entropy of the system increases for irreversible processes and remains constant for reversible processes; it never decreases.</p>
+</blockquote>
+<p>在一个<strong>封闭系统</strong>中，不可能把热量从<strong>低温物体</strong>传递到<strong>高温物体</strong>而<strong>不产生其他影响</strong></p>
+<p>————Rudolf Clausius (1822-1888)</p>
+<blockquote>
+<p>The energy of the universe id constant.</p>
+<p>The entropy of the universe tends to a maximum.</p>
+</blockquote>
+<p><code>有意思的是，此前所有物理定律都没有指出该过程不可逆。该定理打破了物理理论在时间上的对称性。可以说，该定理引出了时间的单向性</code></p>
+<h2 id="熵-S"><a href="#熵-S" class="headerlink" title="熵 S"></a>熵 S</h2><p>我们定义<br>$$<br>S = \frac{Q}{T}<br>$$<br>称之为<strong>熵</strong></p>
+<h2 id="气体过程-熵的变化"><a href="#气体过程-熵的变化" class="headerlink" title="气体过程 熵的变化"></a>气体过程 熵的变化</h2><p>我们记$i$为初始状态(initial state), $f$为最终状态(final state).<br>$$<br>\Delta S = S_f - S_i = \int_{i}^{f} \mathrm{d} S = \int_{i}^{f} \frac{\mathrm{d} Q}{T} = \int_{i}^{f} \frac{\mathrm{d} E_{int} + \mathrm{d} W}{T}<br>$$</p>
+<h3 id="等压变化-Isobaric-process"><a href="#等压变化-Isobaric-process" class="headerlink" title="等压变化(Isobaric process)"></a>等压变化(Isobaric process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} + n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_p \mathrm{ln} \frac{T_f}{T_i}<br>$$</p>
+<h3 id="等温变化-Isothermal-process"><a href="#等温变化-Isothermal-process" class="headerlink" title="等温变化(Isothermal process)"></a>等温变化(Isothermal process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = \frac{Q}{T}<br>$$</p>
+<h3 id="绝热变化-Adiabatic-process"><a href="#绝热变化-Adiabatic-process" class="headerlink" title="绝热变化(Adiabatic process)"></a>绝热变化(Adiabatic process)</h3><p>$$<br>dQ \equiv 0 , \Delta S = 0<br>$$</p>
+<h3 id="等容变化-Isochoric-process"><a href="#等容变化-Isochoric-process" class="headerlink" title="等容变化(Isochoric process)"></a>等容变化(Isochoric process)</h3><p>$$<br>\Delta S = n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_V \mathrm{ln} \frac{P_f}{P_i}<br>$$</p>
+<h3 id="自由扩散-irreversible-process"><a href="#自由扩散-irreversible-process" class="headerlink" title="自由扩散(irreversible process)"></a>自由扩散(irreversible process)</h3><p>$$<br>T_i = T_f ; \Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = n R \mathrm{ln} \frac{P_i}{P_f}<br>$$</p>
+<h2 id="熵的变化"><a href="#熵的变化" class="headerlink" title="熵的变化"></a>熵的变化</h2><h3 id="粒子数目越多，熵就越高"><a href="#粒子数目越多，熵就越高" class="headerlink" title="粒子数目越多，熵就越高"></a>粒子数目越多，熵就越高</h3><p>$$<br>S = k \cdot \mathrm{ln}W<br>$$</p>
+<h3 id="微观诠释（非严谨）"><a href="#微观诠释（非严谨）" class="headerlink" title="微观诠释（非严谨）"></a>微观诠释（非严谨）</h3><p>若是取n个粒子，两个相同的盒子，盒子联通，假设对一个粒子在任意盒子中的概率相同。记在同一盒子中的数目为N。计算<br>$$<br>\mathrm{P}(N=m) = \frac{n!}{(n-m)!m!}<br>$$<br>当n增加时，$\mathrm{P}(N=N/2)$将远远大于$\mathrm{P}(N=0)$即高熵态概率更高。</p>
+<p>记粒子总数$N$,粒子两种状态$n_1, n_2$<br>$$<br>W = \frac{N!}{n_1! n_2!}<br>$$<br>当$n$足够大时，<br>$$<br>\mathrm{ln} N ! \approx N(\mathrm{ln} N) - N<br>$$</p>
+<h2 id="热力学的妖精"><a href="#热力学的妖精" class="headerlink" title="热力学的妖精"></a>热力学的妖精</h2><h3 id="物理学四大神兽之一-——麦克斯韦妖"><a href="#物理学四大神兽之一-——麦克斯韦妖" class="headerlink" title="物理学四大神兽之一 ——麦克斯韦妖"></a>物理学四大神兽之一 ——麦克斯韦妖</h3><blockquote>
+<p>一个绝热容器被分成相等的两格，中间是由“妖”控制的一扇小“门”，容器中的空气分子作无规则热运动时会向门上撞击，“门”可以选择性的将速度较快的分子放入一格，而较慢的分子放入另一格，这样，其中的一格就会比另外一格温度高。</p>
+</blockquote>
+<p>用这个理论，麦克斯韦创造出了一个看似违反热力学第二定律的情况。</p>
+<p>因为麦克斯韦妖与气体之间只有信息交换，没有能量交换，当时的物理学一直没有办法解释清楚。</p>
+<h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>香农提出了<strong>信息熵</strong>的概念</p>
+<p>信息的基本作用就是消除人们对事物的不确定性。那么如果我们已知出现事件的概率，那么我们需要用多少熵去记录它呢。于是，香农把信息冗余度与热力学的熵联系到了一起。<br>$$<br>H(U) = E[- \mathrm{log} p_i] = - \sum_{i=1}^{n}p_i \mathrm{log} p_i<br>$$<br>至此，物理学家才成功解释麦克斯韦妖。</p>
+<h2 id="热机"><a href="#热机" class="headerlink" title="热机"></a>热机</h2><h3 id="热机的效率"><a href="#热机的效率" class="headerlink" title="热机的效率"></a>热机的效率</h3><p>$$<br>\varepsilon = \frac{我们得到的能量}{我们输入的能量} = \frac{\left | W \right |}{\left | Q_H \right |}<br>$$</p>
+<h3 id="卡诺-Carnot-循环"><a href="#卡诺-Carnot-循环" class="headerlink" title="卡诺(Carnot)循环"></a>卡诺(Carnot)循环</h3><p>如下图所示</p>
+<p><img src="https://s2.loli.net/2021/12/29/7pWwDr3ZaLsTA6J.png" alt="卡诺循环.png"></p>
+<p>即，等温过程与绝热过程交替进行</p>
+<p>符合卡诺循环的热机的效率$\varepsilon_C$可以用以下公式计算<br>$$<br>\varepsilon_C = 1 - \frac{\left | Q_L \right | }{\left | Q_H \right | } = 1 - \frac{T_L}{T_H}<br>$$</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" rel="tag">大学物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-数学分析/初识积分学"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/"
+    >积分学笔记1——初识积分学</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-date">
   <time datetime="2021-12-28T03:22:33.000Z" itemprop="datePublished">2021-12-28</time>
 </a> 
   <div class="article-category">
@@ -199,7 +508,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="积分学笔记"><a href="#积分学笔记" class="headerlink" title="积分学笔记"></a>积分学笔记</h1><h2 id="积分的概念"><a href="#积分的概念" class="headerlink" title="积分的概念"></a>积分的概念</h2><h3 id="定义6-1-1-Riemann可积"><a href="#定义6-1-1-Riemann可积" class="headerlink" title="定义6.1.1 Riemann可积"></a>定义6.1.1 Riemann可积</h3><p>设函数在区间$[a,b]$上有定义.如果实数$I$使得对于任意给定的$\varepsilon &gt; 0$，存在$\delta &gt; 0$，只要$[a,b]$的分割$\pi$满足$\left | \pi \right | &lt; \delta$，而不管$\xi  i \in [x_{i-1},x_i] (1 \le i \le n)$如何选择，都有</p>
+  <h1 id="积分学笔记1——初识积分学"><a href="#积分学笔记1——初识积分学" class="headerlink" title="积分学笔记1——初识积分学"></a>积分学笔记1——初识积分学</h1><h2 id="积分的概念"><a href="#积分的概念" class="headerlink" title="积分的概念"></a>积分的概念</h2><h3 id="定义6-1-1-Riemann可积"><a href="#定义6-1-1-Riemann可积" class="headerlink" title="定义6.1.1 Riemann可积"></a>定义6.1.1 Riemann可积</h3><p>设函数在区间$[a,b]$上有定义.如果实数$I$使得对于任意给定的$\varepsilon &gt; 0$，存在$\delta &gt; 0$，只要$[a,b]$的分割$\pi$满足$\left | \pi \right | &lt; \delta$，而不管$\xi_i \in [x_{i-1},x_i] (1 \le i \le n)$如何选择，都有</p>
 <p>$$<br>\left | I - \sum_{i=1}^{n} f(\xi_i) \Delta x_i \right | &lt; \varepsilon<br>$$</p>
 <p>成立，则称$f$在$[a,b]$上Riemann可积，称$I$是$[a,b]$上的Riemann积分.记为</p>
 <p>$$<br>\int_{a}^{b} f(x) \mathrm{d}x<br>$$</p>
@@ -211,7 +520,7 @@
 <h4 id="2-保序性"><a href="#2-保序性" class="headerlink" title="2.保序性"></a>2.保序性</h4><p>若是函数$f$和$g$满足$\forall x \in [a,b], f(x) \ge g(x)$，那么<br>$$<br>\int_{a}^{b} f(x)  \mathrm{d}x \ge \int_{a}^{b} g(x)  \mathrm{d}x<br>$$</p>
 <h4 id="3-关于区间的可加性"><a href="#3-关于区间的可加性" class="headerlink" title="3.关于区间的可加性"></a>3.关于区间的可加性</h4><p>设$c \in (a,b)$，$f$在$[a,c],[c,b]$上可积，那么$f$在$[a,b]$上也可积，并且<br>$$<br>\int_a^b f(x)  \mathrm{d}x = \int_a^c f(x)  \mathrm{d}x + \int_c^b f(x)  \mathrm{d}x<br>$$</p>
 <h4 id="4-上下限互换，积分为相反数"><a href="#4-上下限互换，积分为相反数" class="headerlink" title="4.上下限互换，积分为相反数"></a>4.上下限互换，积分为相反数</h4><p>$$<br>\int_b^a f(x)  \mathrm{d}x = - \int_a^b f(x)  \mathrm{d}x<br>$$</p>
-<h4 id="5-积分平均值定理"><a href="#5-积分平均值定理" class="headerlink" title="5.积分平均值定理"></a>5.积分平均值定理</h4><p>设$f,g \in C[a,b]$且$g(x)$在$[a,b]$上不改变符号，则<br>$$<br>\exists \xi \in [a,b], s.t.\<br>\int_{a}^{b} f(x)g(x) \xi \mathrm{d}x = f(\xi)\int_{a}^{b} g(x) \mathrm{d}x<br>$$</p>
+<h4 id="5-积分平均值定理"><a href="#5-积分平均值定理" class="headerlink" title="5.积分平均值定理"></a>5.积分平均值定理</h4><p>设$f,g \in C[a,b]$且$g(x)$在$[a,b]$上不改变符号，则<br>$$<br>\exists \xi \in [a,b], s.t.\<br>\int_{a}^{b} f(x)g(x) \mathrm{d}x = f(\xi)\int_{a}^{b} g(x) \mathrm{d}x<br>$$</p>
 <hr>
 <h2 id="可积函数"><a href="#可积函数" class="headerlink" title="可积函数"></a>可积函数</h2><h3 id="可积函数的性质"><a href="#可积函数的性质" class="headerlink" title="可积函数的性质"></a>可积函数的性质</h3><h4 id="1-可积函数一定有界"><a href="#1-可积函数一定有界" class="headerlink" title="1.可积函数一定有界"></a>1.可积函数一定有界</h4><h4 id="2-可积函数一定绝对可积"><a href="#2-可积函数一定绝对可积" class="headerlink" title="2.可积函数一定绝对可积"></a>2.可积函数一定绝对可积</h4><p>若$f(x)$可积，则$\left| f(x) \right|$可积</p>
 <h4 id="3-子区间可积"><a href="#3-子区间可积" class="headerlink" title="3.子区间可积"></a>3.子区间可积</h4><p>若$f$在区间$I$上可积，则$\forall I_i \subseteq I$有$I_i$可积.</p>
@@ -221,8 +530,11 @@
 <h2 id="微积分学基本定理-Newton-Leibniz公式"><a href="#微积分学基本定理-Newton-Leibniz公式" class="headerlink" title="微积分学基本定理 Newton-Leibniz公式"></a>微积分学基本定理 Newton-Leibniz公式</h2><p>设$f  \in C[a,b]$，$G$是$f$在$[a,b]$上的任一原函数，那么<br>$$<br>\int_a^b f(x) \mathrm{d}x = G(b)-G(a)<br>$$</p>
 <hr>
 <h2 id="分部积分与换元"><a href="#分部积分与换元" class="headerlink" title="分部积分与换元"></a>分部积分与换元</h2><h4 id="分部积分"><a href="#分部积分" class="headerlink" title="分部积分"></a>分部积分</h4><p>对微分式<br>$$<br>u \mathrm{d}v = \mathrm{d}(uv)-v \mathrm{d}u<br>$$<br>等号两边同时积分，得到<br>$$<br>\int_a^b u(x)v’(x)  \mathrm{d}x = u(x)v(x) |_a^b - \int_a^b u’(x)v(x)  \mathrm{d}x<br>$$</p>
-<h4 id="换元"><a href="#换元" class="headerlink" title="换元"></a>换元</h4><p>设$f$在$I$上连续，$a,b \in I$，函数$\varphi$在区间上有连续的导函数，$\varphi ([\alpha ,\beta ]) \subset I$，且$\varphi (\alpha ) = a , \varphi (\alpha ) = b$,那么<br>$$<br>\int_{a}^{b} f(x)  \mathrm{d}x = \int_{\alpha}^{\beta} f\circ \varphi (x) \varphi’ (x)  \mathrm{d}x<br>$$</p>
-<h2 id="函数的可积性"><a href="#函数的可积性" class="headerlink" title="函数的可积性"></a>函数的可积性</h2> 
+<h4 id="换元"><a href="#换元" class="headerlink" title="换元"></a>换元</h4><p>设$f$在$I$上连续，$a,b \in I$，函数$\varphi$在区间上有连续的导函数，$\varphi ([\alpha ,\beta ]) \subset I$，且$\varphi (\alpha ) = a , \varphi (\alpha ) = b$,那么<br>$$<br>\int_{a}^{b} f(x)  \mathrm{d}x = \int_{\alpha}^{\beta} f\circ \varphi (x) \varphi’ (x) \mathrm{d}x<br>$$</p>
+<h3 id="Talor余项积分形态"><a href="#Talor余项积分形态" class="headerlink" title="Talor余项积分形态"></a>Talor余项积分形态</h3><p>若是$f$在$(a,b)$有$n+1$阶连续导函数，则我们可以将$f$写作<br>$$<br>f(x) = f(x_0) + \frac{f’(x_0)}{1!}(x-x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + R_n(x)<br>$$<br>其中<br>$$<br>R_n(x) = \frac{1}{n!} \int_{x_0}^{x} (x-t)^n f^{(n+1)}(t) \mathrm{d}t<br>$$</p>
+<h2 id="一些好用的不等式"><a href="#一些好用的不等式" class="headerlink" title="一些好用的不等式"></a>一些好用的不等式</h2><h3 id="三角不等式的积分形态"><a href="#三角不等式的积分形态" class="headerlink" title="三角不等式的积分形态"></a>三角不等式的积分形态</h3><p>$$<br>\left | \int_{a}^{b} f(x) \mathrm{d}x  \right | \le \int_{a}^{b} \left | f(x) \right | \mathrm{d}x<br>$$</p>
+<h3 id="Cauchy-Schwarz-不等式"><a href="#Cauchy-Schwarz-不等式" class="headerlink" title="Cauchy-Schwarz 不等式"></a>Cauchy-Schwarz 不等式</h3><p>$$<br>\left ( \int_{a}^{b} f(x)g(x) \mathrm{d}x  \right )^2 \le \left ( \int_{a}^{b} f(x)^2 \mathrm{d}x  \right )\left ( \int_{a}^{b} g(x)^2 \mathrm{d}x  \right )<br>$$</p>
+ 
       <!-- reward -->
       
     </div>

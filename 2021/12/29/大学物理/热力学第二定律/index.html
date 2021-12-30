@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>欧拉计划刷题记录——1 |  空想之国</title>
+      <title>热力学第二定律 |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-20211023-欧拉计划-欧拉计划刷题记录——1"
+  id="post-大学物理/热力学第二定律"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  欧拉计划刷题记录——1
+  热力学第二定律
 </h1>
  
 
@@ -75,11 +75,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/10/23/20211023-%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92-%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%941/" class="article-date">
-  <time datetime="2021-10-23T02:39:51.000Z" itemprop="datePublished">2021-10-23</time>
+      <a href="/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
+  <time datetime="2021-12-29T10:22:53.000Z" itemprop="datePublished">2021-12-29</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/">欧拉计划</a>
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
   </div>
   
 <div class="word_count">
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">782</span>
+            <span class="post-count">870</span>
         </span>
     </span>
 
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -111,53 +111,38 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="Problem-7-10001st-prime"><a href="#Problem-7-10001st-prime" class="headerlink" title="Problem 7 10001st prime"></a>Problem 7 10001st prime</h2><blockquote>
-<p>By listing the first six prime numbers:2,3,5,7,11, and 13, we can see that the 6th prime is 13.</p>
-<p>What is the 10001st prime number?</p>
+  <h1 id="热力学第二定律-笔记"><a href="#热力学第二定律-笔记" class="headerlink" title="热力学第二定律 笔记"></a>热力学第二定律 笔记</h1><h2 id="热力学第二定律-熵增定理"><a href="#热力学第二定律-熵增定理" class="headerlink" title="热力学第二定律(熵增定理)"></a>热力学第二定律(熵增定理)</h2><blockquote>
+<p>If a process occurs in a closed system, the entropy of the system increases for irreversible processes and remains constant for reversible processes; it never decreases.</p>
 </blockquote>
-<span id="more"></span>
-
-<p>此处使用欧拉筛法寻找质数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="number">1000000</span> <span class="comment">#数组长度限制</span></span><br><span class="line">n = <span class="number">10001</span> <span class="comment">#取第n位质数</span></span><br><span class="line">x = <span class="number">2</span>  <span class="comment">#提前定义的倍数值</span></span><br><span class="line">c = <span class="number">0</span>  <span class="comment">#质数的计数</span></span><br><span class="line">prime = [<span class="literal">True</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, m)]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, m):</span><br><span class="line">    <span class="keyword">if</span> prime[i]:</span><br><span class="line">        <span class="keyword">while</span> i*x &lt; m:</span><br><span class="line">            prime[i*x] = <span class="literal">False</span></span><br><span class="line">            x += <span class="number">1</span></span><br><span class="line">        x = <span class="number">2</span></span><br><span class="line">        c += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> c == n:   <span class="comment">#发现答案就退出计算</span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Problem-9-Special-Pythagorean-triplet"><a href="#Problem-9-Special-Pythagorean-triplet" class="headerlink" title="Problem 9 Special Pythagorean triplet"></a>Problem 9 Special Pythagorean triplet</h2><p>A Pythagorean triplet is a set of three natural numbers, $a &lt; b &lt; c$, for which,<br>$$a^2 + b^2 = c^2$$<br>For example, $3^2 + 4^2 = 9 + 16 = 25 = 5^2$.</p>
-<p>There exists exactly one Pythagorean triplet for which $$a + b + c = 1000$$ . Find the product .</p>
-<p>此处直接暴力枚举</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">1000</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n//<span class="number">2</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, j):</span><br><span class="line">        k = n - i - j</span><br><span class="line">        <span class="keyword">if</span> (i**<span class="number">2</span> + j**<span class="number">2</span> == k**<span class="number">2</span>):</span><br><span class="line">            <span class="built_in">print</span>((i,j,k))</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Problem-10-Summation-of-primes"><a href="#Problem-10-Summation-of-primes" class="headerlink" title="Problem 10 Summation of primes"></a>Problem 10 Summation of primes</h2><p>The sum of the primes below 10 is $2 + 3 + 5 + 7 = 170$.</p>
-<p>Find the sum of all the primes below two million.</p>
-<p>同样是使用欧拉筛找质数，再求和</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">m = <span class="number">2000000</span> <span class="comment">#最大值限制</span></span><br><span class="line">x = <span class="number">2</span>  <span class="comment">#提前定义的倍数值</span></span><br><span class="line">prime = [<span class="literal">True</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, m)]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, m):</span><br><span class="line">    <span class="keyword">if</span> prime[i]:</span><br><span class="line">        <span class="keyword">while</span> i*x &lt; m:</span><br><span class="line">            prime[i*x] = <span class="literal">False</span></span><br><span class="line">            x += <span class="number">1</span></span><br><span class="line">        x = <span class="number">2</span></span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>([i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, m) <span class="keyword">if</span> prime[i]])) <span class="comment">#求和</span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Problem-12-Highly-divisible-triangular-number"><a href="#Problem-12-Highly-divisible-triangular-number" class="headerlink" title="Problem 12 Highly divisible triangular number"></a>Problem 12 Highly divisible triangular number</h2><p>The sequence of triangle numbers is generated by adding the natural numbers. So the th triangle number would be $$1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 $$. The first ten terms would be:<br>$$1, 3, 6, 10, 15, 21, 28, 36, 45, 55, \dots$$</p>
-<p>We can see that 28 is the first triangle number to have over five divisors.</p>
-<p>What is the value of the first triangle number to have over five hundred divisors?</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0%E5%AE%9A%E7%90%86/4926961">约数定理</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factor</span>(<span class="params">x</span>):</span>  <span class="comment">#用约数定理快速求约数个数</span></span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> x != <span class="number">1</span>:</span><br><span class="line">        i = <span class="number">2</span></span><br><span class="line">        a = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> x % i != <span class="number">0</span>:</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> x % i == <span class="number">0</span>:</span><br><span class="line">            x = x // i</span><br><span class="line">            a += <span class="number">1</span></span><br><span class="line">        ans *= a</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">m = <span class="number">100000</span> <span class="comment">#范围限制</span></span><br><span class="line">n = <span class="number">500</span>  <span class="comment">#约数数的限制</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, m):</span><br><span class="line">    j = i*(i+<span class="number">1</span>)//<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> factor(j) &gt; n:</span><br><span class="line">        <span class="built_in">print</span>(j)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Problem-14-Longest-Collatz-sequence"><a href="#Problem-14-Longest-Collatz-sequence" class="headerlink" title="Problem 14 Longest Collatz sequence"></a>Problem 14 Longest Collatz sequence</h2><p>The following iterative sequence is defined for the set of positive integers:</p>
-<p> $$n \rightarrow n/2( is . even) , n \rightarrow 3n+1( is . odd)$$</p>
-<p>Using the rule above and starting with 13, we generate the following sequence:<br>    13,40,20,10,5,16,8,4,2,1</p>
-<p>It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at .</p>
-<p>Which starting number, under one million, produces the longest chain?</p>
-<p>NOTE: Once the chain starts the terms are allowed to go above one million.</p>
-<p>使用字典储存多次出现的结果</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">collatz = &#123;&#125;  <span class="comment">#储存已知结果</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cillatz_length</span>(<span class="params">x</span>):</span>  <span class="comment">#计算长度</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> collatz.get(x) != <span class="literal">None</span>: <span class="keyword">return</span> collatz[x]</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        a = x // <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        a = <span class="number">3</span> * x + <span class="number">1</span></span><br><span class="line">    collatz[x] = cillatz_length(a) + <span class="number">1</span>   <span class="comment">#递归运算并存储长度</span></span><br><span class="line">    <span class="keyword">return</span> collatz[x]</span><br><span class="line"></span><br><span class="line">n = <span class="number">1000000</span>  <span class="comment">#数量限制</span></span><br><span class="line">ans = <span class="number">1</span></span><br><span class="line">ans_l = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">    <span class="keyword">if</span> cillatz_length(i) &gt; ans_l:</span><br><span class="line">        ans = i</span><br><span class="line">        ans_l = collatz[i]</span><br><span class="line"><span class="built_in">print</span>((ans, ans_l))  <span class="comment">#输出结果</span></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="Problem-15-Lattice-paths"><a href="#Problem-15-Lattice-paths" class="headerlink" title="Problem 15 Lattice paths"></a>Problem 15 Lattice paths</h2><p>Starting in the top left corner of a $2 \times 2$ grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.</p>
-<p>How many such routes are there through a $20 \times 20$ grid?</p>
-<p>此题相当于在问 <code>20*20次行动中选二十次向下走，其他情况向右走，问有多少种选法。</code><br>如此，答案便不难得到 $C_{40}^{20}$</p>
+<p>在一个<strong>封闭系统</strong>中，不可能把热量从<strong>低温物体</strong>传递到<strong>高温物体</strong>而<strong>不产生其他影响</strong></p>
+<p>————Rudolf Clausius (1822-1888)</p>
+<blockquote>
+<p>The energy of the universe id constant.</p>
+<p>The entropy of the universe tends to a maximum.</p>
+</blockquote>
+<p><code>有意思的是，此前所有物理定律都没有指出该过程不可逆。该定理打破了物理理论在时间上的对称性。可以说，该定理引出了时间的单向性</code></p>
+<h2 id="熵-S"><a href="#熵-S" class="headerlink" title="熵 S"></a>熵 S</h2><p>我们定义<br>$$<br>S = \frac{Q}{T}<br>$$<br>称之为<strong>熵</strong></p>
+<h2 id="气体过程-熵的变化"><a href="#气体过程-熵的变化" class="headerlink" title="气体过程 熵的变化"></a>气体过程 熵的变化</h2><p>我们记$i$为初始状态(initial state), $f$为最终状态(final state).<br>$$<br>\Delta S = S_f - S_i = \int_{i}^{f} \mathrm{d} S = \int_{i}^{f} \frac{\mathrm{d} Q}{T} = \int_{i}^{f} \frac{\mathrm{d} E_{int} + \mathrm{d} W}{T}<br>$$</p>
+<h3 id="等压变化-Isobaric-process"><a href="#等压变化-Isobaric-process" class="headerlink" title="等压变化(Isobaric process)"></a>等压变化(Isobaric process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} + n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_p \mathrm{ln} \frac{T_f}{T_i}<br>$$</p>
+<h3 id="等温变化-Isothermal-process"><a href="#等温变化-Isothermal-process" class="headerlink" title="等温变化(Isothermal process)"></a>等温变化(Isothermal process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = \frac{Q}{T}<br>$$</p>
+<h3 id="绝热变化-Adiabatic-process"><a href="#绝热变化-Adiabatic-process" class="headerlink" title="绝热变化(Adiabatic process)"></a>绝热变化(Adiabatic process)</h3><p>$$<br>dQ \equiv 0 , \Delta S = 0<br>$$</p>
+<h3 id="等容变化-Isochoric-process"><a href="#等容变化-Isochoric-process" class="headerlink" title="等容变化(Isochoric process)"></a>等容变化(Isochoric process)</h3><p>$$<br>\Delta S = n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_V \mathrm{ln} \frac{P_f}{P_i}<br>$$</p>
+<h3 id="自由扩散-irreversible-process"><a href="#自由扩散-irreversible-process" class="headerlink" title="自由扩散(irreversible process)"></a>自由扩散(irreversible process)</h3><p>$$<br>T_i = T_f ; \Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = n R \mathrm{ln} \frac{P_i}{P_f}<br>$$</p>
+<h2 id="熵的变化"><a href="#熵的变化" class="headerlink" title="熵的变化"></a>熵的变化</h2><h3 id="粒子数目越多，熵就越高"><a href="#粒子数目越多，熵就越高" class="headerlink" title="粒子数目越多，熵就越高"></a>粒子数目越多，熵就越高</h3><p>$$<br>S = k \cdot \mathrm{ln}W<br>$$</p>
+<h3 id="微观诠释（非严谨）"><a href="#微观诠释（非严谨）" class="headerlink" title="微观诠释（非严谨）"></a>微观诠释（非严谨）</h3><p>若是取n个粒子，两个相同的盒子，盒子联通，假设对一个粒子在任意盒子中的概率相同。记在同一盒子中的数目为N。计算<br>$$<br>\mathrm{P}(N=m) = \frac{n!}{(n-m)!m!}<br>$$<br>当n增加时，$\mathrm{P}(N=N/2)$将远远大于$\mathrm{P}(N=0)$即高熵态概率更高。</p>
+<p>记粒子总数$N$,粒子两种状态$n_1, n_2$<br>$$<br>W = \frac{N!}{n_1! n_2!}<br>$$<br>当$n$足够大时，<br>$$<br>\mathrm{ln} N ! \approx N(\mathrm{ln} N) - N<br>$$</p>
+<h2 id="热力学的妖精"><a href="#热力学的妖精" class="headerlink" title="热力学的妖精"></a>热力学的妖精</h2><h3 id="物理学四大神兽之一-——麦克斯韦妖"><a href="#物理学四大神兽之一-——麦克斯韦妖" class="headerlink" title="物理学四大神兽之一 ——麦克斯韦妖"></a>物理学四大神兽之一 ——麦克斯韦妖</h3><blockquote>
+<p>一个绝热容器被分成相等的两格，中间是由“妖”控制的一扇小“门”，容器中的空气分子作无规则热运动时会向门上撞击，“门”可以选择性的将速度较快的分子放入一格，而较慢的分子放入另一格，这样，其中的一格就会比另外一格温度高。</p>
+</blockquote>
+<p>用这个理论，麦克斯韦创造出了一个看似违反热力学第二定律的情况。</p>
+<p>因为麦克斯韦妖与气体之间只有信息交换，没有能量交换，当时的物理学一直没有办法解释清楚。</p>
+<h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>香农提出了<strong>信息熵</strong>的概念</p>
+<p>信息的基本作用就是消除人们对事物的不确定性。那么如果我们已知出现事件的概率，那么我们需要用多少熵去记录它呢。于是，香农把信息冗余度与热力学的熵联系到了一起。<br>$$<br>H(U) = E[- \mathrm{log} p_i] = - \sum_{i=1}^{n}p_i \mathrm{log} p_i<br>$$<br>至此，物理学家才成功解释麦克斯韦妖。</p>
+<h2 id="热机"><a href="#热机" class="headerlink" title="热机"></a>热机</h2><h3 id="热机的效率"><a href="#热机的效率" class="headerlink" title="热机的效率"></a>热机的效率</h3><p>$$<br>\varepsilon = \frac{我们得到的能量}{我们输入的能量} = \frac{\left | W \right |}{\left | Q_H \right |}<br>$$</p>
+<h3 id="卡诺-Carnot-循环"><a href="#卡诺-Carnot-循环" class="headerlink" title="卡诺(Carnot)循环"></a>卡诺(Carnot)循环</h3><p>如下图所示</p>
+<p><img src="https://s2.loli.net/2021/12/29/7pWwDr3ZaLsTA6J.png" alt="卡诺循环.png"></p>
+<p>即，等温过程与绝热过程交替进行</p>
+<p>符合卡诺循环的热机的效率$\varepsilon_C$可以用以下公式计算<br>$$<br>\varepsilon_C = 1 - \frac{\left | Q_L \right | }{\left | Q_H \right | } = 1 - \frac{T_L}{T_H}<br>$$</p>
  
       <!-- reward -->
       
@@ -228,12 +213,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/23/20211023-%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92-%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%941/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/" rel="tag">欧拉计划</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" rel="tag">大学物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -241,19 +226,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-nav-link">
+      <a href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            积分学笔记1——初识积分学
+            拓扑学笔记（1）拓扑空间
           
         </div>
       </a>
     
     
-      <a href="/2021/10/21/20211021-%E5%BF%83%E7%90%86%E5%AD%A6-%E9%87%8A%E6%A2%A6%E7%9A%84%E6%84%8F%E4%B9%89/" class="article-nav-link">
+      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">空想的心理学笔记#1-释梦的意义</div>
+        <div class="article-nav-title">积分学笔记1——初识积分学</div>
       </a>
     
   </nav>
