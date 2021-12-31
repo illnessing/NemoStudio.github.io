@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>热力学第二定律 |  空想之国</title>
+      <title>热力学第二定律（熵增定律） |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  热力学第二定律
+  热力学第二定律（熵增定律）
 </h1>
  
 
@@ -75,8 +75,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
-  <time datetime="2021-12-29T10:22:53.000Z" itemprop="datePublished">2021-12-29</time>
+      <a href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
+  <time datetime="2021-12-31T06:38:53.000Z" itemprop="datePublished">2021-12-31</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">870</span>
+            <span class="post-count">1k</span>
         </span>
     </span>
 
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -138,11 +138,21 @@
 <p>因为麦克斯韦妖与气体之间只有信息交换，没有能量交换，当时的物理学一直没有办法解释清楚。</p>
 <h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>香农提出了<strong>信息熵</strong>的概念</p>
 <p>信息的基本作用就是消除人们对事物的不确定性。那么如果我们已知出现事件的概率，那么我们需要用多少熵去记录它呢。于是，香农把信息冗余度与热力学的熵联系到了一起。<br>$$<br>H(U) = E[- \mathrm{log} p_i] = - \sum_{i=1}^{n}p_i \mathrm{log} p_i<br>$$<br>至此，物理学家才成功解释麦克斯韦妖。</p>
-<h2 id="热机"><a href="#热机" class="headerlink" title="热机"></a>热机</h2><h3 id="热机的效率"><a href="#热机的效率" class="headerlink" title="热机的效率"></a>热机的效率</h3><p>$$<br>\varepsilon = \frac{我们得到的能量}{我们输入的能量} = \frac{\left | W \right |}{\left | Q_H \right |}<br>$$</p>
+<h2 id="热机"><a href="#热机" class="headerlink" title="热机"></a>热机</h2><h3 id="热机的效率"><a href="#热机的效率" class="headerlink" title="热机的效率"></a>热机的效率</h3><p>$$<br>\varepsilon = \frac{我们得到的能量}{我们输入的能量} = \frac{\left | W \right |}{\left | Q_H \right |} = 1 - \frac{|Q_L|}{|Q_H|}<br>$$</p>
+<p>显然，我们有$0 \le \varepsilon &lt; 1$.</p>
 <h3 id="卡诺-Carnot-循环"><a href="#卡诺-Carnot-循环" class="headerlink" title="卡诺(Carnot)循环"></a>卡诺(Carnot)循环</h3><p>如下图所示</p>
 <p><img src="https://s2.loli.net/2021/12/29/7pWwDr3ZaLsTA6J.png" alt="卡诺循环.png"></p>
-<p>即，等温过程与绝热过程交替进行</p>
+<p>即，等温过程与绝热过程交替进行，高温膨胀，绝热膨胀，低温收缩，绝热收缩。</p>
 <p>符合卡诺循环的热机的效率$\varepsilon_C$可以用以下公式计算<br>$$<br>\varepsilon_C = 1 - \frac{\left | Q_L \right | }{\left | Q_H \right | } = 1 - \frac{T_L}{T_H}<br>$$</p>
+<h3 id="斯特林-stirling-循环"><a href="#斯特林-stirling-循环" class="headerlink" title="斯特林(stirling)循环"></a>斯特林(stirling)循环</h3><p>如下图所示</p>
+<img src="https://s2.loli.net/2021/12/31/iPIdl7z2H9uqnwV.png" alt="stirling.png" style="zoom:40%;" />
+
+<p>即等温变化与等容变化交替进行。</p>
+<h3 id="Otto-热机"><a href="#Otto-热机" class="headerlink" title="Otto 热机"></a>Otto 热机</h3><p>较为常用的热机，指等容变化与绝热变化交替进行。</p>
+<h2 id="热机的逆运算（雾）——制冷"><a href="#热机的逆运算（雾）——制冷" class="headerlink" title="热机的逆运算（雾）——制冷"></a>热机的逆运算（雾）——制冷</h2><p>通过外加能量使得热机做功进程逆转，从而达到制冷的效果。</p>
+<p>冰箱的表现系数(The coefficient of performance)<br>$$<br>K = \frac{\text{what we want}}{\text{what we pay for}} = \frac{|Q_L|}{|W|} = \frac{|Q_L|}{|Q_H| - |Q_L|}<br>$$</p>
+<h3 id="卡诺冰箱-Carnot-refrigerator"><a href="#卡诺冰箱-Carnot-refrigerator" class="headerlink" title="卡诺冰箱(Carnot refrigerator )"></a>卡诺冰箱(Carnot refrigerator )</h3><p>即卡诺循环逆向进行的结果</p>
+<p>特别的，<br>$$<br>K_C = \frac{T_L}{T_H - T_L}<br>$$</p>
  
       <!-- reward -->
       
@@ -213,7 +223,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -226,19 +236,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            拓扑学笔记（1）拓扑空间
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/" class="article-nav-link">
+      <a href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">积分学笔记1——初识积分学</div>
+        <div class="article-nav-title">数分1知识梳理</div>
       </a>
     
   </nav>

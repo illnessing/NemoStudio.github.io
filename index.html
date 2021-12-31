@@ -158,6 +158,100 @@
     
     
     <article
+  id="post-大学物理/热力学第二定律"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
+    >热力学第二定律（熵增定律）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
+  <time datetime="2021-12-31T06:38:53.000Z" itemprop="datePublished">2021-12-31</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="热力学第二定律-笔记"><a href="#热力学第二定律-笔记" class="headerlink" title="热力学第二定律 笔记"></a>热力学第二定律 笔记</h1><h2 id="热力学第二定律-熵增定理"><a href="#热力学第二定律-熵增定理" class="headerlink" title="热力学第二定律(熵增定理)"></a>热力学第二定律(熵增定理)</h2><blockquote>
+<p>If a process occurs in a closed system, the entropy of the system increases for irreversible processes and remains constant for reversible processes; it never decreases.</p>
+</blockquote>
+<p>在一个<strong>封闭系统</strong>中，不可能把热量从<strong>低温物体</strong>传递到<strong>高温物体</strong>而<strong>不产生其他影响</strong></p>
+<p>————Rudolf Clausius (1822-1888)</p>
+<blockquote>
+<p>The energy of the universe id constant.</p>
+<p>The entropy of the universe tends to a maximum.</p>
+</blockquote>
+<p><code>有意思的是，此前所有物理定律都没有指出该过程不可逆。该定理打破了物理理论在时间上的对称性。可以说，该定理引出了时间的单向性</code></p>
+<h2 id="熵-S"><a href="#熵-S" class="headerlink" title="熵 S"></a>熵 S</h2><p>我们定义<br>$$<br>S = \frac{Q}{T}<br>$$<br>称之为<strong>熵</strong></p>
+<h2 id="气体过程-熵的变化"><a href="#气体过程-熵的变化" class="headerlink" title="气体过程 熵的变化"></a>气体过程 熵的变化</h2><p>我们记$i$为初始状态(initial state), $f$为最终状态(final state).<br>$$<br>\Delta S = S_f - S_i = \int_{i}^{f} \mathrm{d} S = \int_{i}^{f} \frac{\mathrm{d} Q}{T} = \int_{i}^{f} \frac{\mathrm{d} E_{int} + \mathrm{d} W}{T}<br>$$</p>
+<h3 id="等压变化-Isobaric-process"><a href="#等压变化-Isobaric-process" class="headerlink" title="等压变化(Isobaric process)"></a>等压变化(Isobaric process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} + n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_p \mathrm{ln} \frac{T_f}{T_i}<br>$$</p>
+<h3 id="等温变化-Isothermal-process"><a href="#等温变化-Isothermal-process" class="headerlink" title="等温变化(Isothermal process)"></a>等温变化(Isothermal process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = \frac{Q}{T}<br>$$</p>
+<h3 id="绝热变化-Adiabatic-process"><a href="#绝热变化-Adiabatic-process" class="headerlink" title="绝热变化(Adiabatic process)"></a>绝热变化(Adiabatic process)</h3><p>$$<br>dQ \equiv 0 , \Delta S = 0<br>$$</p>
+<h3 id="等容变化-Isochoric-process"><a href="#等容变化-Isochoric-process" class="headerlink" title="等容变化(Isochoric process)"></a>等容变化(Isochoric process)</h3><p>$$<br>\Delta S = n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_V \mathrm{ln} \frac{P_f}{P_i}<br>$$</p>
+<h3 id="自由扩散-irreversible-process"><a href="#自由扩散-irreversible-process" class="headerlink" title="自由扩散(irreversible process)"></a>自由扩散(irreversible process)</h3><p>$$<br>T_i = T_f ; \Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = n R \mathrm{ln} \frac{P_i}{P_f}<br>$$</p>
+<h2 id="熵的变化"><a href="#熵的变化" class="headerlink" title="熵的变化"></a>熵的变化</h2><h3 id="粒子数目越多，熵就越高"><a href="#粒子数目越多，熵就越高" class="headerlink" title="粒子数目越多，熵就越高"></a>粒子数目越多，熵就越高</h3><p>$$<br>S = k \cdot \mathrm{ln}W<br>$$</p>
+<h3 id="微观诠释（非严谨）"><a href="#微观诠释（非严谨）" class="headerlink" title="微观诠释（非严谨）"></a>微观诠释（非严谨）</h3><p>若是取n个粒子，两个相同的盒子，盒子联通，假设对一个粒子在任意盒子中的概率相同。记在同一盒子中的数目为N。计算<br>$$<br>\mathrm{P}(N=m) = \frac{n!}{(n-m)!m!}<br>$$<br>当n增加时，$\mathrm{P}(N=N/2)$将远远大于$\mathrm{P}(N=0)$即高熵态概率更高。</p>
+<p>记粒子总数$N$,粒子两种状态$n_1, n_2$<br>$$<br>W = \frac{N!}{n_1! n_2!}<br>$$<br>当$n$足够大时，<br>$$<br>\mathrm{ln} N ! \approx N(\mathrm{ln} N) - N<br>$$</p>
+<h2 id="热力学的妖精"><a href="#热力学的妖精" class="headerlink" title="热力学的妖精"></a>热力学的妖精</h2><h3 id="物理学四大神兽之一-——麦克斯韦妖"><a href="#物理学四大神兽之一-——麦克斯韦妖" class="headerlink" title="物理学四大神兽之一 ——麦克斯韦妖"></a>物理学四大神兽之一 ——麦克斯韦妖</h3><blockquote>
+<p>一个绝热容器被分成相等的两格，中间是由“妖”控制的一扇小“门”，容器中的空气分子作无规则热运动时会向门上撞击，“门”可以选择性的将速度较快的分子放入一格，而较慢的分子放入另一格，这样，其中的一格就会比另外一格温度高。</p>
+</blockquote>
+<p>用这个理论，麦克斯韦创造出了一个看似违反热力学第二定律的情况。</p>
+<p>因为麦克斯韦妖与气体之间只有信息交换，没有能量交换，当时的物理学一直没有办法解释清楚。</p>
+<h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>香农提出了<strong>信息熵</strong>的概念</p>
+<p>信息的基本作用就是消除人们对事物的不确定性。那么如果我们已知出现事件的概率，那么我们需要用多少熵去记录它呢。于是，香农把信息冗余度与热力学的熵联系到了一起。<br>$$<br>H(U) = E[- \mathrm{log} p_i] = - \sum_{i=1}^{n}p_i \mathrm{log} p_i<br>$$<br>至此，物理学家才成功解释麦克斯韦妖。</p>
+<h2 id="热机"><a href="#热机" class="headerlink" title="热机"></a>热机</h2><h3 id="热机的效率"><a href="#热机的效率" class="headerlink" title="热机的效率"></a>热机的效率</h3><p>$$<br>\varepsilon = \frac{我们得到的能量}{我们输入的能量} = \frac{\left | W \right |}{\left | Q_H \right |} = 1 - \frac{|Q_L|}{|Q_H|}<br>$$</p>
+<p>显然，我们有$0 \le \varepsilon &lt; 1$.</p>
+<h3 id="卡诺-Carnot-循环"><a href="#卡诺-Carnot-循环" class="headerlink" title="卡诺(Carnot)循环"></a>卡诺(Carnot)循环</h3><p>如下图所示</p>
+<p><img src="https://s2.loli.net/2021/12/29/7pWwDr3ZaLsTA6J.png" alt="卡诺循环.png"></p>
+<p>即，等温过程与绝热过程交替进行，高温膨胀，绝热膨胀，低温收缩，绝热收缩。</p>
+<p>符合卡诺循环的热机的效率$\varepsilon_C$可以用以下公式计算<br>$$<br>\varepsilon_C = 1 - \frac{\left | Q_L \right | }{\left | Q_H \right | } = 1 - \frac{T_L}{T_H}<br>$$</p>
+<h3 id="斯特林-stirling-循环"><a href="#斯特林-stirling-循环" class="headerlink" title="斯特林(stirling)循环"></a>斯特林(stirling)循环</h3><p>如下图所示</p>
+<img src="https://s2.loli.net/2021/12/31/iPIdl7z2H9uqnwV.png" alt="stirling.png" style="zoom:40%;" />
+
+<p>即等温变化与等容变化交替进行。</p>
+<h3 id="Otto-热机"><a href="#Otto-热机" class="headerlink" title="Otto 热机"></a>Otto 热机</h3><p>较为常用的热机，指等容变化与绝热变化交替进行。</p>
+<h2 id="热机的逆运算（雾）——制冷"><a href="#热机的逆运算（雾）——制冷" class="headerlink" title="热机的逆运算（雾）——制冷"></a>热机的逆运算（雾）——制冷</h2><p>通过外加能量使得热机做功进程逆转，从而达到制冷的效果。</p>
+<p>冰箱的表现系数(The coefficient of performance)<br>$$<br>K = \frac{\text{what we want}}{\text{what we pay for}} = \frac{|Q_L|}{|W|} = \frac{|Q_L|}{|Q_H| - |Q_L|}<br>$$</p>
+<h3 id="卡诺冰箱-Carnot-refrigerator"><a href="#卡诺冰箱-Carnot-refrigerator" class="headerlink" title="卡诺冰箱(Carnot refrigerator )"></a>卡诺冰箱(Carnot refrigerator )</h3><p>即卡诺循环逆向进行的结果</p>
+<p>特别的，<br>$$<br>K_C = \frac{T_L}{T_H - T_L}<br>$$</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" rel="tag">大学物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-数学分析/数分复习——理论论证部分"
   class="article article-type-post"
   itemscope
@@ -399,90 +493,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-大学物理/热力学第二定律"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
-    >热力学第二定律</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/12/29/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
-  <time datetime="2021-12-29T10:22:53.000Z" itemprop="datePublished">2021-12-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="热力学第二定律-笔记"><a href="#热力学第二定律-笔记" class="headerlink" title="热力学第二定律 笔记"></a>热力学第二定律 笔记</h1><h2 id="热力学第二定律-熵增定理"><a href="#热力学第二定律-熵增定理" class="headerlink" title="热力学第二定律(熵增定理)"></a>热力学第二定律(熵增定理)</h2><blockquote>
-<p>If a process occurs in a closed system, the entropy of the system increases for irreversible processes and remains constant for reversible processes; it never decreases.</p>
-</blockquote>
-<p>在一个<strong>封闭系统</strong>中，不可能把热量从<strong>低温物体</strong>传递到<strong>高温物体</strong>而<strong>不产生其他影响</strong></p>
-<p>————Rudolf Clausius (1822-1888)</p>
-<blockquote>
-<p>The energy of the universe id constant.</p>
-<p>The entropy of the universe tends to a maximum.</p>
-</blockquote>
-<p><code>有意思的是，此前所有物理定律都没有指出该过程不可逆。该定理打破了物理理论在时间上的对称性。可以说，该定理引出了时间的单向性</code></p>
-<h2 id="熵-S"><a href="#熵-S" class="headerlink" title="熵 S"></a>熵 S</h2><p>我们定义<br>$$<br>S = \frac{Q}{T}<br>$$<br>称之为<strong>熵</strong></p>
-<h2 id="气体过程-熵的变化"><a href="#气体过程-熵的变化" class="headerlink" title="气体过程 熵的变化"></a>气体过程 熵的变化</h2><p>我们记$i$为初始状态(initial state), $f$为最终状态(final state).<br>$$<br>\Delta S = S_f - S_i = \int_{i}^{f} \mathrm{d} S = \int_{i}^{f} \frac{\mathrm{d} Q}{T} = \int_{i}^{f} \frac{\mathrm{d} E_{int} + \mathrm{d} W}{T}<br>$$</p>
-<h3 id="等压变化-Isobaric-process"><a href="#等压变化-Isobaric-process" class="headerlink" title="等压变化(Isobaric process)"></a>等压变化(Isobaric process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} + n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_p \mathrm{ln} \frac{T_f}{T_i}<br>$$</p>
-<h3 id="等温变化-Isothermal-process"><a href="#等温变化-Isothermal-process" class="headerlink" title="等温变化(Isothermal process)"></a>等温变化(Isothermal process)</h3><p>$$<br>\Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = \frac{Q}{T}<br>$$</p>
-<h3 id="绝热变化-Adiabatic-process"><a href="#绝热变化-Adiabatic-process" class="headerlink" title="绝热变化(Adiabatic process)"></a>绝热变化(Adiabatic process)</h3><p>$$<br>dQ \equiv 0 , \Delta S = 0<br>$$</p>
-<h3 id="等容变化-Isochoric-process"><a href="#等容变化-Isochoric-process" class="headerlink" title="等容变化(Isochoric process)"></a>等容变化(Isochoric process)</h3><p>$$<br>\Delta S = n C_V \mathrm{ln} \frac{T_f}{T_i} = n C_V \mathrm{ln} \frac{P_f}{P_i}<br>$$</p>
-<h3 id="自由扩散-irreversible-process"><a href="#自由扩散-irreversible-process" class="headerlink" title="自由扩散(irreversible process)"></a>自由扩散(irreversible process)</h3><p>$$<br>T_i = T_f ; \Delta S = n R \mathrm{ln} \frac{V_f}{V_i} = n R \mathrm{ln} \frac{P_i}{P_f}<br>$$</p>
-<h2 id="熵的变化"><a href="#熵的变化" class="headerlink" title="熵的变化"></a>熵的变化</h2><h3 id="粒子数目越多，熵就越高"><a href="#粒子数目越多，熵就越高" class="headerlink" title="粒子数目越多，熵就越高"></a>粒子数目越多，熵就越高</h3><p>$$<br>S = k \cdot \mathrm{ln}W<br>$$</p>
-<h3 id="微观诠释（非严谨）"><a href="#微观诠释（非严谨）" class="headerlink" title="微观诠释（非严谨）"></a>微观诠释（非严谨）</h3><p>若是取n个粒子，两个相同的盒子，盒子联通，假设对一个粒子在任意盒子中的概率相同。记在同一盒子中的数目为N。计算<br>$$<br>\mathrm{P}(N=m) = \frac{n!}{(n-m)!m!}<br>$$<br>当n增加时，$\mathrm{P}(N=N/2)$将远远大于$\mathrm{P}(N=0)$即高熵态概率更高。</p>
-<p>记粒子总数$N$,粒子两种状态$n_1, n_2$<br>$$<br>W = \frac{N!}{n_1! n_2!}<br>$$<br>当$n$足够大时，<br>$$<br>\mathrm{ln} N ! \approx N(\mathrm{ln} N) - N<br>$$</p>
-<h2 id="热力学的妖精"><a href="#热力学的妖精" class="headerlink" title="热力学的妖精"></a>热力学的妖精</h2><h3 id="物理学四大神兽之一-——麦克斯韦妖"><a href="#物理学四大神兽之一-——麦克斯韦妖" class="headerlink" title="物理学四大神兽之一 ——麦克斯韦妖"></a>物理学四大神兽之一 ——麦克斯韦妖</h3><blockquote>
-<p>一个绝热容器被分成相等的两格，中间是由“妖”控制的一扇小“门”，容器中的空气分子作无规则热运动时会向门上撞击，“门”可以选择性的将速度较快的分子放入一格，而较慢的分子放入另一格，这样，其中的一格就会比另外一格温度高。</p>
-</blockquote>
-<p>用这个理论，麦克斯韦创造出了一个看似违反热力学第二定律的情况。</p>
-<p>因为麦克斯韦妖与气体之间只有信息交换，没有能量交换，当时的物理学一直没有办法解释清楚。</p>
-<h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p>香农提出了<strong>信息熵</strong>的概念</p>
-<p>信息的基本作用就是消除人们对事物的不确定性。那么如果我们已知出现事件的概率，那么我们需要用多少熵去记录它呢。于是，香农把信息冗余度与热力学的熵联系到了一起。<br>$$<br>H(U) = E[- \mathrm{log} p_i] = - \sum_{i=1}^{n}p_i \mathrm{log} p_i<br>$$<br>至此，物理学家才成功解释麦克斯韦妖。</p>
-<h2 id="热机"><a href="#热机" class="headerlink" title="热机"></a>热机</h2><h3 id="热机的效率"><a href="#热机的效率" class="headerlink" title="热机的效率"></a>热机的效率</h3><p>$$<br>\varepsilon = \frac{我们得到的能量}{我们输入的能量} = \frac{\left | W \right |}{\left | Q_H \right |}<br>$$</p>
-<h3 id="卡诺-Carnot-循环"><a href="#卡诺-Carnot-循环" class="headerlink" title="卡诺(Carnot)循环"></a>卡诺(Carnot)循环</h3><p>如下图所示</p>
-<p><img src="https://s2.loli.net/2021/12/29/7pWwDr3ZaLsTA6J.png" alt="卡诺循环.png"></p>
-<p>即，等温过程与绝热过程交替进行</p>
-<p>符合卡诺循环的热机的效率$\varepsilon_C$可以用以下公式计算<br>$$<br>\varepsilon_C = 1 - \frac{\left | Q_L \right | }{\left | Q_H \right | } = 1 - \frac{T_L}{T_H}<br>$$</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" rel="tag">大学物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
   </div>
