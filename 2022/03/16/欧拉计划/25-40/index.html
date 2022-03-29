@@ -114,6 +114,9 @@
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
 
 <h2 id="第二十五题"><a href="#第二十五题" class="headerlink" title="第二十五题"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/25/">第二十五题</a></h2><p>这是一个数列递推问题，如果使用递归会使用O($n^2$)的空间与O($n*2^n$)的时间，我们直接使用递推公式一步一步推</p>
+<span id="more"></span>
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">n = <span class="number">1000</span></span><br><span class="line">m = <span class="number">10</span>**(n - <span class="number">1</span>)</span><br><span class="line">a_1 = <span class="number">1</span></span><br><span class="line">a_2 = <span class="number">1</span></span><br><span class="line">ans = <span class="number">2</span></span><br><span class="line"><span class="keyword">while</span> a_2 &lt; m:</span><br><span class="line">    ans += <span class="number">1</span></span><br><span class="line">    a_1, a_2 = a_2, a_1 + a_2</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;第一个超过&#123;&#125;位的数字是位于第&#123;&#125;位的:\n&#123;&#125;&quot;</span>.<span class="built_in">format</span>(n, ans, a_2))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;消耗时间&#123;:.6f&#125;s&quot;</span>.<span class="built_in">format</span>(time.time() - start))</span><br></pre></td></tr></table></figure>
 
 <pre><code>第一个超过1000位的数字是位于第4782位的:
@@ -373,6 +376,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/2022/03/29/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/41-50/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            欧拉计划刷题记录——41-50
+          
+        </div>
+      </a>
     
     
       <a href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-nav-link">

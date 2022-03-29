@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="空想家的个人博客" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>欧拉计划刷题记录——41-50 |  空想之国</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/空想之国.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-欧拉计划/41-50"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  欧拉计划刷题记录——41-50
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/03/29/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/41-50/" class="article-date">
+  <time datetime="2022-03-29T14:58:53.000Z" itemprop="datePublished">2022-03-29</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/">欧拉计划</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.5k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">12 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> math</span><br></pre></td></tr></table></figure>
+
+<h2 id="第四十一问-全数字的素数"><a href="#第四十一问-全数字的素数" class="headerlink" title="第四十一问 全数字的素数"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/41/">第四十一问</a> 全数字的素数</h2><p>这个问题有一个显然上限 987654321, 但是对于我们的小计算机来说，它太大了。但是，我们先验证是否是全序列花费的时间远比验证是否是质数的时间短，这样我们可以用尽可能少的算力排除大量的不可能事件</p>
+<p>因为只需要验证是否是质数，那么我们其实只要验证是否能被$1 - \sqrt{987654321}$的质数整除即可</p>
+<span id="more"></span>
+
+<p>首先邀请我们的老朋友——欧拉筛，入场，计算出$1 - \sqrt{987654321}$的质数序列用来验证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">list</span>:</span></span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    num = [<span class="literal">True</span>] * n</span><br><span class="line">    num[<span class="number">0</span>:<span class="number">2</span>] = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> num[i]:</span><br><span class="line">            j = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> i * j &lt; n:</span><br><span class="line">                num[i * j] = <span class="literal">False</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n) <span class="keyword">if</span> num[i]]</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">primes = prime(<span class="built_in">int</span>(math.sqrt(<span class="number">987654321</span>)))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>你浪费了12.00ms
+</code></pre>
+<p>然后，我们定义一个验证是否是质数的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_prime</span>(<span class="params">x</span>):</span></span><br><span class="line">    limit = math.sqrt(x)</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> primes:</span><br><span class="line">        <span class="keyword">if</span> x % p == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> p &gt; limit:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>至于是不是全序列，不需要测量，我们直接用排列组合枚举全序列数，这样我们需要测试的数字只有$9! = 362880$个远远少于$987654321$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations <span class="comment"># 懒得重复造轮子了</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pandigital_prime</span>():</span></span><br><span class="line">    nums = <span class="string">&#x27;987654321&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>):</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> permutations(nums[i:]): <span class="comment"># 因为函数特性，将从最大数开始枚举</span></span><br><span class="line">            n = <span class="built_in">int</span>(<span class="string">&#x27;&#x27;</span>.join(x))</span><br><span class="line">            <span class="keyword">if</span> is_prime(n):</span><br><span class="line">                <span class="keyword">return</span> n</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(pandigital_prime())</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>7652413
+你浪费了238.13ms
+</code></pre>
+<h2 id="第四十二问-编码三角形数"><a href="#第四十二问-编码三角形数" class="headerlink" title="第四十二问 编码三角形数"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/42/">第四十二问</a> 编码三角形数</h2><p>题目给的数据是一个txt文件，我们需要先将他读取进来并处理成列表形式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;source/p042_words.txt&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    words = f.read().replace(<span class="string">&#x27;\&quot;&#x27;</span>,<span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line">    f.close()</span><br><span class="line">max_l = <span class="built_in">max</span>([<span class="built_in">len</span>(w) <span class="keyword">for</span> w <span class="keyword">in</span> words])</span><br><span class="line"><span class="built_in">print</span>(max_l)</span><br></pre></td></tr></table></figure>
+
+<pre><code>14
+</code></pre>
+<p>我们注意到，这个单词列表里最长的单词也只有14个单词的长度，也就是说，单词编码不会超过$14 \times 26 = 364$</p>
+<p>单词不多，只有两千个，我们直接遍历就好</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">word_value</span>(<span class="params">word</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>([<span class="built_in">ord</span>(t) - <span class="number">64</span> <span class="keyword">for</span> t <span class="keyword">in</span> word])</span><br><span class="line"></span><br><span class="line">tri_nums = [n*(n+<span class="number">1</span>)//<span class="number">2</span> <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(math.sqrt(max_l*<span class="number">26</span>*<span class="number">2</span>)) +<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>( [w <span class="keyword">for</span> w <span class="keyword">in</span> words <span class="keyword">if</span> word_value(w) <span class="keyword">in</span> tri_nums]))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.6f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>162
+你浪费了1.000166ms
+</code></pre>
+<h2 id="第四十三问-子串的可整除性"><a href="#第四十三问-子串的可整除性" class="headerlink" title="第四十三问 子串的可整除性"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/43/">第四十三问</a> 子串的可整除性</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> permutations</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">divisors = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">17</span>]</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> permutations(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">0</span>,<span class="number">10</span>))):</span><br><span class="line">    <span class="keyword">if</span> num[<span class="number">0</span>] == <span class="number">0</span>: <span class="keyword">continue</span></span><br><span class="line">    ok = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7</span>):</span><br><span class="line">        n = num[i+<span class="number">1</span>]*<span class="number">100</span> + num[i+<span class="number">2</span>]*<span class="number">10</span> + num[i+<span class="number">3</span>]</span><br><span class="line">        <span class="keyword">if</span> n % divisors[i] != <span class="number">0</span>:</span><br><span class="line">            ok = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> ok:</span><br><span class="line">        ans += <span class="built_in">int</span>(<span class="string">&#x27;&#x27;</span>.join([<span class="built_in">str</span>(k) <span class="keyword">for</span> k <span class="keyword">in</span> num]))</span><br><span class="line"><span class="built_in">print</span>(ans)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>16695334890
+你浪费了2250.26ms
+</code></pre>
+<h2 id="第四十四问-五边形数"><a href="#第四十四问-五边形数" class="headerlink" title="第四十四问 五边形数"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/44/">第四十四问</a> 五边形数</h2><p>暂时没想到好办法，所以直接暴力了</p>
+<p><del>什么？你问我上界怎么来的？试出来的呗.</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">p=[i*(<span class="number">3</span>*i-<span class="number">1</span>)//<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5000</span>)]</span><br><span class="line">k=[<span class="literal">False</span>]*(<span class="number">5000</span>*(<span class="number">3</span>*<span class="number">5000</span>-<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> p:</span><br><span class="line">    k[i]=<span class="literal">True</span></span><br><span class="line">ans=<span class="number">190000000</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> p:</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> p:</span><br><span class="line">        <span class="keyword">if</span> k[<span class="built_in">abs</span>(i-j)] <span class="keyword">and</span> k[i+j]:</span><br><span class="line"><span class="comment">#             print(i, j)</span></span><br><span class="line">            ans = <span class="built_in">min</span>(ans,<span class="built_in">abs</span>(i-j))</span><br><span class="line"><span class="built_in">print</span>(ans)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>5482660
+你浪费了6323.92ms
+</code></pre>
+<h2 id="第四十五问-三角形数、五边形数和六角形数"><a href="#第四十五问-三角形数、五边形数和六角形数" class="headerlink" title="第四十五问 三角形数、五边形数和六角形数"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/45/">第四十五问</a> 三角形数、五边形数和六角形数</h2><p>这一次，我们试一下用生成器</p>
+<p>一个一个数生成，不断更新三个数列中的最小值，直到三个数列取到相同的数字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> count</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">triangular</span>():</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> count(<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> n*(n+<span class="number">1</span>)//<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pentagonal</span>():</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> count(<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> n*(<span class="number">3</span>*n-<span class="number">1</span>)//<span class="number">2</span></span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hexagonal</span>():</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> count(<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> n*(<span class="number">2</span>*n-<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nums</span>():</span></span><br><span class="line">    a = triangular()</span><br><span class="line">    b = pentagonal()</span><br><span class="line">    c = hexagonal()</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        x = <span class="built_in">next</span>(a)</span><br><span class="line">        y = <span class="built_in">next</span>(b)</span><br><span class="line">        z = <span class="built_in">next</span>(c)</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> x == y <span class="keyword">and</span> y == z:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> x &gt; y:</span><br><span class="line">                y = <span class="built_in">next</span>(b)</span><br><span class="line">            <span class="keyword">if</span> y &gt; x:</span><br><span class="line">                x = <span class="built_in">next</span>(a)</span><br><span class="line">            <span class="keyword">if</span> y &gt; z:</span><br><span class="line">                z = <span class="built_in">next</span>(c)</span><br><span class="line">            <span class="keyword">if</span> y &lt; z:</span><br><span class="line">                y = <span class="built_in">next</span>(b)</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line">                </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">a = nums()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">next</span>(a))</span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1
+40755
+1533776805
+你浪费了32.01ms
+</code></pre>
+<p>更进一步，我们发现第一个序列包含了第三个序列，这意味着我们只需要验证后两个序列即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> count</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hexagonal</span>():</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> count(<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> n*(<span class="number">2</span>*n-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pentagonal</span>():</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> count(<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">yield</span> n*(<span class="number">3</span>*n-<span class="number">1</span>)//<span class="number">2</span></span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nums</span>():</span></span><br><span class="line">    a = hexagonal()</span><br><span class="line">    b = pentagonal()</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        x = <span class="built_in">next</span>(a)</span><br><span class="line">        y = <span class="built_in">next</span>(b)</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> x == y:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> x &gt; y:</span><br><span class="line">                y = <span class="built_in">next</span>(b)</span><br><span class="line">            <span class="keyword">if</span> y &gt; x:</span><br><span class="line">                x = <span class="built_in">next</span>(a)</span><br><span class="line">        <span class="keyword">yield</span> x</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">a = nums()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">next</span>(a))</span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1
+40755
+1533776805
+你浪费了15.99ms
+</code></pre>
+<h2 id="第四十六问-哥德巴赫的另一个猜想"><a href="#第四十六问-哥德巴赫的另一个猜想" class="headerlink" title="第四十六问 哥德巴赫的另一个猜想"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/46/">第四十六问</a> 哥德巴赫的另一个猜想</h2><p>或许我们可以参照欧拉筛的思想做一个 “哥德巴赫的另一个猜想”筛（非专业术语，我瞎叫的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">list</span>:</span></span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    num = [<span class="literal">True</span>] * n</span><br><span class="line">    num[<span class="number">0</span>:<span class="number">2</span>] = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> num[i]:</span><br><span class="line">            j = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> i * j &lt; n:</span><br><span class="line">                num[i * j] = <span class="literal">False</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> num</span><br><span class="line"></span><br><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">n = <span class="number">10000</span></span><br><span class="line">is_prime = prime(n)</span><br><span class="line">primes = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n) <span class="keyword">if</span> is_prime[i]]</span><br><span class="line">squares = [i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(math.sqrt(n)))]</span><br><span class="line"></span><br><span class="line">nums = [<span class="literal">False</span>]*(n+<span class="number">1</span>)</span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> primes:</span><br><span class="line">    <span class="keyword">for</span> q <span class="keyword">in</span> squares:</span><br><span class="line">        <span class="keyword">if</span> p+<span class="number">2</span>*q &gt; n: <span class="keyword">break</span></span><br><span class="line">        nums[p+<span class="number">2</span>*q] = <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line">ans = [i <span class="keyword">for</span> i,y <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums) <span class="keyword">if</span> <span class="keyword">not</span> y <span class="keyword">and</span> <span class="keyword">not</span> is_prime[i] <span class="keyword">and</span> i&amp;<span class="number">1</span> == <span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(ans)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1, 5777, 5993]
+你浪费了14.00ms
+</code></pre>
+<h2 id="第四十七问-不同的质因数"><a href="#第四十七问-不同的质因数" class="headerlink" title="第四十七问 不同的质因数"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/47/">第四十七问</a> 不同的质因数</h2><p>本题最大的关键在于如何确定一个数字的质因数的数量。反正不用管质因数的幂数，直接见一个就直接除尽一个。</p>
+<p>以及为了迭代方便，我们使用双指针，因为当我们检测到一个数不符合要求的时候，那么任何一列包含这个数的数都不符合要求，我们直接跳到这个数后面继续就好，这样就不用对同一个数反复检测。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">list</span>:</span></span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    num = [<span class="literal">True</span>] * n</span><br><span class="line">    num[<span class="number">0</span>:<span class="number">2</span>] = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> num[i]:</span><br><span class="line">            j = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> i * j &lt; n:</span><br><span class="line">                num[i * j] = <span class="literal">False</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n) <span class="keyword">if</span> num[i]]</span><br><span class="line">primes = prime(<span class="number">10</span>**<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_factor</span>(<span class="params">x</span>):</span></span><br><span class="line">    ans = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> primes:</span><br><span class="line">        <span class="keyword">if</span> p &gt; x: <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> x % p == <span class="number">0</span>:</span><br><span class="line">            ans += <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> x%p == <span class="number">0</span>:</span><br><span class="line">                x = x//p</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">n = <span class="number">4</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">j = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> j - i == n:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> count_factor(j) == n:</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line">        i = j</span><br><span class="line">        </span><br><span class="line"><span class="built_in">print</span>([x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(i,j)])</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>[134043, 134044, 134045, 134046]
+你浪费了6954.51ms
+</code></pre>
+<h2 id="第四十八问-自幂"><a href="#第四十八问-自幂" class="headerlink" title="第四十八问 自幂"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/48/">第四十八问</a> 自幂</h2><p>取一个数字的后十位，相当于是对一个数取模，虽然说python不需要向c一样考虑整数溢出的事情，但为了效率，我们最好尽量避免处理太大的数，那样子会侵占过多的计算机资源，同时也会消耗过多的时间。</p>
+<p>对于取模后的运算，我们可以验证以下定理成立</p>
+<p>$$<br>a \pmod{m} + b \pmod{m} \equiv (a+b) \pmod{m}<br>$$<br>$$<br>a \pmod{m} * b \pmod{m} \equiv (a*b) \pmod{m}<br>$$</p>
+<p>这意味着，我们可以通过在计算加法与乘法之前取模来减少对不必要的数的处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">n = <span class="number">1000</span></span><br><span class="line">mod = <span class="number">10</span>**<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mod_pow</span>(<span class="params">x, p, m</span>):</span></span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(p):</span><br><span class="line">        ans *= x</span><br><span class="line">        ans %= m</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">    ans += mod_pow(i, i, mod)</span><br><span class="line">    ans %= mod</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&#123;:0&gt;10d&#125;&quot;</span>.<span class="built_in">format</span>(ans))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>9110846700
+你浪费了55.57ms
+</code></pre>
+<h2 id="第四十九问-素数重排"><a href="#第四十九问-素数重排" class="headerlink" title="第四十九问 素数重排"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/49/">第四十九问</a> 素数重排</h2><p>这一道题第一眼看上去的时候感觉有点无从下手</p>
+<p>先试试暴力枚举</p>
+<p><del>反正，运算的任务是芯片，储存的任务是内存，跟我又有什么关系呢</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">length = <span class="number">4</span></span><br><span class="line">down = <span class="number">10</span>**(length-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">list</span>:</span></span><br><span class="line">    <span class="keyword">global</span> down</span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    num = [<span class="literal">True</span>] * n</span><br><span class="line">    num[<span class="number">0</span>:<span class="number">2</span>] = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> num[i]:</span><br><span class="line">            j = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> i * j &lt; n:</span><br><span class="line">                num[i * j] = <span class="literal">False</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(down, n) <span class="keyword">if</span> num[i]]</span><br><span class="line"></span><br><span class="line">primes = prime(<span class="number">10</span>**length)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> primes:</span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> primes:</span><br><span class="line">        <span class="keyword">if</span> b &gt;= a: <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> primes:</span><br><span class="line">            <span class="keyword">if</span> c &gt;= b: <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="number">2</span>*b == a+c) <span class="keyword">and</span> (<span class="built_in">set</span>(<span class="built_in">str</span>(a)) == <span class="built_in">set</span>(<span class="built_in">str</span>(b)) == <span class="built_in">set</span>(<span class="built_in">str</span>(c))):</span><br><span class="line">                <span class="built_in">print</span>(c,b,a)</span><br><span class="line">                </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>1487 4817 8147
+2969 6299 9629
+你浪费了21861.58ms
+</code></pre>
+<p>嘶，用的时间也太久了吧。</p>
+<p>回头有时间优化一下</p>
+<h2 id="第五十问-连续素数的和"><a href="#第五十问-连续素数的和" class="headerlink" title="第五十问 连续素数的和"></a><a target="_blank" rel="noopener" href="https://pe-cn.github.io/50/">第五十问</a> 连续素数的和</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">list</span>:</span></span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    num = [<span class="literal">True</span>] * n</span><br><span class="line">    num[<span class="number">0</span>:<span class="number">2</span>] = [<span class="literal">False</span>] * <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> num[i]:</span><br><span class="line">            j = <span class="number">2</span></span><br><span class="line">            <span class="keyword">while</span> i * j &lt; n:</span><br><span class="line">                num[i * j] = <span class="literal">False</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, n) <span class="keyword">if</span> num[i]], num</span><br></pre></td></tr></table></figure>
+
+<p>暴力验证（1/1 空间：$O(n)$ ，时间：$O(n^3)$ 消耗时间直接破出天际</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">limited = <span class="number">1000000</span></span><br><span class="line">primes, _ = prime(limited)</span><br><span class="line">n = <span class="built_in">len</span>(primes)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">consecutive_prime_sum</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">global</span> primes</span><br><span class="line">    ans = -<span class="number">1</span> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="keyword">if</span> primes[i] &gt;= x: <span class="keyword">break</span></span><br><span class="line">        c = <span class="number">0</span></span><br><span class="line">        v = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i,n):</span><br><span class="line">            <span class="keyword">if</span> v &gt;= x: <span class="keyword">break</span></span><br><span class="line">            v += primes[j]</span><br><span class="line">            c += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> v == x:</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, c)</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">v = -<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> primes:</span><br><span class="line">    <span class="keyword">if</span> consecutive_prime_sum(i) &gt; v:</span><br><span class="line">        v = consecutive_prime_sum(i)</span><br><span class="line">        ans = i</span><br><span class="line"><span class="built_in">print</span>(ans, v)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<p>上一百万花的时间太久，<del>感兴趣的可以用自己的电脑逝一逝</del></p>
+<p>懒得算了，换个思路</p>
+<p>因为是连续序列，我们可以先遍历素数求和，这样时间复杂度会缩到O(n^2),接着，其实不用每次都计算和，我们注意到每次只会增加一个素数，这样时间将进一步优化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">start = time.time()</span><br><span class="line"></span><br><span class="line">limited = <span class="number">1000000</span></span><br><span class="line">primes, is_prime = prime(limited)</span><br><span class="line">n = <span class="built_in">len</span>(primes)</span><br><span class="line"></span><br><span class="line">a,b = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">v = -<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    d = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> <span class="built_in">range</span>(a,n):</span><br><span class="line">        d += primes[b]</span><br><span class="line">        <span class="keyword">if</span> d &gt; limited: <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> is_prime[d]:</span><br><span class="line">            <span class="keyword">if</span> b-a &gt; v:</span><br><span class="line">                v = b-a</span><br><span class="line">                ans = d</span><br><span class="line"><span class="built_in">print</span>(ans,v+<span class="number">1</span>)</span><br><span class="line">                </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;你浪费了&#123;:.2f&#125;ms&quot;</span>.<span class="built_in">format</span>((time.time()-start)*<span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>997651 543
+你浪费了437.10ms
+</code></pre>
+<p>完成~(^o^)~~</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/03/29/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/41-50/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/" rel="tag">欧拉计划</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/03/16/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/25-40/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">欧拉计划刷题记录——25-40</div>
+      </a>
+    
+  </nav>
+
+  
+   
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'fb6e2cfcfb36572015af',
+    clientSecret: '7f6e8fe89858073e5ef32ee00113d140da847d11',
+    repo: 'blog_message',
+    owner: 'illnessing',
+    admin: ['illnessing'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> 空想家
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/空想之国Logo.svg" alt="空想之国"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://fengyan03474.lofter.com">梦境记录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about/me">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>若对你有用，不如支持一下~</p>
+  <div class="reward-box">
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/my_wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>
