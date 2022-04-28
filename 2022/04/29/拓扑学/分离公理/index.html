@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>笔记 |  空想之国</title>
+      <title>分离公理 |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -55,204 +55,203 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-拓扑学/分离公理"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">笔记</h1>
-    
-    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  分离公理
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E5%88%86%E7%A6%BB%E5%85%AC%E7%90%86/" class="article-date">
+  <time datetime="2022-04-28T16:12:43.000Z" itemprop="datePublished">2022-04-29</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
   
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">495</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/04/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E5%88%86%E7%A6%BB%E5%85%AC%E7%90%86/" class="archive-article-date">
-  <time datetime="2022-04-28T16:12:43.000Z" itemprop="datePublished">04/29</time>
-</a>
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/04/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E5%88%86%E7%A6%BB%E5%85%AC%E7%90%86/"
-    >分离公理</a> 
-</h2>
+  <h2 id="分离公理整理笔记"><a href="#分离公理整理笔记" class="headerlink" title="分离公理整理笔记"></a>分离公理整理笔记</h2><p><code>稍微整理了一下最近看到的部分，以后可能还会时不时更新</code></p>
+<h3 id="分离公理及记号"><a href="#分离公理及记号" class="headerlink" title="分离公理及记号"></a>分离公理及记号</h3><p>我们不妨假设在以下空间中，单点集合都是闭集。</p>
+<h6 id="T1："><a href="#T1：" class="headerlink" title="T1："></a><strong>T1</strong>：</h6><p>任意拓扑空间中两个不同点，总存在两个点各自的邻域，使得一个点的邻域不包含另一个点。</p>
+<h6 id="T2-Hausdorff空间-："><a href="#T2-Hausdorff空间-：" class="headerlink" title="T2(Hausdorff空间)："></a><strong>T2</strong>(Hausdorff空间)：</h6><p>对于$X$中任意两个互不相同的点$x$和$y$，存在两个无交的开集分别包含x和$y$。</p>
+<span id="more"></span>
+
+<h6 id="T3-正则空间-："><a href="#T3-正则空间-：" class="headerlink" title="T3(正则空间)："></a><strong>T3</strong>(正则空间)：</h6><p>对于任意一个点$x$和不包含$x$的一个闭集$B$，存在无交的两个开集分别包含x和$B$。</p>
+<h6 id="T-3-frac-1-2-完全正则空间-："><a href="#T-3-frac-1-2-完全正则空间-：" class="headerlink" title="T$3\frac{1}{2}$(完全正则空间)："></a><strong>T$3\frac{1}{2}$</strong>(完全正则空间)：</h6><p>对于X中每一个点$x_0$和不包含$x_0$的任何一个闭集$A$存在一个<a href="#%E8%BF%9E%E7%BB%AD%E5%87%BD%E6%95%B0">连续函数</a>$f: X \rightarrow [0,1], s.t. f(x_0)=1, f(A) = {0}$。</p>
+<h6 id="T4-正规空间-："><a href="#T4-正规空间-：" class="headerlink" title="T4(正规空间)："></a><strong>T4</strong>(正规空间)：</h6><p>对于任意两个无交闭集，存在无交的两个开集分别包含两个闭集。</p>
+<h6 id="T5-完全正规空间-："><a href="#T5-完全正规空间-：" class="headerlink" title="T5(完全正规空间)："></a><strong>T5</strong>(完全正规空间)：</h6><p>$X$的每一个子空间都是正规空间。</p>
+<h6 id="T6-完美正规空间-："><a href="#T6-完美正规空间-：" class="headerlink" title="T6(完美正规空间)："></a><strong>T6</strong>(完美正规空间)：</h6><p>$X$中的每一个闭子集都是$X$的一个$G_{\delta}$<a href="#$G_%7B%5Cdelta%7D$%E9%9B%86">集</a></p>
+<hr>
+<h3 id="一些常见的等价条件"><a href="#一些常见的等价条件" class="headerlink" title="一些常见的等价条件"></a>一些常见的等价条件</h3><h4 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h4><p>对于任意两个无交闭集$A$和$B$，存在一个<a href="#%E8%BF%9E%E7%BB%AD%E5%87%BD%E6%95%B0">连续函数</a>$f: X \rightarrow [0,1], s.t. f(A)={1}, f(A) = {0}$。</p>
+<h4 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h4><p>对于X中每一对<a href="#%E5%88%86%E7%A6%BB%E9%9B%86">分离集</a>，存在无交的开集分别包含它们。</p>
+<hr>
+<h2 id="一点补充解释"><a href="#一点补充解释" class="headerlink" title="一点补充解释"></a>一点补充解释</h2><h3 id="G-delta-集"><a href="#G-delta-集" class="headerlink" title="$G_{\delta}$集"></a>$G_{\delta}$集</h3><p>一个集合$A$是$X$中的$G_{\delta}$集，当且仅当$A$可表示为$X$中<strong>可数个</strong>开集的交。</p>
+<p>显然，开集一定是$G_{\delta}$集。</p>
+<h3 id="连续函数"><a href="#连续函数" class="headerlink" title="连续函数"></a>连续函数</h3><p>一个函数$f: X \rightarrow Y$被称为<strong>连续函数</strong>，当且仅当<br>$$<br>\forall U \in Y, (U \text{是开集} \Rightarrow f^{-1}(U) \text{是开集})<br>$$</p>
+<h3 id="分离集"><a href="#分离集" class="headerlink" title="分离集"></a>分离集</h3><p>我们称X中的一对点集A和B为<strong>分离集</strong>，当且仅当<br>$$<br>\overline{A} \cap B = \overline{B} \cap A = \emptyset<br>$$</p>
  
-
-    </header>
-    
+      <!-- reward -->
       
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-    
-    
-  </div>
-</article>
-      
-  
-  
-  
-  </div>
-  </div>
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2021" class="archive-year">2021</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="archive-article-date">
-  <time datetime="2021-12-31T06:38:53.000Z" itemprop="datePublished">12/31</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
-    >热力学第二定律（熵增定律）</a> 
-</h2>
- 
-
-    </header>
-    
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/" class="archive-article-date">
-  <time datetime="2021-12-30T05:07:13.000Z" itemprop="datePublished">12/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/"
-    >数分1知识梳理</a> 
-</h2>
- 
-
-    </header>
-    
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="archive-article-date">
-  <time datetime="2021-12-29T12:30:42.000Z" itemprop="datePublished">12/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"
-    >拓扑学笔记（1）拓扑空间</a> 
-</h2>
- 
-
-    </header>
-    
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/" class="archive-article-date">
-  <time datetime="2021-12-28T03:22:33.000Z" itemprop="datePublished">12/28</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/"
-    >积分学笔记1——初识积分学</a> 
-</h2>
- 
-
-    </header>
-    
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/13/20211013_%E7%AC%94%E8%AE%B0_Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  <time datetime="2021-10-13T08:34:00.000Z" itemprop="datePublished">10/13</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/10/13/20211013_%E7%AC%94%E8%AE%B0_Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
-    >Markdown快速入门</a> 
-</h2>
- 
-
-    </header>
-    
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-    
-    
-  </div>
-</article>
-      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E5%88%86%E7%A6%BB%E5%85%AC%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
   </div>
-  
-  
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/03/29/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/41-50/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">欧拉计划刷题记录——41-50</div>
+      </a>
+    
+  </nav>
 
   
+   
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'fb6e2cfcfb36572015af',
+    clientSecret: '7f6e8fe89858073e5ef32ee00113d140da847d11',
+    repo: 'blog_message',
+    owner: 'illnessing',
+    admin: ['illnessing'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -388,6 +387,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
