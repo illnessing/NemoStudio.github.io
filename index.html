@@ -158,6 +158,79 @@
     
     
     <article
+  id="post-微分几何/初见微分几何"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"
+    >微分几何1：初见</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" class="article-date">
+  <time datetime="2023-02-13T14:32:35.000Z" itemprop="datePublished">2023-02-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="曲线-Curve"><a href="#曲线-Curve" class="headerlink" title="曲线 Curve"></a>曲线 Curve</h2><p>事实上，对于三维空间里的任意曲线，很有可能会变得任意复杂，或者有无限多个拐角。这会让事情变得很复杂。也许可以研究，但是，我们现在还是从比较简单的情况开始入手。</p>
+<h3 id="参数化曲线-Parametrized-differential-Curves"><a href="#参数化曲线-Parametrized-differential-Curves" class="headerlink" title="参数化曲线 Parametrized differential Curves"></a>参数化曲线 Parametrized differential Curves</h3><blockquote>
+<p><strong>Def</strong> A <strong>parametrized differntiable curve</strong> is a differential map $\alpha:I \to \mathbb{R}^3$ of an open interval $I = (a,b)$ of the real line $R$ into $R$.</p>
+</blockquote>
+<p>简单来说就是，整个曲线可以用一个从R上的开区间$(a,b)$到$\mathbb{R}^3$的可微函数$\alpha$来表示。这里的开区间并没有排除掉整个实数轴的情况。</p>
+<p>参数化之后的第一个好处就是可以应用我们的分析工具了。</p>
+<h3 id="切向量-Tangent-Vector"><a href="#切向量-Tangent-Vector" class="headerlink" title="切向量 Tangent Vector"></a>切向量 Tangent Vector</h3><p>$$<br>t(s) = |\alpha ‘ (s)|<br>$$</p>
+<p>因为这个定义，有时候也会称切向量是速度向量 velocity vector.</p>
+<h3 id="正则曲线-regular-curve"><a href="#正则曲线-regular-curve" class="headerlink" title="正则曲线 regular curve"></a>正则曲线 regular curve</h3><blockquote>
+<p><strong>Def</strong> A parametrized differentiable curve $\alpha:I \to \mathbb{R}^3$ is said to be <strong>regular</strong> if $\alpha’(t) \not = 0$ for all $t \in I$.</p>
+</blockquote>
+<h3 id="用长度参数化的曲线-Curve-parametrized-by-arc-length"><a href="#用长度参数化的曲线-Curve-parametrized-by-arc-length" class="headerlink" title="用长度参数化的曲线 Curve parametrized by arc length"></a>用长度参数化的曲线 Curve parametrized by arc length</h3><p>在这种情况下，我们就可以定义从某一点开始算的长度 length</p>
+<p>$$<br>s(t) = \int_{t_0}^{t} |\alpha ‘ (t)| dt<br>$$<br>而切向量的长度则可表达为<br>$$<br>|\alpha’ (t)| = \sqrt{(x’(t))^2 + (y’(t))^2 + (z’(t))^2}<br>$$</p>
+<p>那么当$|\alpha’(t)| \equiv 1$时，那么<br>$$<br>s = \int_{t_0}^{t} 1 dt = t - t_0<br>$$</p>
+<h3 id="曲率-currature"><a href="#曲率-currature" class="headerlink" title="曲率 currature"></a>曲率 currature</h3><p>$$<br>k(s) = |t’(s)|=|\alpha’’(s)|<br>$$</p>
+<h3 id="法向量-Normal-Vectorfa"><a href="#法向量-Normal-Vectorfa" class="headerlink" title="法向量 Normal Vectorfa"></a>法向量 Normal Vectorfa</h3><p>$$<br>\alpha’’(s) = k(s)n(s), \text{when }|k(s)| \not = 0<br>$$</p>
+<p>事实上这个曲率$k$反应了曲线在该处的弯曲程度，因此有以下对应<br>$$<br>k(s)\equiv 0 \Leftrightarrow \alpha(s) = u \cdot s + v \text{ for some vector }u,v \in \mathbb{R}^3<br>$$</p>
+<h3 id="密切平面-Osculating-plane"><a href="#密切平面-Osculating-plane" class="headerlink" title="密切平面 Osculating plane"></a>密切平面 Osculating plane</h3><p>我们可以利用切向量$t(s)$和法向量$n(s)$来刻画密切平面,由此提供一个密切平面的法向量$b(s)$,称之为<strong>副法线</strong>（binormal）.</p>
+<p>$$<br>b(s) = t(s)\wedge n(s)<br>$$</p>
+<p>$|b’(s)|$ 实际上刻画了密切平面在$s$邻域内的变动<br>$$<br>b’(s) = t’(s) \wedge n(s) + t(s) \wedge n’(s) = t(s) \wedge n’(s)<br>$$<br>因此，可以注意到，$b(s)$与$n(s)$线性相关</p>
+<p>所以，我们可以定义这一点的<strong>扭转</strong>（torsion）$\tau (s) = |b’(s)|$<br>$$<br>b’(s) = \tau (s) n(s)<br>$$<br>这个值的大小刻画了密切平面的变动速率，因此有<br>$$<br>\tau(s) \equiv 0 \Leftrightarrow \alpha(I) \text{ contained in a plane}<br>$$</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" rel="tag">微分几何</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-高代上的一些不等式"
   class="article article-type-post"
   itemscope
@@ -697,101 +770,6 @@
 </article>
 
     
-    <article
-  id="post-20211021-心理学-释梦的意义"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/10/21/20211021-%E5%BF%83%E7%90%86%E5%AD%A6-%E9%87%8A%E6%A2%A6%E7%9A%84%E6%84%8F%E4%B9%89/"
-    >空想的心理学笔记#1-释梦的意义</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/10/21/20211021-%E5%BF%83%E7%90%86%E5%AD%A6-%E9%87%8A%E6%A2%A6%E7%9A%84%E6%84%8F%E4%B9%89/" class="article-date">
-  <time datetime="2021-10-21T11:25:37.000Z" itemprop="datePublished">2021-10-21</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <blockquote>
-<p>星空与心灵，广袤而难以触碰，不可知，但仍值得探求。</p>
-</blockquote>
-<h2 id="梦的意义"><a href="#梦的意义" class="headerlink" title="梦的意义"></a>梦的意义</h2><h3 id="预知未来"><a href="#预知未来" class="headerlink" title="预知未来"></a>预知未来</h3><p>有一种解释，认为梦是来自未来的启示，认为梦有预知的作用。</p>
-<h3 id="另一种现实"><a href="#另一种现实" class="headerlink" title="另一种现实"></a>另一种现实</h3><p>有人认为梦境中的事是真实发生的，与现实的事件具有等同的地位。</p>
-<h3 id="醒梦即虚幻"><a href="#醒梦即虚幻" class="headerlink" title="醒梦即虚幻"></a>醒梦即虚幻</h3><p>有人认为梦中人类灵魂出窍，周游世界。</p>
-<h3 id="梦是身心的反映"><a href="#梦是身心的反映" class="headerlink" title="梦是身心的反映"></a>梦是身心的反映</h3><p>有人认为，梦是身体问题的反映。</p>
-<h3 id="巴普洛夫经典型条件反射学说"><a href="#巴普洛夫经典型条件反射学说" class="headerlink" title="巴普洛夫经典型条件反射学说"></a>巴普洛夫经典型条件反射学说</h3><p>一个刺激和另一个带有奖赏或惩罚的无条件刺激多次联结，可使个体学会在单独呈现该一刺激时，也能引发类似无条件反应的条件反应，又称古典制约。它具有获得、消退、恢复、泛化四个特征。<br>建立在该观点下，巴普洛夫认为梦境是人对你外刺激的反馈。人渴了会梦到水，人饿了会梦到食物，有时会在梦中听到外界的声音。该观点被认为是梦的<strong>唯一科学解释</strong>。（并非唯一解释）</p>
-<hr>
-<h2 id="解释梦境"><a href="#解释梦境" class="headerlink" title="解释梦境"></a>解释梦境</h2><p>20 世纪中旬至今，巴普洛夫的理论从未被推翻。但是，人们对梦境的探索从未停止。<br>纵使语言也因语境而不同，梦虚无缥缈，充满个体差异，<strong>解梦常有误解读的可能</strong>。</p>
-<h3 id="实验的结论"><a href="#实验的结论" class="headerlink" title="实验的结论"></a>实验的结论</h3><p>人们发现，梦往往伴随着脑电图的快波、快速动眼等现象出现。改阶段的睡眠被称为快速动眼睡眠。</p>
-<blockquote>
-<p>慢波睡眠又可划分为4个阶段或称4期。因此更具体地说，睡眠的程序是：觉醒→慢波1期→2期→3期→4期→快波睡眠，然后再次重复慢波睡眠2期→3期→4期→快波睡眠，如此循环。一般从一次快波睡眠到下一次快波睡眠的间隔为70-120分钟，平均90分钟。一夜大致要循环4-6次。越到后半夜，快波睡眠越长、慢波睡眠越短。</p>
-</blockquote>
-<p>现代的研究发现，慢波睡眠阶段也存在梦境，但相比于快波而言不那么富于变化与象征性。</p>
-<p>总的来说，睡眠不是觉醒状态的终结，不是神经活动的停止或休息，而是中枢神经系统中另一种形式的活动，是一个主动的过程。</p>
-<h3 id="弗洛伊德的解释—-梦是欲望的伪装"><a href="#弗洛伊德的解释—-梦是欲望的伪装" class="headerlink" title="弗洛伊德的解释—-梦是欲望的伪装"></a>弗洛伊德的解释—-梦是欲望的伪装</h3><p>弗洛伊德的理论并非全对，但对于心理学对梦境的研究的发展有着不可否认的作用。于今日而言，仍为经典。</p>
-<p>现实的事物确实会出现在梦中，但他们不是内容，而是素材。梦的素材来自三方面：<strong>身体状态、日间印象、儿时记忆。</strong>他认为所有梦都是内心愿望的实现，或者是内心真实愿望的伪装。<br>由此，弗洛伊德提出人有<strong>三我</strong>。</p>
-<ul>
-<li>“本我”的存在，即代表人的本能与欲望的部分。本我的欲望并非全是坏的，但它就像一个小孩，及时行乐，不明道德法律为何物，若放任不管将极易陷入混乱。</li>
-<li>“自我”的存在，即用于理性思维的部分。自我知道本我的欲望是否合理、将如何实现，也知道实现后的后果。</li>
-<li>“超我”的存在，即代表良心与理想的部分。超我约束着本我，不让他将不合理的欲望付诸实践。</li>
-</ul>
-<p>在弗洛伊德的理论中，梦是为了本我发泄而形成的，也就是本源的愿望，但这些愿望并非全都光明正大，所以，为了绕开超我的管控，本我将这些梦境做了伪装。而这个过程中，本我常用的方法被弗洛伊德总结为以下几类：凝缩、移置、视觉化、象征、再度矫正。<del>笔者不太喜欢弗洛伊德的例子，感兴趣者可以自己去查</del></p>
-<blockquote>
-<p>凝缩：是把有联系的几个事物转化为一个单一的形象或单一的内容。<br>移置：指梦把重要的内容放在梦里不引人注意的情节上。<br>视觉化：指把心理内容转变为视觉形象。<br>象征：指用一个事物代表另一个事物。<br>再度校正：指如果超我不小心让一些不允许出现的内容出现在梦里，本我就会通过一些话去努力减少这些内容的影响。<br>弗洛伊德的理论受时代的影响相对偏激，但也有着相当的借鉴意义。 </p>
-</blockquote>
-<h3 id="荣格的解释—-梦是心灵的平衡与警告"><a href="#荣格的解释—-梦是心灵的平衡与警告" class="headerlink" title="荣格的解释—-梦是心灵的平衡与警告"></a>荣格的解释—-梦是心灵的平衡与警告</h3><blockquote>
-<p>“梦是无意识心灵自发的和没有扭曲的产物……梦给我们展示的是未加修饰的自然的真理。”<br>格荣对梦的解释与弗洛伊德不同，在格荣眼中梦更像是一位诗人，用象征表现着最朴实的心灵。在这一层面上，象征不是伪装，而是表达的手段。<strong>梦的基本目的不是实现欲望，而是恢复心理平衡。</strong><br>荣格认为，梦中的形象除了来源于日常生活之外，还可能来自于人类世世代代的经历与情感在群体潜意识海洋中的沉淀。他把这些历史遗留的形象称之为<strong>原型</strong>。比如，太阳总是代表伟大、善良、光彩照人；月亮总是代表温柔、美好。荣格列举了其中一部分：<code>上帝原型、恶魔原型、智慧老人原型、大地母亲原型、英雄原型、阿尼姆斯原型、阿尼玛原型、阴影原型、人格面具原型、自性原型</code>。除此之外还有诸多原型，甚至不同的原型之间可以共同存在于一个形象。这些原型构成了心灵的信息。<br>.</p>
-</blockquote>
-<h3 id="弗洛姆的解释—-梦是象征的语言"><a href="#弗洛姆的解释—-梦是象征的语言" class="headerlink" title="弗洛姆的解释—-梦是象征的语言"></a>弗洛姆的解释—-梦是象征的语言</h3><p>梦的象征是心灵的语言。许多心情的微妙的部分，时常找不到适当的语言来表达。而运用象征则可以把这些细微的感受表达出来。但与交流不同，交流时的象征仍离不开语言，而梦中的象征更多是作为潜意识到意识的桥梁。</p>
-<p>弗洛姆将这些象征分为三类：</p>
-<blockquote>
-<p>习惯的象征：通常没有什么道理，比如“猫”“狗”等日常称谓。<br>偶然的象征：与代表的事物有一定内在联系，比如对某人很重要的事件及当时的环境。<br>普遍的象征：与其代表的事物联系密切，比如火与勇敢、力量、活力与危险。<br>弗洛姆认为，任何心理活动的表现都会出现在梦里。他不同意弗洛伊德把梦说成仅仅是“愿望达成”。</p>
-</blockquote>
-<p>下面是弗洛姆释的一个梦：</p>
-<blockquote>
-<p>“有个男人在经过一座果园时，从一棵树上摘下一个苹果。一条大狗出现并扑过来。”这个人&gt;恐惧万分，于是惊醒了，嘴里大喊救命。<br>弗洛姆解释，梦者对一个已婚妇女产生了欲望。他想和她发生关系，却有所恐惧。</p>
-</blockquote>
-<p>此处，苹果象征禁果，大狗象征危险与后果。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>绝大多数梦的意义不在于预见未来，而在于揭示你自己内心中那些连自己都不知道的东西，那些潜藏的欲望、直觉的洞察和判断。</p>
-<p>梦是十分复杂的、多层面的，不要轻易以为自己已完全了解了一个梦。</p>
-<p>释梦最危险的就是干扰了心理的自然进程。释梦是用于认识自我的，在释梦的过程中也在与自己的潜意识交流，若使用释梦的技术完成危害他人的行为，将更容易撼动自己的心灵，造成心理疾病的可能。</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
   </article>
   
 
@@ -809,7 +787,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2015-2022
+        2015-2023
         <i class="ri-heart-fill heart_icon"></i> 空想家
       </li>
     </ul>
