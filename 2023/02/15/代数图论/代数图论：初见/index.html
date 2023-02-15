@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>归档: 2023/2 |  空想之国</title>
+      <title>代数图论：初见 |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -55,73 +55,228 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-代数图论/代数图论：初见"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">2023/2</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2023" class="archive-year">2023</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/" class="archive-article-date">
-  <time datetime="2023-02-15T04:09:00.000Z" itemprop="datePublished">02/15</time>
-</a>
+    <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/"
-    >代数图论：初见</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  代数图论：初见
+</h1>
  
 
-    </header>
-    
-    
-  </div>
-</article>
       
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/" class="article-date">
+  <time datetime="2023-02-15T04:09:00.000Z" itemprop="datePublished">2023-02-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
   
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" class="archive-article-date">
-  <time datetime="2023-02-13T14:32:35.000Z" itemprop="datePublished">02/13</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"
-    >微分几何1：初见</a> 
-</h2>
- 
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">776</span>
+        </span>
+    </span>
 
-    </header>
-    
-    
-  </div>
-</article>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="什么是图-Graph"><a href="#什么是图-Graph" class="headerlink" title="什么是图 Graph"></a>什么是图 Graph</h2><blockquote>
+<p>A <em>graph</em> $X$ consits of a <em>vertex</em> set $V(X)$ and an <em>edge</em>set $E(X)$, where an edge is an unordered pair of distinct vertices of $X$.</p>
+</blockquote>
+<p>图$X$由两部分组成，一部分是顶点集$V(X)$，另一部分是边集$E(X)$。每条边本质上都是包含两个顶点的无序集。</p>
+<p>依照边的关系所自然导出的一个拓扑，事实上正是这里的离散拓扑。因此，有限图在自然导出的拓扑下是一个零维空间。</p>
+<span id="more"></span>
+
+
+
+<h3 id="简单图-Simple-graph"><a href="#简单图-Simple-graph" class="headerlink" title="简单图 Simple graph"></a>简单图 Simple graph</h3><p>我们一开始要研究的图是<strong>简单图</strong>，它在图的基础上满足三个额外的条件</p>
+<ul>
+<li>两点之间至多有一条边</li>
+<li>边无向</li>
+<li>点与自己之间没有边</li>
+</ul>
+<p>几种常见的简单图</p>
+<ol>
+<li>全连接图 complete graph $K_n$ 有n个零点，且点与点之间都有边 的简单图</li>
+<li>空图 empty graph 只有顶点没有边的简单图</li>
+<li>零图 null graph 没有顶点的简单图</li>
+</ol>
+<h4 id="同构-isomorphic"><a href="#同构-isomorphic" class="headerlink" title="同构 isomorphic"></a>同构 isomorphic</h4><p>因为我们在研究图的时候，事实上更加关心图的顶点与边之间的关系，而不会去关心顶点本身的含义。因此我们需要一个等价关系来说明这些图本质上是“相同的”。</p>
+<blockquote>
+<p>We say that $\varphi:V(X) \to V(Y)$ is an  <em>isomorphism</em> from $X$ to $Y$, if $\varphi$ is a bijective and $\forall a,b \in V(X), ab \in E(X) \Leftrightarrow \varphi(a)\varphi(b) \in E(V)$.</p>
+</blockquote>
+<p>由此我们通过$\varphi$构造了一个顶点集与顶点集的对应，同时也保存的边的关系。可以验证，这个定义满足等价关系的三个公理。</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p>![[两个不太显然的同构例子.png]]</p>
+<h3 id="有向图-directed-graph"><a href="#有向图-directed-graph" class="headerlink" title="有向图 directed graph"></a>有向图 directed graph</h3><p>即不满足简单图的第二个条件，边有向。</p>
+<p>（有向图例子）</p>
+<h3 id="连通图-connected-graph"><a href="#连通图-connected-graph" class="headerlink" title="连通图 connected graph"></a>连通图 connected graph</h3><p>即两个顶点之间存在路径链接</p>
+<hr>
+<h2 id="子图-subgraph"><a href="#子图-subgraph" class="headerlink" title="子图 subgraph"></a>子图 subgraph</h2><blockquote>
+<p>A <em>subgraph</em> of a graph $X$ is a graph $Y$ such that<br>$$<br>    V(Y) \subset V(X), E(Y) \subset E(X)<br>$$<br>即从已知的图$X$里取出一些顶点和相关的边来构成一个图。可以直观理解为图里面包含的一个图</p>
+</blockquote>
+<h3 id="特殊的子图"><a href="#特殊的子图" class="headerlink" title="特殊的子图"></a>特殊的子图</h3><h4 id="生成子图-spanning-subgraph"><a href="#生成子图-spanning-subgraph" class="headerlink" title="生成子图 spanning subgraph"></a>生成子图 spanning subgraph</h4><p>$$<br>V(X) = V(Y)<br>$$<br>即包含了所有原来的图的顶点</p>
+<h4 id="诱导子图-induced-subgraph"><a href="#诱导子图-induced-subgraph" class="headerlink" title="诱导子图 induced subgraph"></a>诱导子图 induced subgraph</h4><p>顶点可以不是原来的顶点集，但是，所有可以包含进来的边都会被包含进来。</p>
+<h3 id="道路-path"><a href="#道路-path" class="headerlink" title="道路 path"></a>道路 path</h3><p>一个顶点序列，相邻顶点之间存在边</p>
+<h3 id="环-cycle"><a href="#环-cycle" class="headerlink" title="环 cycle"></a>环 cycle</h3><p>一个首尾相接的道路<br>又或者可以定义为，每个顶点都有且仅有两个边连出</p>
+<h3 id="树-tree"><a href="#树-tree" class="headerlink" title="树 tree"></a>树 tree</h3><p>一个无环的连通子图</p>
+<h3 id="森林-forest"><a href="#森林-forest" class="headerlink" title="森林 forest"></a>森林 forest</h3><p>一个无环的子图<br>或者说，一堆树的并</p>
+<h3 id="独立集-independent-set"><a href="#独立集-independent-set" class="headerlink" title="独立集 independent set"></a>独立集 independent set</h3><p>一个子图，且是空图<br>可以定义最大独立集大小$\alpha(X)$</p>
+<h3 id="团-clique"><a href="#团-clique" class="headerlink" title="团 clique"></a>团 clique</h3><p>一个全连接子图<br>可以定义最大团大小$\omega(X)$</p>
+<h3 id="某个连通图的最大子树"><a href="#某个连通图的最大子树" class="headerlink" title="某个连通图的最大子树"></a>某个连通图的最大子树</h3><p>即最大生成子树</p>
+<h3 id="最大森林"><a href="#最大森林" class="headerlink" title="最大森林"></a>最大森林</h3><p>如果一个图不是连通图，那么每个连通分支都有一个最大树，我们称这个几何是最大森林</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/" rel="tag">代数图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
   </div>
-  
-  
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">微分几何1：初见</div>
+      </a>
+    
+  </nav>
 
   
+   
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'fb6e2cfcfb36572015af',
+    clientSecret: '7f6e8fe89858073e5ef32ee00113d140da847d11',
+    repo: 'blog_message',
+    owner: 'illnessing',
+    admin: ['illnessing'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -257,6 +412,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
