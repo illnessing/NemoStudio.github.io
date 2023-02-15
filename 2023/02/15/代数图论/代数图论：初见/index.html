@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">776</span>
+            <span class="post-count">759</span>
         </span>
     </span>
 
@@ -137,16 +137,18 @@
 <p>We say that $\varphi:V(X) \to V(Y)$ is an  <em>isomorphism</em> from $X$ to $Y$, if $\varphi$ is a bijective and $\forall a,b \in V(X), ab \in E(X) \Leftrightarrow \varphi(a)\varphi(b) \in E(V)$.</p>
 </blockquote>
 <p>由此我们通过$\varphi$构造了一个顶点集与顶点集的对应，同时也保存的边的关系。可以验证，这个定义满足等价关系的三个公理。</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p>![[两个不太显然的同构例子.png]]</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="/images/%E4%B8%A4%E4%B8%AA%E4%B8%8D%E5%A4%AA%E6%98%BE%E7%84%B6%E7%9A%84%E5%90%8C%E6%9E%84%E4%BE%8B%E5%AD%90.png" alt="两个不太显然但确实同构的图"></p>
 <h3 id="有向图-directed-graph"><a href="#有向图-directed-graph" class="headerlink" title="有向图 directed graph"></a>有向图 directed graph</h3><p>即不满足简单图的第二个条件，边有向。</p>
-<p>（有向图例子）</p>
+<p><img src="/images/%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E4%BE%8B%E5%AD%90.png" alt="有向图的例子"></p>
 <h3 id="连通图-connected-graph"><a href="#连通图-connected-graph" class="headerlink" title="连通图 connected graph"></a>连通图 connected graph</h3><p>即两个顶点之间存在路径链接</p>
 <hr>
 <h2 id="子图-subgraph"><a href="#子图-subgraph" class="headerlink" title="子图 subgraph"></a>子图 subgraph</h2><blockquote>
-<p>A <em>subgraph</em> of a graph $X$ is a graph $Y$ such that<br>$$<br>    V(Y) \subset V(X), E(Y) \subset E(X)<br>$$<br>即从已知的图$X$里取出一些顶点和相关的边来构成一个图。可以直观理解为图里面包含的一个图</p>
+<p>A <em>subgraph</em> of a graph $X$ is a graph $Y$ such that</p>
 </blockquote>
+<p>$$<br>    V(Y) \subset V(X), E(Y) \subset E(X)<br>$$<br>即从已知的图$X$里取出一些顶点和相关的边来构成一个图。可以直观理解为图里面包含的一个图</p>
 <h3 id="特殊的子图"><a href="#特殊的子图" class="headerlink" title="特殊的子图"></a>特殊的子图</h3><h4 id="生成子图-spanning-subgraph"><a href="#生成子图-spanning-subgraph" class="headerlink" title="生成子图 spanning subgraph"></a>生成子图 spanning subgraph</h4><p>$$<br>V(X) = V(Y)<br>$$<br>即包含了所有原来的图的顶点</p>
 <h4 id="诱导子图-induced-subgraph"><a href="#诱导子图-induced-subgraph" class="headerlink" title="诱导子图 induced subgraph"></a>诱导子图 induced subgraph</h4><p>顶点可以不是原来的顶点集，但是，所有可以包含进来的边都会被包含进来。</p>
+<p><img src="/images/%E7%94%9F%E6%88%90%E5%AD%90%E5%9B%BE%E4%B8%8E%E8%AF%B1%E5%AF%BC%E5%AD%90%E5%9B%BE.png" alt="生成子图与诱导子图"></p>
 <h3 id="道路-path"><a href="#道路-path" class="headerlink" title="道路 path"></a>道路 path</h3><p>一个顶点序列，相邻顶点之间存在边</p>
 <h3 id="环-cycle"><a href="#环-cycle" class="headerlink" title="环 cycle"></a>环 cycle</h3><p>一个首尾相接的道路<br>又或者可以定义为，每个顶点都有且仅有两个边连出</p>
 <h3 id="树-tree"><a href="#树-tree" class="headerlink" title="树 tree"></a>树 tree</h3><p>一个无环的连通子图</p>
