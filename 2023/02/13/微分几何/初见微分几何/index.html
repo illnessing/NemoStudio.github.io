@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">590</span>
+            <span class="post-count">653</span>
         </span>
     </span>
 
@@ -116,20 +116,23 @@
 <p><strong>Def</strong> A <strong>parametrized differntiable curve</strong> is a differential map $\alpha:I \to \mathbb{R}^3$ of an open interval $I = (a,b)$ of the real line $R$ into $R$.</p>
 </blockquote>
 <p>简单来说就是，整个曲线可以用一个从R上的开区间$(a,b)$到$\mathbb{R}^3$的可微函数$\alpha$来表示。这里的开区间并没有排除掉整个实数轴的情况。</p>
-<p>参数化之后的第一个好处就是可以应用我们的分析工具了。</p>
-<h3 id="切向量-Tangent-Vector"><a href="#切向量-Tangent-Vector" class="headerlink" title="切向量 Tangent Vector"></a>切向量 Tangent Vector</h3><p>$$<br>t(s) = |\alpha ‘ (s)|<br>$$</p>
-<p>因为这个定义，有时候也会称切向量是速度向量 velocity vector.</p>
-<h3 id="正则曲线-regular-curve"><a href="#正则曲线-regular-curve" class="headerlink" title="正则曲线 regular curve"></a>正则曲线 regular curve</h3><blockquote>
-<p><strong>Def</strong> A parametrized differentiable curve $\alpha:I \to \mathbb{R}^3$ is said to be <strong>regular</strong> if $\alpha’(t) \not = 0$ for all $t \in I$.</p>
-</blockquote>
+<p>参数化之后的一个显而易见的好处就是可以应用我们的分析工具了。</p>
 <span id="more"></span>
 
+<h3 id="切向量-Tangent-Vector"><a href="#切向量-Tangent-Vector" class="headerlink" title="切向量 Tangent Vector"></a>切向量 Tangent Vector</h3><p>$$<br>t(s) = |\alpha ‘ (s)|<br>$$</p>
+<p>因为这个定义，有时候也会称切向量是速度向量 <strong>velocity vector</strong>.</p>
+<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><p>$$<br>f:\mathbb R \to \mathbb R^2;t \mapsto(t^2,t^3)<br>$$</p>
+<h3 id="正则曲线-regular-curve"><a href="#正则曲线-regular-curve" class="headerlink" title="正则曲线 regular curve"></a>正则曲线 regular curve</h3><blockquote>
+<p><strong>Def：</strong> </p>
+<p>A parametrized differentiable curve $\alpha:I \to \mathbb{R}^3$ is said to be <strong>regular</strong> if $\alpha’(t) \not = 0$ for all $t \in I$.</p>
+</blockquote>
+<p>这个保证了参数化的时候，速度永远不是零，这保证了反函数的存在，那么我们就可以任意修改参数化的形式。</p>
 <h3 id="用长度参数化的曲线-Curve-parametrized-by-arc-length"><a href="#用长度参数化的曲线-Curve-parametrized-by-arc-length" class="headerlink" title="用长度参数化的曲线 Curve parametrized by arc length"></a>用长度参数化的曲线 Curve parametrized by arc length</h3><p>在这种情况下，我们就可以定义从某一点开始算的长度 length</p>
 <p>$$<br>s(t) = \int_{t_0}^{t} |\alpha ‘ (t)| dt<br>$$<br>而切向量的长度则可表达为<br>$$<br>|\alpha’ (t)| = \sqrt{(x’(t))^2 + (y’(t))^2 + (z’(t))^2}<br>$$</p>
 <p>那么当$|\alpha’(t)| \equiv 1$时，那么<br>$$<br>s = \int_{t_0}^{t} 1 dt = t - t_0<br>$$</p>
 <h3 id="曲率-currature"><a href="#曲率-currature" class="headerlink" title="曲率 currature"></a>曲率 currature</h3><p>$$<br>k(s) = |t’(s)|=|\alpha’’(s)|<br>$$</p>
-<h3 id="法向量-Normal-Vectorfa"><a href="#法向量-Normal-Vectorfa" class="headerlink" title="法向量 Normal Vectorfa"></a>法向量 Normal Vectorfa</h3><p>$$<br>\alpha’’(s) = k(s)n(s), \text{when }|k(s)| \not = 0<br>$$</p>
 <p>事实上这个曲率$k$反应了曲线在该处的弯曲程度，因此有以下对应<br>$$<br>k(s)\equiv 0 \Leftrightarrow \alpha(s) = u \cdot s + v \text{ for some vector }u,v \in \mathbb{R}^3<br>$$</p>
+<h3 id="法向量-Normal-Vector"><a href="#法向量-Normal-Vector" class="headerlink" title="法向量 Normal Vector"></a>法向量 Normal Vector</h3><p>$$<br>\alpha’’(s) = k(s)n(s), \text{when }|k(s)| \not = 0<br>$$</p>
 <h3 id="密切平面-Osculating-plane"><a href="#密切平面-Osculating-plane" class="headerlink" title="密切平面 Osculating plane"></a>密切平面 Osculating plane</h3><p>我们可以利用切向量$t(s)$和法向量$n(s)$来刻画密切平面,由此提供一个密切平面的法向量$b(s)$,称之为<strong>副法线</strong>（binormal）.</p>
 <p>$$<br>b(s) = t(s)\wedge n(s)<br>$$</p>
 <p>$|b’(s)|$ 实际上刻画了密切平面在$s$邻域内的变动<br>$$<br>b’(s) = t’(s) \wedge n(s) + t(s) \wedge n’(s) = t(s) \wedge n’(s)<br>$$<br>因此，可以注意到，$b(s)$与$n(s)$线性相关</p>

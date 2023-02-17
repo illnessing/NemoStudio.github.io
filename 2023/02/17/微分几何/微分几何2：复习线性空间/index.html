@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Tag: 笔记 |  空想之国</title>
+      <title>微分几何2：复习线性空间 |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -55,308 +55,215 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-微分几何/微分几何2：复习线性空间"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">#&nbsp笔记</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2023" class="archive-year">2023</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/17/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%952%EF%BC%9A%E5%A4%8D%E4%B9%A0%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/" class="archive-article-date">
-  <time datetime="2023-02-17T07:19:35.000Z" itemprop="datePublished">02/17</time>
-</a>
+    <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/02/17/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%952%EF%BC%9A%E5%A4%8D%E4%B9%A0%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/"
-    >微分几何2：复习线性空间</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  微分几何2：复习线性空间
+</h1>
  
 
-    </header>
-    
-    
       
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/17/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%952%EF%BC%9A%E5%A4%8D%E4%B9%A0%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/" class="article-date">
+  <time datetime="2023-02-17T07:19:35.000Z" itemprop="datePublished">2023-02-17</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">514</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="向量空间的定向-Orientation"><a href="#向量空间的定向-Orientation" class="headerlink" title="向量空间的定向 Orientation"></a>向量空间的定向 Orientation</h2><blockquote>
+<p><strong>Def:</strong><br>$e = \left { e_i \right } _{i = 1} ^n$, $f = \left { f_i \right } _{i = 1} ^n$ is order base.<br>We say $e$ and $f$ <strong>have the same orientation</strong> if the matrix of change of basis has position determinant. Denoted as $e \sim f$.</p>
+</blockquote>
+<p>$e \sim f$ 事实上是一个等价关系，因为它满足等价关系的三个条件。</p>
+<blockquote>
+<p><strong>Remark:</strong><br>等价关系的三个条件：</p>
+<ol>
+<li>$e \sim e$</li>
+<li>$e \sim f \Rightarrow f \sim e$</li>
+<li>$e \sim f, f \sim g \Rightarrow e \sim g$</li>
+</ol>
+</blockquote>
+<p>由此，它把向量空间分成了两个等价类。</p>
+<h2 id="外积"><a href="#外积" class="headerlink" title="外积"></a>外积</h2><blockquote>
+<p><strong>Def:</strong> Vector product (Cross product) in $\mathbb R ^3$<br>For $v,u \in \mathbb R ^3$, the vector product of u and v is the unique vector $u\wedge v \in \mathbb R^3$</p>
+</blockquote>
+<p>用行列式表达的话，<br>$$<br>u\wedge v = \begin{vmatrix}<br> u_1 &amp; u_2 &amp;u_3 \<br> v_1 &amp; v_2 &amp;v_3 \<br> \hat{e_1}  &amp; \hat{e_2} &amp;\hat{e_3}<br>\end{vmatrix}<br>$$<br>由此，由行列式的性质，我们可以得到以下运算规律</p>
+<ol>
+<li>$u\wedge v = -v\wedge u$</li>
+<li>$u\wedge v = 0 \Leftrightarrow u,v\text{线性相关}$</li>
+<li>$(u\wedge v)\cdot u = 0,(u\wedge v)\cdot v = 0$</li>
+<li>$(u \wedge v) \wedge w = (u \cdot w)v - (v \cdot w)u$</li>
+</ol>
+<h3 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h3><p>$(u\wedge v)$事实上是$u$和$v$生成平面的一个法向量。</p>
+<h3 id="Lagrange’s-identity"><a href="#Lagrange’s-identity" class="headerlink" title="Lagrange’s identity"></a>Lagrange’s identity</h3><p>$$<br>(u\wedge v) \cdot (x \wedge y) = \begin{vmatrix}<br> u\cdot x &amp; v\cdot x\<br> u\cdot y &amp; v\cdot y<br>\end{vmatrix}<br>$$</p>
+<h4 id="proof"><a href="#proof" class="headerlink" title="proof"></a>proof</h4><p>因为外积与内积都是线性运算，因此我们只需要对一组积进行验证即可<br>$$<br>(e_i\wedge e_j) \cdot (e_k \wedge e_l) = \begin{vmatrix}<br> e_i\cdot e_k &amp; e_j\cdot e_k\<br> e_i\cdot e_l &amp; e_j\cdot e_l<br>\end{vmatrix}<br>$$</p>
+<h3 id="外积的模长"><a href="#外积的模长" class="headerlink" title="外积的模长"></a>外积的模长</h3><p>用拉格朗日的公式，我们即可获得<br>$$<br>\left | u \wedge v \right | ^2 = \begin{vmatrix}<br> u\cdot u &amp; v\cdot u\<br> u\cdot v &amp; v\cdot v<br>\end{vmatrix} = |u|\cdot|v|(1-\cos ^2(\theta))<br>$$</p>
+<hr>
+<p>对于单个点附近的函数变化的研究，往往会求助于线性代数。<br>但当这些局部性质沿着曲线动起来的时候，就会出现微积分了。</p>
+<hr>
+<h3 id="微分下的结构变换"><a href="#微分下的结构变换" class="headerlink" title="微分下的结构变换"></a>微分下的结构变换</h3><p>$$<br>\frac{\mathrm{d} }{\mathrm{d} t} \left ( u(t) \wedge v(t) \right )  = \left ( \frac{\mathrm{d} }{\mathrm{d} t} u(t) \right ) \wedge v(t) + u(t) \wedge \left ( \frac{\mathrm{d} }{\mathrm{d} t} v(t) \right )<br>$$</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/17/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%952%EF%BC%9A%E5%A4%8D%E4%B9%A0%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" rel="tag">微分几何</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
-    
+    </footer>
   </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA2%EF%BC%9A%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  <time datetime="2023-02-15T11:09:00.000Z" itemprop="datePublished">02/15</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA2%EF%BC%9A%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84/"
-    >代数图论2：代数结构</a> 
-</h2>
- 
 
-    </header>
+   
+  <nav class="article-nav">
     
     
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/" rel="tag">代数图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
+      <a href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA2%EF%BC%9A%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">代数图论2：代数结构</div>
+      </a>
     
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/" class="archive-article-date">
-  <time datetime="2023-02-15T04:09:00.000Z" itemprop="datePublished">02/15</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/"
-    >代数图论：初见</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/" rel="tag">代数图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" class="archive-article-date">
-  <time datetime="2023-02-13T14:32:35.000Z" itemprop="datePublished">02/13</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"
-    >微分几何1：初见</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" rel="tag">微分几何</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-  
-  </div>
-  </div>
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/06/09/%E9%AB%98%E4%BB%A3%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F/" class="archive-article-date">
-  <time datetime="2022-06-09T03:07:13.000Z" itemprop="datePublished">06/09</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/06/09/%E9%AB%98%E4%BB%A3%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F/"
-    >高代上的一些不等式</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/" rel="tag">高等代数</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/04/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E5%88%86%E7%A6%BB%E5%85%AC%E7%90%86/" class="archive-article-date">
-  <time datetime="2022-04-28T16:12:43.000Z" itemprop="datePublished">04/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/04/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E5%88%86%E7%A6%BB%E5%85%AC%E7%90%86/"
-    >分离公理</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-  
-  </div>
-  </div>
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2021" class="archive-year">2021</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="archive-article-date">
-  <time datetime="2021-12-31T06:38:53.000Z" itemprop="datePublished">12/31</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
-    >热力学第二定律（熵增定律）</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" rel="tag">大学物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/" class="archive-article-date">
-  <time datetime="2021-12-30T05:07:13.000Z" itemprop="datePublished">12/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/"
-    >数分1知识梳理</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" class="archive-article-date">
-  <time datetime="2021-12-29T12:30:42.000Z" itemprop="datePublished">12/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/29/%E6%8B%93%E6%89%91%E5%AD%A6/%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"
-    >拓扑学笔记（1）拓扑空间</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/" class="archive-article-date">
-  <time datetime="2021-12-28T03:22:33.000Z" itemprop="datePublished">12/28</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E5%88%9D%E8%AF%86%E7%A7%AF%E5%88%86%E5%AD%A6/"
-    >积分学笔记1——初识积分学</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    
-  </div>
-</article>
-      
-      
-    </div>
-  </div>
-  
-  
-
-  
-  <nav class="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/tags/%E7%AC%94%E8%AE%B0/page/2/">2</a><a class="extend next" rel="next" href="/tags/%E7%AC%94%E8%AE%B0/page/2/">下一页</a>
   </nav>
+
   
+   
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'fb6e2cfcfb36572015af',
+    clientSecret: '7f6e8fe89858073e5ef32ee00113d140da847d11',
+    repo: 'blog_message',
+    owner: 'illnessing',
+    admin: ['illnessing'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -492,6 +399,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
