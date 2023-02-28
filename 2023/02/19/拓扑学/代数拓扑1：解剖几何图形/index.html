@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>微分几何1：初见 |  空想之国</title>
+      <title>代数拓扑1：解剖几何图形 |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-微分几何/初见微分几何"
+  id="post-拓扑学/代数拓扑1：解剖几何图形"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  微分几何1：初见
+  代数拓扑1：解剖几何图形
 </h1>
  
 
@@ -75,8 +75,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" class="article-date">
-  <time datetime="2023-02-13T14:32:35.000Z" itemprop="datePublished">2023-02-13</time>
+      <a href="/2023/02/19/%E6%8B%93%E6%89%91%E5%AD%A6/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%911%EF%BC%9A%E8%A7%A3%E5%89%96%E5%87%A0%E4%BD%95%E5%9B%BE%E5%BD%A2/" class="article-date">
+  <time datetime="2023-02-18T16:12:43.000Z" itemprop="datePublished">2023-02-19</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">951</span>
+            <span class="post-count">733</span>
         </span>
     </span>
 
@@ -111,34 +111,45 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="曲线-Curve"><a href="#曲线-Curve" class="headerlink" title="曲线 Curve"></a>曲线 Curve</h2><p>事实上，对于三维空间里的任意曲线，很有可能会变得任意复杂，或者有无限多个拐角。这会让事情变得很复杂。也许可以研究，但是，我们现在还是从比较简单的情况开始入手。</p>
-<h3 id="参数化曲线-Parametrized-differential-Curves"><a href="#参数化曲线-Parametrized-differential-Curves" class="headerlink" title="参数化曲线 Parametrized differential Curves"></a>参数化曲线 Parametrized differential Curves</h3><blockquote>
-<p><strong>Def</strong> A <strong>parametrized differntiable curve</strong> is a differential map $\alpha:I \to \mathbb{R}^3$ of an open interval $I = (a,b)$ of the real line $R$ into $R$.</p>
+  <p>学完拓扑就学代数拓扑这很合理（确信</p>
+<h2 id="动机-motivations"><a href="#动机-motivations" class="headerlink" title="动机 motivations"></a>动机 motivations</h2><p>代数拓扑是对拓扑空间的定性分析<br>$$<br>\begin{array}{c}<br>\text{Solution sets } \left { x^2+y^2+z^2 = 1 \right } \<br>\downarrow \<br>\text{manifolds}\<br>\downarrow \<br>\text{topological spaces}<br>\end{array}<br>$$</p>
+<h2 id="我们将要做什么"><a href="#我们将要做什么" class="headerlink" title="我们将要做什么"></a>我们将要做什么</h2><ul>
+<li>Have machinery that gives us general information about spaces that is <strong>insentive</strong> to collapse and various other things.</li>
+<li>We also need to decide on a family of topological space that we are interested in <strong>Cell complex and CW complexes</strong>.</li>
+</ul>
+<h2 id="胞腔复形-cell-complex"><a href="#胞腔复形-cell-complex" class="headerlink" title="胞腔复形 cell complex"></a>胞腔复形 cell complex</h2><h3 id="Definitions-notations"><a href="#Definitions-notations" class="headerlink" title="Definitions/notations"></a>Definitions/notations</h3><ul>
+<li>Open $n$-cell: topolical space homemeomorphic to the open unit ball $\mathbb B ^n$</li>
+<li>Close $n$-cell: topolical space $\overline{\mathbb B ^n} = \mathbb B ^n \cup \mathbb S ^{n-1}$.</li>
+</ul>
+<blockquote>
+<p><strong>Prop:</strong><br>If $D \subset \mathbb R ^n$ is a compact convex subset weith nonempty interior, then $D$ is a closesd $n$-cell and its interior is an open $n$-cell.<br>In fact, given any point $p \in \mathrm{Int} D$, there exist a homeomorphism $F:\overline{\mathbb B ^n} \to D$ that sends $0$ to $p$, $\overline{\mathbb B ^n}$ to $\mathrm{Int} D$ and $\mathbb S ^{n-1}$ to $\partial D$.</p>
 </blockquote>
-<p>简单来说就是，整个曲线可以用一个从R上的开区间$(a,b)$到$\mathbb{R}^3$的可微函数$\alpha$来表示。这里的开区间并没有排除掉整个实数轴的情况。</p>
-<p>参数化之后的一个显而易见的好处就是可以应用我们的分析工具了。</p>
-<span id="more"></span>
-
-<h3 id="切向量-Tangent-Vector"><a href="#切向量-Tangent-Vector" class="headerlink" title="切向量 Tangent Vector"></a>切向量 Tangent Vector</h3><p>$$<br>t(s) = |\alpha ‘ (s)|<br>$$</p>
-<p>因为这个定义，有时候也会称切向量是速度向量 <strong>velocity vector</strong>.</p>
-<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><p>$$<br>f:\mathbb R \to \mathbb R^2;t \mapsto(t^2,t^3)<br>$$</p>
-<h3 id="正则曲线-regular-curve"><a href="#正则曲线-regular-curve" class="headerlink" title="正则曲线 regular curve"></a>正则曲线 regular curve</h3><blockquote>
-<p><strong>Def：</strong> </p>
-<p>A parametrized differentiable curve $\alpha:I \to \mathbb{R}^3$ is said to be <strong>regular</strong> if $\alpha’(t) \not = 0$ for all $t \in I$.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><ul>
+<li>Every closed interval in $\mathbb R$ is a closed 1-cell</li>
+<li>Every polygons in $\mathbb R ^2$ are closed 2-cells</li>
+</ul>
+<h3 id="Cell-decompositions"><a href="#Cell-decompositions" class="headerlink" title="Cell decompositions"></a>Cell decompositions</h3><blockquote>
+<p>attaching cells to a given topological space $X$:<br>Given ${D_{\alpha}}_{\alpha \in A}$ and indexed collection of close $n$-cell foe some fixed $n \ge 1$. we can glue them to X via continous maps $\varphi _\alpha: \partial D \to X$ as follows: Let $\varphi :\bigsqcup_\alpha \partial D_\alpha \to X$ be the map restriction to each $\partial D_\alpha$ is $\varphi_\alpha$ We can then form <strong>the cadjunction</strong> space $X \cup_\alpha (\sqcup _\alpha D_\alpha)$.</p>
 </blockquote>
-<p>可能从这个定义方式看不出来，这个正则曲线的性质相对于一般曲线而言已经有了一个极大 的提升。这个速度向量永远不为零的性质保证了参数化的时候，速度永远不是零，这保证了反函数的存在，那么我们就可以任意修改参数化的形式。比如用下面这一种更加自然的参数数化方法。</p>
-<h3 id="用长度参数化的曲线-Curve-parametrized-by-arc-length"><a href="#用长度参数化的曲线-Curve-parametrized-by-arc-length" class="headerlink" title="用长度参数化的曲线 Curve parametrized by arc length"></a>用长度参数化的曲线 Curve parametrized by arc length</h3><p>在这种情况下，我们就可以定义从某一点开始算的长度 length</p>
-<p>$$<br>s(t) = \int_{t_0}^{t} |\alpha ‘ (t)| dt<br>$$<br>而切向量的长度则可表达为<br>$$<br>|\alpha’ (t)| = \sqrt{(x’(t))^2 + (y’(t))^2 + (z’(t))^2}<br>$$</p>
-<p>那么当$|\alpha’(t)| \equiv 1$时，那么<br>$$<br>s = \int_{t_0}^{t} 1 dt = t - t_0<br>$$</p>
-<h3 id="曲率-currature"><a href="#曲率-currature" class="headerlink" title="曲率 currature"></a>曲率 currature</h3><p>$$<br>k(s) = |t’(s)|=|\alpha’’(s)|<br>$$</p>
-<p>事实上这个曲率$k$反应了曲线在该处的弯曲程度，因此有以下对应<br>$$<br>k(s)\equiv 0 \Leftrightarrow \alpha(s) = u \cdot s + v \text{ for some vector }u,v \in \mathbb{R}^3<br>$$</p>
-<h3 id="法向量-Normal-Vector"><a href="#法向量-Normal-Vector" class="headerlink" title="法向量 Normal Vector"></a>法向量 Normal Vector</h3><p>$$<br>\alpha’’(s) = k(s)n(s), \text{when }|k(s)| \not = 0<br>$$</p>
-<h3 id="密切平面-Osculating-plane"><a href="#密切平面-Osculating-plane" class="headerlink" title="密切平面 Osculating plane"></a>密切平面 Osculating plane</h3><p>我们可以利用切向量$t(s)$和法向量$n(s)$来刻画密切平面,</p>
-<p>然而，事实上，我们更加希望能够给这一点定义一个自然的局部坐标系（<strong>Remark</strong> 数分提到过局部坐标系和世界坐标系之间的关系）</p>
-<h4 id="次法向量R"><a href="#次法向量R" class="headerlink" title="次法向量R"></a>次法向量R</h4><p>由此提供一个密切平面的法向量$b(s)$,称之为<strong>副法线</strong>（binormal）.<br>$$<br>b(s) = t(s)\wedge n(s)<br>$$</p>
-<p>$|b’(s)|$ 实际上刻画了密切平面在$s$邻域内的变动<br>$$<br>b’(s) = t’(s) \wedge n(s) + t(s) \wedge n’(s) = t(s) \wedge n’(s)<br>$$<br>因此，可以注意到，$b(s)$与$n(s)$线性相关</p>
-<p>所以，我们可以定义这一点的<strong>挠率</strong>（torsion）$\tau (s) = |b’(s)|$<br>$$<br>b’(s) = \tau (s) n(s)<br>$$<br>不过我们也可以认为它的定义是这个<br>$$<br>\tau (s) = b’(s) \cdot n(s)<br>$$<br>这个值的大小刻画了密切平面的变动速率, 或者说是刻画了曲线在这一点逃离这个平面的速度。因此有<br>$$<br>\tau(s) \equiv 0 \Leftrightarrow \alpha(I) \text{ contained in a plane}<br>$$<br>到这里，我们还可以验证，当曲线定向反转的时候，$b’(s)$是不会出现变化的。也就是说曲线的定向不会改变挠率和曲率。</p>
-<h4 id="局部坐标"><a href="#局部坐标" class="headerlink" title="局部坐标"></a>局部坐标</h4><p>由此我们拥有了三个与曲线该点性质密切相关且两两之间互相垂直的向量$b(s), t(s), n(s)$<br>$$<br>\left{\begin{matrix}<br> n = b \wedge t\<br> t = n \wedge b\<br> b = t \wedge n<br>\end{matrix}\right.<br>$$<br>因此<br>$$<br>\begin{cases}<br> n’ = -kt-\tau b\<br> t’ = \tau n\<br> b’ = k n<br>\end{cases}<br>$$</p>
+<p><img src="img%5C%E8%83%9E%E8%85%94%E5%88%86%E8%A7%A3.png" alt="胞腔分解"></p>
+<h3 id="Cell-decomposition"><a href="#Cell-decomposition" class="headerlink" title="Cell decomposition"></a>Cell decomposition</h3><blockquote>
+<p><strong>Def:</strong><br>If $X$ is a nonempty topological space, a <strong>cell decomposition of $X$</strong> is a <em>partition</em> $\xi$ of $X$ into subspaces that are <em>open cells</em> of various dimensions, such that the following condition is satisfied: for each cell $e \in \xi$ of dimension $n \ge 1$, there exists a continuous map $\varPhi$ from some closed $n$-cell $D$ into $X$ (called a <strong>characteristic map for $e$</strong>) that restricts to a homeomomorphism from $\mathrm{Int}D$ onto $e$ and maps $\partial D$ into the union of all cells of $\xi$ of dimensions strictly less than $n$. </p>
+</blockquote>
+<p>这个书的定义方式是，先给出一个拓扑空间$X$，然后我们用一些手段去展示这些胞腔之间是怎么拼到一起的。</p>
+<p>顺便一提，这里事实上只是限制了，分解出来的空间是个开胞腔，我们对于这个区域在$X$中的边界依旧是一无所知。</p>
+<p>这个要求保证，如果存在一个胞腔分解，那么我们就可以用之前的办法来构造这个空间. 事实上，$\varPhi$本身给出了一个将这个子部分与其他地方连接的“连接方式”。在有限的情况下，我们可以认为，这其实给出了用一堆胞腔去粘连出这个cell complex(定义如下)的方法，因此，我们可以用胞腔去分析它 了。</p>
+<h3 id="Cell-complex"><a href="#Cell-complex" class="headerlink" title="Cell complex"></a>Cell complex</h3><blockquote>
+<p><strong>Def:</strong><br>A <strong>cell complex</strong> is a Hausdorff space $X$ together with a specific <em>cell decomposition</em> of $X$.</p>
+</blockquote>
+<h3 id="Finite-cell-complex"><a href="#Finite-cell-complex" class="headerlink" title="Finite cell complex"></a>Finite cell complex</h3><blockquote>
+<p><strong>Def:</strong><br>A <strong>finite cell complex</strong> is one whose cell decomposition has only finitely many cells.</p>
+</blockquote>
+<h3 id="local-finite"><a href="#local-finite" class="headerlink" title="local finite"></a>local finite</h3><blockquote>
+<p><strong>Def:</strong><br>A cell complex is called <strong>locally finite</strong> if the <em>connection</em> of open cell is “locally finite”.</p>
+</blockquote>
+<h2 id="CW-complex"><a href="#CW-complex" class="headerlink" title="CW complex"></a>CW complex</h2><h3 id="CW-complex-1"><a href="#CW-complex-1" class="headerlink" title="CW complex"></a>CW complex</h3><blockquote>
+<p><strong>Def:</strong><br>A <strong>CW complex</strong> is a complex $(X,\xi)$ satisfying:<br>   (C, closure finiteness): The closure of each cell is contained in a union of <em>finitely many cells</em>.<br>   (W, weak topology): The topology of X is <em>coherent</em> with the family of closed subspaces ${\overline e | e \in \xi}$</p>
+</blockquote>
  
       <!-- reward -->
       
@@ -209,12 +220,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/13/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%88%9D%E8%A7%81%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/02/19/%E6%8B%93%E6%89%91%E5%AD%A6/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%911%EF%BC%9A%E8%A7%A3%E5%89%96%E5%87%A0%E4%BD%95%E5%9B%BE%E5%BD%A2/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/" rel="tag">微分几何</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
   </div>
@@ -222,19 +233,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2023/02/15/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%EF%BC%9A%E5%88%9D%E8%A7%81/" class="article-nav-link">
+      <a href="/2023/02/28/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA3%EF%BC%9A%E4%B8%BA%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98%E5%81%9A%E5%87%86%E5%A4%87/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            代数图论：初见
+            代数图论3：进入正题前的准备
           
         </div>
       </a>
     
     
-      <a href="/2022/06/09/%E9%AB%98%E4%BB%A3%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F/" class="article-nav-link">
+      <a href="/2023/02/17/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%952%EF%BC%9A%E5%A4%8D%E4%B9%A0%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">高代上的一些不等式</div>
+        <div class="article-nav-title">微分几何2：复习线性空间</div>
       </a>
     
   </nav>

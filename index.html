@@ -158,6 +158,189 @@
     
     
     <article
+  id="post-代数图论/代数图论3：为进入正题做准备"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/02/28/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA3%EF%BC%9A%E4%B8%BA%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98%E5%81%9A%E5%87%86%E5%A4%87/"
+    >代数图论3：进入正题前的准备</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/28/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA3%EF%BC%9A%E4%B8%BA%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98%E5%81%9A%E5%87%86%E5%A4%87/" class="article-date">
+  <time datetime="2023-02-28T02:25:00.000Z" itemprop="datePublished">2023-02-28</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="循环图-Circulant-Graphs"><a href="#循环图-Circulant-Graphs" class="headerlink" title="循环图 Circulant Graphs"></a>循环图 Circulant Graphs</h2><p>之前提到过 cycle，我们这里再把 cycle 拿出来做一个更加详细的定义</p>
+<h3 id="n点循环-C-n"><a href="#n点循环-C-n" class="headerlink" title="n点循环 $C_n$"></a>n点循环 $C_n$</h3><blockquote>
+<p>The cycle on n vertices is the graph Cn with vertex set {0, … , n- 1} and with i adjacent to j if and only if j - i = ±1 mod n.</p>
+</blockquote>
+<p>也就是说，我们利用了同模的概念来表达一种周而复始的“循环递增”。</p>
+<h3 id="循环图-circulant-graphs"><a href="#循环图-circulant-graphs" class="headerlink" title="循环图 circulant graphs"></a>循环图 circulant graphs</h3><blockquote>
+<p>Let $\mathbb{Z}_n$ denote the additive group of integers modulo n. If $C$ is a subset of $\mathbb{Z}_n \setminus 0$, then construct a directed graph $X = X (\mathbb{Z}_n , C)$ as follows. The vertices of X are the elements of $\mathbb{Z}_n$ and $( i, j)$ is an arc of $X$ if and only if $j - i \in C$. The graph $X(\mathbb{Z}_n, C)$ is called a circulant of order $n$, and $C$ is called its connection set.</p>
+</blockquote>
+<p>大致可以这样来理解这套定义，$\mathbb{Z}_n$事实上表达了这张图的点的个数，是自由度，而$C$则是间隔多少个来连边，是连线方式。</p>
+<p>对于一个比较大的循环群$R$我们有<br>$$<br>\left | \mathrm{Aut}(X) \right | \ge 2n<br>$$<br>因为一般的循环图至少可以进行“旋转”与“反转”的操作，这构成一个与$D_{2n}$同构的自同构子群。只是在$n\le2$时有可能出现谬误，因为点数太少了。</p>
+<h2 id="平面图-Planar-graph"><a href="#平面图-Planar-graph" class="headerlink" title="平面图 Planar graph"></a>平面图 Planar graph</h2><blockquote>
+<p>A graph is called <strong>planar</strong> if it cann be drawn without crossing edges.</p>
+</blockquote>
+<p>对于平面图有一个很经典的结果</p>
+<h4 id="欧拉公式"><a href="#欧拉公式" class="headerlink" title="欧拉公式"></a>欧拉公式</h4><blockquote>
+<p><strong>Theorem 1.8.1 (Euler)</strong><br>If a connected plane graph has $n$ vertices, $e$ edges and $f$ faces,<br>   then $n - e + f = 2$.</p>
+</blockquote>
+<p>证明也很直接。</p>
+<ol>
+<li>我们注意到对一个多边形进行三教剖分并不会改变它 $(n-e+f)$ 的结果，因此我们可以假设我们面对的都是已经被三角剖分的图形。</li>
+<li>我们又注意到，对于一个已经三角剖分过的平面图删去一个顶点以及与这个顶点相关的边，$(n-e+f)$ 也不会改变，因此我们可以用这个手段来减少顶点数。</li>
+<li>递归直到剩下一个三角形（即只剩下三个顶点），我们得知 $(n-e+f)=2$</li>
+</ol>
+<h3 id="平面图的性质"><a href="#平面图的性质" class="headerlink" title="平面图的性质"></a>平面图的性质</h3><h4 id="Lemma-1"><a href="#Lemma-1" class="headerlink" title="Lemma_1"></a>Lemma_1</h4><blockquote>
+<p>A planar graph with $n$ vertices has no more than $3n-6$ edges.</p>
+</blockquote>
+<p><strong>Proof:</strong><br>注意到$2e\ge3f$<br>$f\le\frac 2 3 e$<br>由$(n-e+f)=2$可知$e-(n-2)=f\le\frac 2 3 e$.<br>所以我们有$e\ge 3n-6$.</p>
+<hr>
+<p>利用这些引理，我们可以验证一些图像是否是平面图</p>
+<h4 id="K-5-不是一个平面图"><a href="#K-5-不是一个平面图" class="headerlink" title="$K_5$ 不是一个平面图"></a>$K_5$ 不是一个平面图</h4><p><strong>Proof：</strong><br>由<a href="####Lemma_1">Lemma 1</a>即可验证</p>
+<h4 id="K-3-3-不是平面图"><a href="#K-3-3-不是平面图" class="headerlink" title="$K_{3,3}$不是平面图"></a>$K_{3,3}$不是平面图</h4><p><strong>Proof：</strong><br>考虑$K_{3,3}$里的顶点数和边数，那么有$n=6,e=9$.<br>并不满足<a href="####Lemma_1">Lemma 1</a>中给出的不等关系，因此不可能是平面图</p>
+<h2 id="对偶图"><a href="#对偶图" class="headerlink" title="对偶图"></a>对偶图</h2><blockquote>
+<p>Given a plane graph $X*$, we can form another plane graph called the <strong>dual graph</strong> $X*$ . The vertices of $X*$ correspond to the faces of $X$, with each vertex being placed in the corresponding face . Every edge e of X gives rise to an edge of $X*$ joining the two faces of X that contain $e$.</p>
+</blockquote>
+<p>大致就是点变成面，面变成点。只是在变化的时候，可能要把平面图的标准放松一点点。因为两个面之间可能不止有一条共同边。</p>
+<p><img src="img%5C%E5%AF%B9%E5%81%B6%E5%9B%BE.png" alt="对偶图示例"></p>
+<h2 id="射影平面"><a href="#射影平面" class="headerlink" title="射影平面"></a>射影平面</h2><blockquote>
+<p>The <strong>real projective plane</strong> is a nonorientable surface, which can be rep­ resented on paper by a circle with diametrically opposed points identified.</p>
+</blockquote>
+<p>在这个平面上，画出$K_5$便成为可能。<br><img src="img%5C%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84K5.png" alt="$K_5$映射在射影平面上"><br><del>感觉像装了传送门一样</del></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/" rel="tag">代数图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-拓扑学/代数拓扑1：解剖几何图形"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/02/19/%E6%8B%93%E6%89%91%E5%AD%A6/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%911%EF%BC%9A%E8%A7%A3%E5%89%96%E5%87%A0%E4%BD%95%E5%9B%BE%E5%BD%A2/"
+    >代数拓扑1：解剖几何图形</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/02/19/%E6%8B%93%E6%89%91%E5%AD%A6/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%911%EF%BC%9A%E8%A7%A3%E5%89%96%E5%87%A0%E4%BD%95%E5%9B%BE%E5%BD%A2/" class="article-date">
+  <time datetime="2023-02-18T16:12:43.000Z" itemprop="datePublished">2023-02-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>学完拓扑就学代数拓扑这很合理（确信</p>
+<h2 id="动机-motivations"><a href="#动机-motivations" class="headerlink" title="动机 motivations"></a>动机 motivations</h2><p>代数拓扑是对拓扑空间的定性分析<br>$$<br>\begin{array}{c}<br>\text{Solution sets } \left { x^2+y^2+z^2 = 1 \right } \<br>\downarrow \<br>\text{manifolds}\<br>\downarrow \<br>\text{topological spaces}<br>\end{array}<br>$$</p>
+<h2 id="我们将要做什么"><a href="#我们将要做什么" class="headerlink" title="我们将要做什么"></a>我们将要做什么</h2><ul>
+<li>Have machinery that gives us general information about spaces that is <strong>insentive</strong> to collapse and various other things.</li>
+<li>We also need to decide on a family of topological space that we are interested in <strong>Cell complex and CW complexes</strong>.</li>
+</ul>
+<h2 id="胞腔复形-cell-complex"><a href="#胞腔复形-cell-complex" class="headerlink" title="胞腔复形 cell complex"></a>胞腔复形 cell complex</h2><h3 id="Definitions-notations"><a href="#Definitions-notations" class="headerlink" title="Definitions/notations"></a>Definitions/notations</h3><ul>
+<li>Open $n$-cell: topolical space homemeomorphic to the open unit ball $\mathbb B ^n$</li>
+<li>Close $n$-cell: topolical space $\overline{\mathbb B ^n} = \mathbb B ^n \cup \mathbb S ^{n-1}$.</li>
+</ul>
+<blockquote>
+<p><strong>Prop:</strong><br>If $D \subset \mathbb R ^n$ is a compact convex subset weith nonempty interior, then $D$ is a closesd $n$-cell and its interior is an open $n$-cell.<br>In fact, given any point $p \in \mathrm{Int} D$, there exist a homeomorphism $F:\overline{\mathbb B ^n} \to D$ that sends $0$ to $p$, $\overline{\mathbb B ^n}$ to $\mathrm{Int} D$ and $\mathbb S ^{n-1}$ to $\partial D$.</p>
+</blockquote>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><ul>
+<li>Every closed interval in $\mathbb R$ is a closed 1-cell</li>
+<li>Every polygons in $\mathbb R ^2$ are closed 2-cells</li>
+</ul>
+<h3 id="Cell-decompositions"><a href="#Cell-decompositions" class="headerlink" title="Cell decompositions"></a>Cell decompositions</h3><blockquote>
+<p>attaching cells to a given topological space $X$:<br>Given ${D_{\alpha}}_{\alpha \in A}$ and indexed collection of close $n$-cell foe some fixed $n \ge 1$. we can glue them to X via continous maps $\varphi _\alpha: \partial D \to X$ as follows: Let $\varphi :\bigsqcup_\alpha \partial D_\alpha \to X$ be the map restriction to each $\partial D_\alpha$ is $\varphi_\alpha$ We can then form <strong>the cadjunction</strong> space $X \cup_\alpha (\sqcup _\alpha D_\alpha)$.</p>
+</blockquote>
+<p><img src="img%5C%E8%83%9E%E8%85%94%E5%88%86%E8%A7%A3.png" alt="胞腔分解"></p>
+<h3 id="Cell-decomposition"><a href="#Cell-decomposition" class="headerlink" title="Cell decomposition"></a>Cell decomposition</h3><blockquote>
+<p><strong>Def:</strong><br>If $X$ is a nonempty topological space, a <strong>cell decomposition of $X$</strong> is a <em>partition</em> $\xi$ of $X$ into subspaces that are <em>open cells</em> of various dimensions, such that the following condition is satisfied: for each cell $e \in \xi$ of dimension $n \ge 1$, there exists a continuous map $\varPhi$ from some closed $n$-cell $D$ into $X$ (called a <strong>characteristic map for $e$</strong>) that restricts to a homeomomorphism from $\mathrm{Int}D$ onto $e$ and maps $\partial D$ into the union of all cells of $\xi$ of dimensions strictly less than $n$. </p>
+</blockquote>
+<p>这个书的定义方式是，先给出一个拓扑空间$X$，然后我们用一些手段去展示这些胞腔之间是怎么拼到一起的。</p>
+<p>顺便一提，这里事实上只是限制了，分解出来的空间是个开胞腔，我们对于这个区域在$X$中的边界依旧是一无所知。</p>
+<p>这个要求保证，如果存在一个胞腔分解，那么我们就可以用之前的办法来构造这个空间. 事实上，$\varPhi$本身给出了一个将这个子部分与其他地方连接的“连接方式”。在有限的情况下，我们可以认为，这其实给出了用一堆胞腔去粘连出这个cell complex(定义如下)的方法，因此，我们可以用胞腔去分析它 了。</p>
+<h3 id="Cell-complex"><a href="#Cell-complex" class="headerlink" title="Cell complex"></a>Cell complex</h3><blockquote>
+<p><strong>Def:</strong><br>A <strong>cell complex</strong> is a Hausdorff space $X$ together with a specific <em>cell decomposition</em> of $X$.</p>
+</blockquote>
+<h3 id="Finite-cell-complex"><a href="#Finite-cell-complex" class="headerlink" title="Finite cell complex"></a>Finite cell complex</h3><blockquote>
+<p><strong>Def:</strong><br>A <strong>finite cell complex</strong> is one whose cell decomposition has only finitely many cells.</p>
+</blockquote>
+<h3 id="local-finite"><a href="#local-finite" class="headerlink" title="local finite"></a>local finite</h3><blockquote>
+<p><strong>Def:</strong><br>A cell complex is called <strong>locally finite</strong> if the <em>connection</em> of open cell is “locally finite”.</p>
+</blockquote>
+<h2 id="CW-complex"><a href="#CW-complex" class="headerlink" title="CW complex"></a>CW complex</h2><h3 id="CW-complex-1"><a href="#CW-complex-1" class="headerlink" title="CW complex"></a>CW complex</h3><blockquote>
+<p><strong>Def:</strong><br>A <strong>CW complex</strong> is a complex $(X,\xi)$ satisfying:<br>   (C, closure finiteness): The closure of each cell is contained in a union of <em>finitely many cells</em>.<br>   (W, weak topology): The topology of X is <em>coherent</em> with the family of closed subspaces ${\overline e | e \in \xi}$</p>
+</blockquote>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%93%E6%89%91%E5%AD%A6/" rel="tag">拓扑学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-微分几何/微分几何2：复习线性空间"
   class="article article-type-post"
   itemscope
@@ -648,130 +831,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/" rel="tag">欧拉计划</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-大学物理/热力学第二定律"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
-    >热力学第二定律（熵增定律）</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="article-date">
-  <time datetime="2021-12-31T06:38:53.000Z" itemprop="datePublished">2021-12-31</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="热力学第二定律-笔记"><a href="#热力学第二定律-笔记" class="headerlink" title="热力学第二定律 笔记"></a>热力学第二定律 笔记</h1><p><code>本笔记图片源自《Principles of Physics》，其余部分禁止转载</code></p>
-<h2 id="热力学第二定律-熵增定理"><a href="#热力学第二定律-熵增定理" class="headerlink" title="热力学第二定律(熵增定理)"></a>热力学第二定律(熵增定理)</h2><blockquote>
-<p>If a process occurs in a closed system, the entropy of the system increases for irreversible processes and remains constant for reversible processes; it never decreases.</p>
-</blockquote>
-<p>在一个<strong>封闭系统</strong>中，不可能把热量从<strong>低温物体</strong>传递到<strong>高温物体</strong>而<strong>不产生其他影响</strong></p>
-<p>————Rudolf Clausius (1822-1888)</p>
-<blockquote>
-<p>The energy of the universe id constant.</p>
-<p>The entropy of the universe tends to a maximum.</p>
-</blockquote>
-<p><code>有意思的是，此前所有物理定律都没有指出该过程不可逆。该定理打破了物理理论在时间上的对称性。可以说，该定理引出了时间的单向性</code></p> 
-      <a class="article-more-link" href="/2021/12/31/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" rel="tag">大学物理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-数学分析/数分复习——理论论证部分"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/"
-    >数分1知识梳理</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/" class="article-date">
-  <time datetime="2021-12-30T05:07:13.000Z" itemprop="datePublished">2021-12-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="数分知识梳理"><a href="#数分知识梳理" class="headerlink" title="数分知识梳理"></a>数分知识梳理</h1><h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h3 id="数列的极限"><a href="#数列的极限" class="headerlink" title="数列的极限"></a>数列的极限</h3><h4 id="varepsilon-N-定义"><a href="#varepsilon-N-定义" class="headerlink" title="$\varepsilon - N$定义"></a>$\varepsilon - N$定义</h4><p>$\forall \varepsilon &gt; 0, \exists N \in N_+,s.t.$当$n&gt;N$时,有</p>
-<p>$$<br>\left | a_n - a \right | &lt; \varepsilon<br>$$</p>
-<p>我们称$a$为数列${ a_n }$的极限，记为<br>$$\lim_{n \to \infty} a_n = a $$</p> 
-      <a class="article-more-link" href="/2021/12/30/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E6%95%B0%E5%88%86%E5%A4%8D%E4%B9%A0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E8%AE%BA%E8%AF%81%E9%83%A8%E5%88%86/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
     </footer>
   </div>
