@@ -189,7 +189,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="1-傅里叶级数"><a href="#1-傅里叶级数" class="headerlink" title="1 傅里叶级数"></a>1 傅里叶级数</h2><p>$$<br>f \sim \sum a_n e^{inx}<br>$$<br>$$<br>a_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-inx}dx<br>$$<br>由此我们可以得到Parseval恒等式：<br>$$<br>\sum_{n=-\infty}^{+\infty} |a_n|^2 = \frac{1}{2\pi}\int_{-\pi}^\pi |f(x)|^2 dx<br>$$<br>在常庚哲,史济怀的《数学分析》中也有相关论述：<br>![[Pasted image 20230622204800.png]]<br>但是这样得到的度量，并非完备</p>
+  <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="1-傅里叶级数"><a href="#1-傅里叶级数" class="headerlink" title="1 傅里叶级数"></a>1 傅里叶级数</h2><p>$$<br>f \sim \sum a_n e^{inx}<br>$$<br>$$<br>a_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-inx}dx<br>$$<br>由此我们可以得到Parseval恒等式：<br>$$<br>\sum_{n=-\infty}^{+\infty} |a_n|^2 = \frac{1}{2\pi}\int_{-\pi}^\pi |f(x)|^2 dx<br>$$<br>在常庚哲,史济怀的《数学分析》中也有相关论述：<br>![](.\img\Pasted image 20230622204800.png)<br>但是这样得到的度量，并非完备</p>
 <hr>
 <h1 id="前置知识储备"><a href="#前置知识储备" class="headerlink" title="前置知识储备"></a>前置知识储备</h1><h2 id="集合与度量"><a href="#集合与度量" class="headerlink" title="集合与度量"></a>集合与度量</h2><h3 id="点-point"><a href="#点-point" class="headerlink" title="点 point"></a>点 point</h3><p>A point $x \in \mathbb R^n$ consists of a $d$-tuple of real numbers<br>$$<br>x=(x_1,x_2,\dots,x_d), x_i \in \mathbb R,\text{ for }i=1,\dots,d<br>$$</p>
 <h3 id="范数-norm"><a href="#范数-norm" class="headerlink" title="范数 norm"></a>范数 norm</h3><p>The <strong>norm</strong> of x is denoted by $|x|$ and is defined to be the <strong>standard Euclidean norm</strong> given by<br>$$<br>|x| = (x_1^2+\cdots+x_d^2)^{1/2}<br>$$</p>
@@ -206,7 +206,7 @@
 <p>If a rectangle is the almost disjoint union of finitely many other rectangles, say $R = \bigcup_{k=1}^N R_k$, then</p>
 </blockquote>
 <p>$$<br>|R| = \sum_{k=1}^N |R_k|<br>$$</p>
-<p>proof.<br>如下图，进行有限次划分，进而变成我们更加容易处理的形式。<br>![[Pasted image 20230622221621.png]]<br>$$<br>|R| = \sum_{j=1}^M |\overline{R_j}| = \sum_{k=1}^N\sum_{j \in J_k}|\overline{R_j}| = \sum_{k=1}^{N}|R_k|<br>$$</p>
+<p>proof.<br>如下图，进行有限次划分，进而变成我们更加容易处理的形式。<br>![](.\img\Pasted image 20230622221621.png)<br>$$<br>|R| = \sum_{j=1}^M |\overline{R_j}| = \sum_{k=1}^N\sum_{j \in J_k}|\overline{R_j}| = \sum_{k=1}^{N}|R_k|<br>$$</p>
 <h3 id="Lemma-1-2"><a href="#Lemma-1-2" class="headerlink" title="Lemma 1.2"></a>Lemma 1.2</h3><blockquote>
 <p>If $R, R_1, \dots , R_N$ are rectangles, and $R \subset \bigcup^N_{k=1} R_k$, then $|R| \le \sum^N_{k=1} |R_k|$.</p>
 </blockquote>
@@ -218,10 +218,10 @@
 <h3 id="Lemma-1-4"><a href="#Lemma-1-4" class="headerlink" title="Lemma 1.4"></a>Lemma 1.4</h3><blockquote>
 <p>Every open subset $\mathcal O$ of $\mathbb R^d, d \ge 1$, can be written as a countable union of almost disjoint closed cubes.</p>
 </blockquote>
-<p>proof.<br>![[Pasted image 20230622234223.png]]<br>先用长度为1的正方形划分$\mathbb R^d$，标记被$\mathcal O$包含的正方形为$Q_{1,1},Q_{1,2},Q_{1,3},\dots$<br>再使用更细的划分去填补剩下的空间，每一次都将边长变成原来的1/2.<br>因为每一层都最多使用可数个正方形，而总共有可数层，于是总计使用的正方形数量不会超过可数个。<br>而对于开集$\mathcal O$中的每一个点$x$, 都存在一个以$x$为中心半径为$\delta$的球被包含在开集$\mathcal O$内, 因此必然存在边长大于$\delta / 2$的划分使得该点被正方形覆盖。<br>因此，the open set $\mathcal O$ can be written as a countable union of almost disjoint closed cubes</p>
-<h2 id="康托尔集-Cantor-set"><a href="#康托尔集-Cantor-set" class="headerlink" title="康托尔集 Cantor set"></a>康托尔集 Cantor set</h2><p>![[Pasted image 20230623114859.png]]<br>The total length of Cantor set is 0. （但这个说法对于现在的我们来说很符合直觉但不严谨，你如何去测量一个有无穷断点的物体的长度呢？</p>
+<p>proof.<br>![](.\img\Pasted image 20230622234223.png)<br>先用长度为1的正方形划分$\mathbb R^d$，标记被$\mathcal O$包含的正方形为$Q_{1,1},Q_{1,2},Q_{1,3},\dots$<br>再使用更细的划分去填补剩下的空间，每一次都将边长变成原来的1/2.<br>因为每一层都最多使用可数个正方形，而总共有可数层，于是总计使用的正方形数量不会超过可数个。<br>而对于开集$\mathcal O$中的每一个点$x$, 都存在一个以$x$为中心半径为$\delta$的球被包含在开集$\mathcal O$内, 因此必然存在边长大于$\delta / 2$的划分使得该点被正方形覆盖。<br>因此，the open set $\mathcal O$ can be written as a countable union of almost disjoint closed cubes</p>
+<h2 id="康托尔集-Cantor-set"><a href="#康托尔集-Cantor-set" class="headerlink" title="康托尔集 Cantor set"></a>康托尔集 Cantor set</h2><p>![](.\img\Pasted image 20230623114859.png)<br>The total length of Cantor set is 0. （但这个说法对于现在的我们来说很符合直觉但不严谨，你如何去测量一个有无穷断点的物体的长度呢？</p>
 <hr>
-<h1 id="外测度-exterior-measure"><a href="#外测度-exterior-measure" class="headerlink" title="外测度 exterior measure"></a>外测度 exterior measure</h1><p>由上面的定理，我们知道，一个相对规整的集合（比如开集）可以表示为可数个正方形的无交并，这预示着我们去利用已知的正方形的体积去测量任意集合的体积<br>当我们用多个正方形从外侧去逼近一个图形的时候，也许就可以得到一些与面积相关的信息<br>![[Pasted image 20230623124600.png]]</p>
+<h1 id="外测度-exterior-measure"><a href="#外测度-exterior-measure" class="headerlink" title="外测度 exterior measure"></a>外测度 exterior measure</h1><p>由上面的定理，我们知道，一个相对规整的集合（比如开集）可以表示为可数个正方形的无交并，这预示着我们去利用已知的正方形的体积去测量任意集合的体积<br>当我们用多个正方形从外侧去逼近一个图形的时候，也许就可以得到一些与面积相关的信息<br>![](.\img\Pasted image 20230623124600.png)</p>
 <h2 id="定义外测度"><a href="#定义外测度" class="headerlink" title="定义外测度"></a>定义外测度</h2><p>The precise definition is as follows: if $E$ is any subset of $\mathbb R^d$, the exterior measure of $E$ is<br>$$<br>m_*(E) = inf{\sum_{j=1}^\infty |Q_j|}<br>$$</p>
 <h3 id="值得注意"><a href="#值得注意" class="headerlink" title="值得注意"></a>值得注意</h3><h4 id="1-这里使用有限和是有可能得不到我们想要的面积的"><a href="#1-这里使用有限和是有可能得不到我们想要的面积的" class="headerlink" title="1 这里使用有限和是有可能得不到我们想要的面积的"></a>1 这里使用有限和是有可能得不到我们想要的面积的</h4><p>比如说$[0,1]$中所有有理数构成的集合$E$，在有限和定义的测度下测度为1，但是数学分析告诉我们这应该是一个零测集。</p>
 <h4 id="2-事实上可以将正方形替换成长方形，这个定义依然生效"><a href="#2-事实上可以将正方形替换成长方形，这个定义依然生效" class="headerlink" title="2 事实上可以将正方形替换成长方形，这个定义依然生效"></a>2 事实上可以将正方形替换成长方形，这个定义依然生效</h4><p>可以试试将长方形用可数个正方形表达出来</p>
