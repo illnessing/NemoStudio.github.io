@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>有限域的元素都可以写成两个平方的和 |  空想之国</title>
+      <title>实变函数：外测度 |  空想之国</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/空想之国.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-有限域的元素都可以写成两个平方数的和"
+  id="post-实变函数/实变函数：勒贝格测度"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  有限域的元素都可以写成两个平方的和
+  实变函数：外测度
 </h1>
  
 
@@ -75,11 +75,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/05/24/%E6%9C%89%E9%99%90%E5%9F%9F%E7%9A%84%E5%85%83%E7%B4%A0%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%86%99%E6%88%90%E4%B8%A4%E4%B8%AA%E5%B9%B3%E6%96%B9%E6%95%B0%E7%9A%84%E5%92%8C/" class="article-date">
-  <time datetime="2023-05-24T13:07:13.000Z" itemprop="datePublished">2023-05-24</time>
+      <a href="/2023/06/24/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0%EF%BC%9A%E5%8B%92%E8%B4%9D%E6%A0%BC%E6%B5%8B%E5%BA%A6/" class="article-date">
+  <time datetime="2023-06-24T00:34:17.000Z" itemprop="datePublished">2023-06-24</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    <a class="article-category-link" href="/categories/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/">实变函数</a>
   </div>
   
 <div class="word_count">
@@ -87,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">424</span>
+            <span class="post-count">2k</span>
         </span>
     </span>
 
@@ -96,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">10 分钟</span>
         </span>
     </span>
 </div>
@@ -111,20 +111,90 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>We denote a prime $p$, $q = p^n$ and $F$ is a field with $q$ element.</p>
-<h3 id="Lemma-1"><a href="#Lemma-1" class="headerlink" title="Lemma 1"></a>Lemma 1</h3><blockquote>
-<p>$x = y^2  \text{ for some } y \in F \Leftrightarrow x^{\frac{q-1}{2}} = 1$</p>
+  <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="1-傅里叶级数"><a href="#1-傅里叶级数" class="headerlink" title="1 傅里叶级数"></a>1 傅里叶级数</h2><p>$$<br>f \sim \sum a_n e^{inx}<br>$$<br>$$<br>a_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-inx}dx<br>$$<br>由此我们可以得到Parseval恒等式：<br>$$<br>\sum_{n=-\infty}^{+\infty} |a_n|^2 = \frac{1}{2\pi}\int_{-\pi}^\pi |f(x)|^2 dx<br>$$<br>在常庚哲,史济怀的《数学分析》中也有相关论述：<br>![[Pasted image 20230622204800.png]]<br>但是这样得到的度量，并非完备</p>
+<hr>
+<h1 id="前置知识储备"><a href="#前置知识储备" class="headerlink" title="前置知识储备"></a>前置知识储备</h1><h2 id="集合与度量"><a href="#集合与度量" class="headerlink" title="集合与度量"></a>集合与度量</h2><h3 id="点-point"><a href="#点-point" class="headerlink" title="点 point"></a>点 point</h3><p>A point $x \in \mathbb R^n$ consists of a $d$-tuple of real numbers<br>$$<br>x=(x_1,x_2,\dots,x_d), x_i \in \mathbb R,\text{ for }i=1,\dots,d<br>$$</p>
+<h3 id="范数-norm"><a href="#范数-norm" class="headerlink" title="范数 norm"></a>范数 norm</h3><p>The <strong>norm</strong> of x is denoted by $|x|$ and is defined to be the <strong>standard Euclidean norm</strong> given by<br>$$<br>|x| = (x_1^2+\cdots+x_d^2)^{1/2}<br>$$</p>
+<h3 id="补集-complement"><a href="#补集-complement" class="headerlink" title="补集 complement"></a>补集 complement</h3><p>The <strong>complement</strong> of a set $E$ in $\mathbb R^d$ is denoted by $E^c$ and defined by<br>$$<br>E^c = {x \in \mathbb R^d : x \not \in E}<br>$$</p>
+<h3 id="距离-distance"><a href="#距离-distance" class="headerlink" title="距离 distance"></a>距离 distance</h3><p>The <strong>distance</strong> between two points $x$ and $y$ is then simply $|x-y|$.<br>The distance beteween two sets $E$ and $F$ is defined by<br>$$<br>d(E,F) = \inf_{x\in E,y \in F} |x-y|<br>$$</p>
+<h2 id="点与点之间的位置关系——开、闭、紧致集"><a href="#点与点之间的位置关系——开、闭、紧致集" class="headerlink" title="点与点之间的位置关系——开、闭、紧致集"></a>点与点之间的位置关系——开、闭、紧致集</h2><p>The <strong>open ball</strong> in $\mathbb R ^ d$ centered at $x$ and of radius $r$ is defined by<br>$$<br>B_r(x) = {y \in \mathbb R^d : |y-x| &lt; r}<br>$$<br>A subset $E \subset \mathbb R^d$ is **open** if for every $x \in E$ there exists $r &gt; 0$ with $B_r(x) \subset E$.<br>A subset $E \subset \mathbb R^d$ is <strong>closed</strong> if its complement is open.<br>A subset $E \subset \mathbb R^d$ is <strong>bounded</strong> if it is contained in some ball of finite radius.</p>
+<p>A subset $E \subset \mathbb R^d$ is <strong>compact</strong> if it is closed and bounded.<code>warning: 这只在欧氏空间中成立</code><br>A subset $E \subset \mathbb R^d$ is <strong>compact</strong> if there is a finite subcovering for any open covering.</p>
+<p>A point $x \in\mathbb R^d$ is a <strong>limit point</strong> of the set $E$ if for every $r&gt; 0$, the ball $B_r(x)$ contains points of $E$.<br>An <strong>isolated</strong> point of E is a point $x \in E$ such that there exists an $r &gt; 0$ where $B_r(x) \cap E$ is equal to ${x}$.<br>A point $x \in E$ is an <strong>interior point</strong> of $E$ if there exists $r &gt; 0$ such that $B_r(x) \subset E$.</p>
+<p>The set of all interior points of $E$ is called the <strong>interior</strong> of E.<br>the <strong>closure</strong> $E$ of the $E$ consists of the union of $E$ and all its limit points.<br>The <strong>boundary</strong> of a set $E$, denoted by $\partial E$, is the set of points which are in the closure of $E$ but not in the interior of $E$.<br>内部是被$E$包含的最大开集，闭包是包含$E$的最小闭集。</p>
+<p>a closed set $E$ is <strong>perfect</strong> if $E$ does not have any isolated points.</p>
+<h2 id="最直接的体积计算——长方形"><a href="#最直接的体积计算——长方形" class="headerlink" title="最直接的体积计算——长方形"></a>最直接的体积计算——长方形</h2><p>A (closed) rectangle $R$ in $\mathbb R^d$ is given by the product of $d$ one-dimensional closed and bounded intervals<br>$$<br>R = [a_1, b_1] \times [a_2, b_2] \times \cdots \times [a_d, b_d]<br>$$<br>![[Pasted image 20230622215919.png]]<br>The <strong>volume</strong> of the rectangle $R$ is defined as<br>$$<br>|R| = (b_1 - a_1)\cdots(b_d-a_d)<br>$$<br>a <strong>cube</strong> is a rectangle for which $b_1 - a_1 = \cdots = b_d-a_d$, whose volume is $(b_1-a_1)^d$</p>
+<p>A union of rectangles is said to be <strong>almost disjoint</strong> if the interiors of the rectangles are disjoint.</p>
+<h3 id="Lemma-1-1"><a href="#Lemma-1-1" class="headerlink" title="Lemma 1.1"></a>Lemma 1.1</h3><blockquote>
+<p>If a rectangle is the almost disjoint union of finitely many other rectangles, say $R = \bigcup_{k=1}^N R_k$, then</p>
 </blockquote>
-<h3 id="Lemma-2"><a href="#Lemma-2" class="headerlink" title="Lemma 2"></a>Lemma 2</h3><blockquote>
-<p>For any generator $g$ of multiplication group of $F^\times$, there exist a element $x \in F$ such that $(g - x^2) = y^2$ for some $y \in F$.</p>
+<p>$$<br>|R| = \sum_{k=1}^N |R_k|<br>$$</p>
+<p>proof.<br>如下图，进行有限次划分，进而变成我们更加容易处理的形式。<br>![[Pasted image 20230622221621.png]]<br>$$<br>|R| = \sum_{j=1}^M |\overline{R_j}| = \sum_{k=1}^N\sum_{j \in J_k}|\overline{R_j}| = \sum_{k=1}^{N}|R_k|<br>$$</p>
+<h3 id="Lemma-1-2"><a href="#Lemma-1-2" class="headerlink" title="Lemma 1.2"></a>Lemma 1.2</h3><blockquote>
+<p>If $R, R_1, \dots , R_N$ are rectangles, and $R \subset \bigcup^N_{k=1} R_k$, then $|R| \le \sum^N_{k=1} |R_k|$.</p>
 </blockquote>
-<p>Consider<br>$$<br>\begin{array}{l}<br>\sum_{x \in F^\times} \left(g - x^2\right)^{\frac{q-1}{2}}<br>\end{array}<br>$$<br>$$<br>= \sum_{k=1}^{q-1} \left(g - (g^{k})^2\right)^{\frac{q-1}{2}}<br>$$<br>$$<br>=g^{\frac{q-1}{2}} \sum_{k=1}^{q-1} \left(\sum_{i=0}^{\frac{q-1}{2}}\binom{\frac{q-1}{2}}{i} (-g)^{(2k-1)i} \right)<br>$$<br>$$<br>= - \sum_{i=1}^{\frac{q-1}{2}-1}\binom{\frac{q-1}{2}}{i}\sum_{k=1}^{q-1} (-g)^{(2k-1)i} -\binom{\frac{q-1}{2}}{0}\sum_{k=1}^{q-1} (-g)^{0}-\binom{\frac{q-1}{2}}{\frac{q-1}{2}}\sum_{k=1}^{q-1} (-g)^{(2k-1)\frac{q-1}{2}}<br>$$<br>$$<br>= -\sum_{i=1}^{\frac{q-1}{2}-1}\binom{\frac{q-1}{2}}{i}\frac{1-(-g)^{(2q-1)i}}{1-(-g)^{2i}} (-g)^i - (q-1) - (q-1)<br>$$<br>$$<br>= -\sum_{i=1}^{\frac{q-1}{2}-1}\binom{\frac{q-1}{2}}{i} (-g)^i +2<br>$$<br>$$<br>= -(1-g)^{\frac{q-1}{2}} + 1 + (-g)^{\frac{q-1}{2}} + 2<br>$$<br>$$<br>= 3 - (1-g)^{\frac{q-1}{2}} - (-1)^{\frac{q-1}{2}} \in {1,3,5}<br>$$</p>
-<p>If $p \not = 2$, then $\sum_{x \in F^\times} \left(g - x^2\right)^{\frac{q-1}{2}} \not = q-1$ (calculate in $F$). Thus, there at least one element $x$ of $F$ such that $(g-x^2) = y^2$ for some $y \in F$.<br>If $p = 2$, then every element of $F$ are square.<br>we finish our proof.</p>
-<h3 id="Thm"><a href="#Thm" class="headerlink" title="Thm"></a>Thm</h3><blockquote>
-<p>Every element of $F$ is a sum of two square.</p>
+<p>proof. 和Lemma 1.1相似的方法，将矩形分割，将面积累加。而重叠的部分则是不等的缘由</p>
+<h3 id="Lemma-1-3"><a href="#Lemma-1-3" class="headerlink" title="Lemma 1.3"></a>Lemma 1.3</h3><blockquote>
+<p>Every open subset $\mathcal{O}$ of $\mathbb R$ can be writen uniquely as a countable union of disjoint open intervals.</p>
 </blockquote>
-<p>Consider $g$ as a generator of $F^\times$,<br>By Lemma 2, there exist $a,b \in F$ such that $g = a^2 + b^2$.<br>for any $x = g^r \in F$, if $r$ is even ,then $x = (g^{\frac{r}{2}})^2 + 0^2$.<br>If $r$ is odd, $x = (g^{\frac{r-1}{2}})^2 g= ((g^{\frac{r}{2}})^2 + 0^2)(a^2+b^2) = (g^{\frac{r}{2}}a)^2+(g^{\frac{r}{2}}b)^2$.</p>
-<p>Hence, every element of $F$ can write as a sum of two square.</p>
+<p>proof.<br>Consider<br>$$<br>a_x = \inf{a&lt;x:(a,x) \subset \mathcal{O}}, b_x = \inf{b&gt;x:(x,b) \subset \mathcal{O}}<br>$$<br>Since $I_x = (a_x,b_x)$ is a subset of $\mathcal O$, then we have<br>$$<br>\mathcal O = \bigcup_{x\in\mathcal O} I_x<br>$$<br>If $I_x \cap I_y \not = \emptyset$, then $I_x \cup I_y$ is also a interval. Then we have $I_x \cup I_y \subset I_x$ and $I_x \cup I_y \subset I_x$ by definition. This only happen when $I_x = I_y$.<br>Since every open interval contain a rational number, we can choose disjoint rational number for every element in ${I_x}<em>{x \in \mathcal O}$, since they are disjoint.<br>Therefore,  ${I_x}</em>{x \in \mathcal O}$ is countable.</p>
+<h3 id="Lemma-1-4"><a href="#Lemma-1-4" class="headerlink" title="Lemma 1.4"></a>Lemma 1.4</h3><blockquote>
+<p>Every open subset $\mathcal O$ of $\mathbb R^d, d \ge 1$, can be written as a countable union of almost disjoint closed cubes.</p>
+</blockquote>
+<p>proof.<br>![[Pasted image 20230622234223.png]]<br>先用长度为1的正方形划分$\mathbb R^d$，标记被$\mathcal O$包含的正方形为$Q_{1,1},Q_{1,2},Q_{1,3},\dots$<br>再使用更细的划分去填补剩下的空间，每一次都将边长变成原来的1/2.<br>因为每一层都最多使用可数个正方形，而总共有可数层，于是总计使用的正方形数量不会超过可数个。<br>而对于开集$\mathcal O$中的每一个点$x$, 都存在一个以$x$为中心半径为$\delta$的球被包含在开集$\mathcal O$内, 因此必然存在边长大于$\delta / 2$的划分使得该点被正方形覆盖。<br>因此，the open set $\mathcal O$ can be written as a countable union of almost disjoint closed cubes</p>
+<h2 id="康托尔集-Cantor-set"><a href="#康托尔集-Cantor-set" class="headerlink" title="康托尔集 Cantor set"></a>康托尔集 Cantor set</h2><p>![[Pasted image 20230623114859.png]]<br>The total length of Cantor set is 0. （但这个说法对于现在的我们来说很符合直觉但不严谨，你如何去测量一个有无穷断点的物体的长度呢？</p>
+<hr>
+<h1 id="外测度-exterior-measure"><a href="#外测度-exterior-measure" class="headerlink" title="外测度 exterior measure"></a>外测度 exterior measure</h1><p>由上面的定理，我们知道，一个相对规整的集合（比如开集）可以表示为可数个正方形的无交并，这预示着我们去利用已知的正方形的体积去测量任意集合的体积<br>当我们用多个正方形从外侧去逼近一个图形的时候，也许就可以得到一些与面积相关的信息<br>![[Pasted image 20230623124600.png]]</p>
+<h2 id="定义外测度"><a href="#定义外测度" class="headerlink" title="定义外测度"></a>定义外测度</h2><p>The precise definition is as follows: if $E$ is any subset of $\mathbb R^d$, the exterior measure of $E$ is<br>$$<br>m_*(E) = inf{\sum_{j=1}^\infty |Q_j|}<br>$$</p>
+<h3 id="值得注意"><a href="#值得注意" class="headerlink" title="值得注意"></a>值得注意</h3><h4 id="1-这里使用有限和是有可能得不到我们想要的面积的"><a href="#1-这里使用有限和是有可能得不到我们想要的面积的" class="headerlink" title="1 这里使用有限和是有可能得不到我们想要的面积的"></a>1 这里使用有限和是有可能得不到我们想要的面积的</h4><p>比如说$[0,1]$中所有有理数构成的集合$E$，在有限和定义的测度下测度为1，但是数学分析告诉我们这应该是一个零测集。</p>
+<h4 id="2-事实上可以将正方形替换成长方形，这个定义依然生效"><a href="#2-事实上可以将正方形替换成长方形，这个定义依然生效" class="headerlink" title="2 事实上可以将正方形替换成长方形，这个定义依然生效"></a>2 事实上可以将正方形替换成长方形，这个定义依然生效</h4><p>可以试试将长方形用可数个正方形表达出来</p>
+<h3 id="试试手"><a href="#试试手" class="headerlink" title="试试手"></a>试试手</h3><h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h4><blockquote>
+<p>The exterior measure of a point is zero.</p>
+</blockquote>
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h4><blockquote>
+<p>The exterior measure of a closed cube is equal to its volume.</p>
+</blockquote>
+<h4 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h4><blockquote>
+<p>If $Q$ is an open cube, the result $m_∗(Q) = |Q|$ still holds.</p>
+</blockquote>
+<h4 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h4><blockquote>
+<p>The exterior measure of $\mathbb R^d$ is infinite.</p>
+</blockquote>
+<h4 id="Example-5"><a href="#Example-5" class="headerlink" title="Example 5"></a>Example 5</h4><blockquote>
+<p>The Cantor set $\mathcal C$ has exterior measure $0$.</p>
+</blockquote>
+<h2 id="外测度的性质"><a href="#外测度的性质" class="headerlink" title="外测度的性质"></a>外测度的性质</h2><h3 id="观察所得"><a href="#观察所得" class="headerlink" title="观察所得"></a>观察所得</h3><p>观察所见，加上少许证明，即为基本的性质。</p>
+<h4 id="Obs1"><a href="#Obs1" class="headerlink" title="Obs1"></a>Obs1</h4><blockquote>
+<p>$A \subset B \Rightarrow m_*(A) \le m_*(B)$</p>
+</blockquote>
+<p>因为任何一个$B$的覆盖也是$A$的一个覆盖。</p>
+<h4 id="Obs2"><a href="#Obs2" class="headerlink" title="Obs2"></a>Obs2</h4><blockquote>
+<p>若$J$可数，则$m_*(\bigcup_{j \in J} A_j) \le \sum_{j \in J} m_*(A_j)$</p>
+</blockquote>
+<p>By definition, we get a covering $E_j \subset \bigcup_{k=1}^\infty Q_{k,j}$ such that<br>$$<br>\sum_{k=1}^{\infty} |Q_{k,j}| &lt; m_*(E_j) + \frac{\epsilon}{2^j}<br>$$<br>Then, we have<br>$$<br>m_*(E) \le \sum_{j=1}^\infty \sum_{k=1}^\infty|Q_{k,j}| \le \sum_{j=1}^\infty \left(m_*(E) + \frac{\epsilon}{2^j}\right) \le \sum_{j=1}^\infty m_*(E) + \epsilon<br>$$</p>
+<h4 id="Obs3"><a href="#Obs3" class="headerlink" title="Obs3"></a>Obs3</h4><blockquote>
+<p>If $E \subset \mathbb R^d$, then $m_∗(E) = \inf m_∗(\mathcal O)$, where the infimum is taken over all open sets $\mathcal O$ containing $E$.</p>
+</blockquote>
+<h4 id="Obs4"><a href="#Obs4" class="headerlink" title="Obs4"></a>Obs4</h4><blockquote>
+<p>If $E = E_1 \cup E_2$, and $d(E_1, E_2) &gt; 0$, then $m_∗(E) = m_∗(E_1) + m_∗(E_2)$.</p>
+</blockquote>
+<p>By Obs2, we have $m_*(E) \le m_*(E_1) + m_*(E_2)$.</p>
+<h4 id="Obs5"><a href="#Obs5" class="headerlink" title="Obs5"></a>Obs5</h4><blockquote>
+<p>If a set $E$ is the countable union of almost disjoint cubes $E = \bigcup_ {j=1}^\infty Q_j$, then</p>
+</blockquote>
+<p>$$<br>m_∗(E) = \sum_ {j=1}^\infty |Q_j |<br>$$</p>
+<h2 id="测度公理化"><a href="#测度公理化" class="headerlink" title="测度公理化"></a>测度公理化</h2><ol>
+<li>（Borel性质）$\mathbb R^n$中每一个开集都是可测集，每一个闭集都是可测集。</li>
+<li>（补性质）如果$\Omega$是可测的，那么$\mathbb R^n / \Omega$也是可测的</li>
+<li>（Boole代数性质）如果$(\Omega_j)<em>{j \in J}$是可测集的<strong>有限</strong>族，那么$\bigcup</em>{j \in J} \Omega_j$和$\bigcap_{j \in J} \Omega_j$都是可测集</li>
+<li>（$\sigma$代数性质）如果$(\Omega_j)<em>{j \in J}$是可测集的<strong>可数</strong>族，那么$\bigcup</em>{j \in J} \Omega_j$和$\bigcap_{j \in J} \Omega_j$都是可测集</li>
+<li>$m(\emptyset) = 0$</li>
+<li>$0\le m(\Omega) \le \infty$</li>
+<li>$A \subset B \Rightarrow m(A) \le m(B)$</li>
+<li>若$J$可数，则$m(\bigcup_{j \in J} A_j) \le \sum_{j \in J} m(A_j)$</li>
+<li>若$(A_j)<em>{j\in J}$ 是<strong>互不相交</strong>的可数族，则$m(\bigcup</em>{j \in J} A_j) =\le= \sum_{j \in J} m(A_j)$</li>
+<li>（正规化性质）$m([0,1]^n)=1$</li>
+<li>若$\Omega$是可测集而$x \in \mathbb R^n$，那么$x+\Omega := {x+y:y\in\Omega}$是可测的，而且$m(x+\Omega) = m(\Omega)$.</li>
+</ol>
  
       <!-- reward -->
       
@@ -195,12 +265,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/05/24/%E6%9C%89%E9%99%90%E5%9F%9F%E7%9A%84%E5%85%83%E7%B4%A0%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%86%99%E6%88%90%E4%B8%A4%E4%B8%AA%E5%B9%B3%E6%96%B9%E6%95%B0%E7%9A%84%E5%92%8C/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/06/24/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0%EF%BC%9A%E5%8B%92%E8%B4%9D%E6%A0%BC%E6%B5%8B%E5%BA%A6/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/" rel="tag">抽象代数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/" rel="tag">实变函数</a></li></ul>
 
     </footer>
   </div>
@@ -208,19 +278,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2023/06/24/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0%EF%BC%9A%E5%8B%92%E8%B4%9D%E6%A0%BC%E6%B5%8B%E5%BA%A6/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            实变函数：外测度
-          
-        </div>
-      </a>
     
-    
-      <a href="/2023/05/06/%E4%BB%A3%E6%95%B0%E6%95%B0%E8%AE%BA/%E4%BA%A4%E6%8D%A2%E4%BB%A3%E6%95%B0%EF%BC%9A%E5%B1%80%E9%83%A8%E5%8C%96/" class="article-nav-link">
+      <a href="/2023/05/24/%E6%9C%89%E9%99%90%E5%9F%9F%E7%9A%84%E5%85%83%E7%B4%A0%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%86%99%E6%88%90%E4%B8%A4%E4%B8%AA%E5%B9%B3%E6%96%B9%E6%95%B0%E7%9A%84%E5%92%8C/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">交换代数：局部化</div>
+        <div class="article-nav-title">有限域的元素都可以写成两个平方的和</div>
       </a>
     
   </nav>
